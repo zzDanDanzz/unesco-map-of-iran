@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import Map, { Marker } from "react-map-gl/maplibre"
 import "maplibre-gl/dist/maplibre-gl.css"
 import type { StyleSpecification } from "maplibre-gl"
+import type { Feature, Point } from "geojson"
 
 const INITIAL_VIEW_STATE = {
   longitude: 54.03,
@@ -29,20 +30,15 @@ const OSM_STYLE = {
   ],
 }
 
-interface HeritageSite {
-  type: "Feature"
-  geometry: {
-    type: "Point"
-    coordinates: [number, number]
-  }
-  properties: {
-    name_en: string
-    short_description_en: string
-    category: string
-    main_image_url: string
-    id_no: string
-  }
+interface HeritageSiteProperties {
+  name_en: string
+  short_description_en: string
+  category: string
+  main_image_url: string
+  id_no: string
 }
+
+type HeritageSite = Feature<Point, HeritageSiteProperties>
 
 export function App() {
   const [viewState, setViewState] = useState(INITIAL_VIEW_STATE)
