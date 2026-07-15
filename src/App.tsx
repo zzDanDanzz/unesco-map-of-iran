@@ -1,20 +1,3 @@
-import type { Feature, Point } from "geojson"
-import maplibregl from "maplibre-gl"
-import "maplibre-gl/dist/maplibre-gl.css"
-import { Protocol } from "pmtiles"
-import { useEffect, useState, useMemo } from "react"
-import Map, { Marker, MapProvider, useMap } from "react-map-gl/maplibre"
-import useSupercluster from "use-supercluster"
-import Supercluster from "supercluster"
-import { Toaster } from "@/components/ui/sonner"
-import { toast } from "sonner"
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetDescription,
-} from "@/components/ui/sheet"
 import { Badge } from "@/components/ui/badge"
 import {
   Carousel,
@@ -23,6 +6,25 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet"
+import { Toaster } from "@/components/ui/sonner"
+import { IconMaximize, IconX } from "@tabler/icons-react"
+import type { Feature, Point } from "geojson"
+import maplibregl from "maplibre-gl"
+import "maplibre-gl/dist/maplibre-gl.css"
+import { Protocol } from "pmtiles"
+import { Dialog as RadixDialog } from "radix-ui"
+import { useEffect, useMemo, useState } from "react"
+import Map, { MapProvider, Marker, useMap } from "react-map-gl/maplibre"
+import { toast } from "sonner"
+import Supercluster from "supercluster"
+import useSupercluster from "use-supercluster"
 
 const protocol = new Protocol()
 maplibregl.addProtocol("pmtiles", protocol.tile)
@@ -241,6 +243,9 @@ function MapComponent({
 export function App() {
   const [selectedSite, setSelectedSite] =
     useState<HeritageSiteProperties | null>(null)
+  const [fullScreenImageIndex, setFullScreenImageIndex] = useState<
+    number | null
+  >(null)
 
   const carouselImages = selectedSite
     ? Array.from(
@@ -268,7 +273,15 @@ export function App() {
               <SheetHeader>
                 <SheetTitle>{selectedSite.name_en}</SheetTitle>
                 <SheetDescription className="mt-1 flex items-center gap-2">
-                  <Badge variant={selectedSite.category === "Natural" ? "secondary" : selectedSite.category === "Mixed" ? "outline" : "default"}>
+                  <Badge
+                    variant={
+                      selectedSite.category === "Natural"
+                        ? "secondary"
+                        : selectedSite.category === "Mixed"
+                          ? "outline"
+                          : "default"
+                    }
+                  >
                     {selectedSite.category}
                   </Badge>
                 </SheetDescription>
@@ -280,12 +293,21 @@ export function App() {
                     <CarouselContent>
                       {carouselImages.map((url, i) => (
                         <CarouselItem key={i}>
-                          <div className="relative aspect-video w-full overflow-hidden">
+                          <div
+                            className="group relative aspect-video w-full cursor-pointer overflow-hidden"
+                            onClick={() => setFullScreenImageIndex(i)}
+                          >
                             <img
                               src={url.replace("{size}", "large")}
                               alt={`${selectedSite.name_en} - Image ${i + 1}`}
-                              className="absolute inset-0 h-full w-full object-cover"
+                              className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                             />
+                            <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/10" />
+                            <div className="absolute top-2 right-2 opacity-0 transition-opacity group-hover:opacity-100">
+                              <div className="rounded-full bg-black/50 p-1.5 text-white backdrop-blur-sm">
+                                <IconMaximize className="h-4 w-4" />
+                              </div>
+                            </div>
                           </div>
                         </CarouselItem>
                       ))}
@@ -306,6 +328,68 @@ export function App() {
           )}
         </SheetContent>
       </Sheet>
+      <RadixDialog.Root
+        open={fullScreenImageIndex !== null}
+        onOpenChange={(isOpen) => {
+          if (!isOpen) setFullScreenImageIndex(null)
+        }}
+      >
+        <RadixDialog.Portal>
+          <RadixDialog.Overlay className="fixed inset-0 z-100 bg-black/95 backdrop-blur-sm data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0" />
+          <RadixDialog.Content
+            className="fixed inset-0 z-100 flex flex-col focus:outline-none"
+            aria-describedby={undefined}
+            onClick={() => setFullScreenImageIndex(null)}
+          >
+            <RadixDialog.Title className="sr-only">
+              Full Screen Viewer
+            </RadixDialog.Title>
+
+            {selectedSite && fullScreenImageIndex !== null && (
+              <>
+                <div className="absolute top-4 right-4 z-110">
+                  <RadixDialog.Close asChild>
+                    <button className="cursor-pointer rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20">
+                      <IconX className="h-6 w-6" />
+                    </button>
+                  </RadixDialog.Close>
+                </div>
+                <div className="flex h-full w-full items-center justify-center p-4 sm:p-8">
+                  <Carousel
+                    opts={{
+                      loop: true,
+                      startIndex: fullScreenImageIndex,
+                    }}
+                    className="w-full max-w-6xl"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <CarouselContent>
+                      {carouselImages.map((url, i) => (
+                        <CarouselItem key={i}>
+                          <div className="relative flex h-[85vh] w-full items-center justify-center">
+                            <img
+                              src={url.replace("{size}", "large")}
+                              alt={`${selectedSite.name_en} - Image ${i + 1}`}
+                              className="max-h-full max-w-full object-contain"
+                            />
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    {carouselImages.length > 1 && (
+                      <>
+                        <CarouselPrevious className="left-4 z-50 border-0 bg-black/50 text-white hover:bg-black/80 hover:text-white" />
+                        <CarouselNext className="right-4 z-50 border-0 bg-black/50 text-white hover:bg-black/80 hover:text-white" />
+                      </>
+                    )}
+                  </Carousel>
+                </div>
+              </>
+            )}
+          </RadixDialog.Content>
+        </RadixDialog.Portal>
+      </RadixDialog.Root>
+
       <Toaster position="top-center" />
     </>
   )
