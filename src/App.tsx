@@ -16,6 +16,13 @@ import {
   SheetDescription,
 } from "@/components/ui/sheet"
 import { Badge } from "@/components/ui/badge"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 const protocol = new Protocol()
 maplibregl.addProtocol("pmtiles", protocol.tile)
@@ -34,6 +41,7 @@ interface HeritageSiteProperties {
   short_description_en: string
   category: string
   main_image_url: string
+  images_urls: string[]
   id_no: string
 }
 
@@ -234,6 +242,15 @@ export function App() {
   const [selectedSite, setSelectedSite] =
     useState<HeritageSiteProperties | null>(null)
 
+  const carouselImages = selectedSite
+    ? Array.from(
+        new Set([
+          selectedSite.main_image_url,
+          ...(selectedSite.images_urls || []),
+        ])
+      )
+    : []
+
   return (
     <>
       <MapProvider>
@@ -259,11 +276,27 @@ export function App() {
 
               <div className="flex flex-col gap-4 px-6 pb-6">
                 <div className="overflow-hidden rounded-xl">
-                  <img
-                    src={selectedSite.main_image_url.replace("{size}", "large")}
-                    alt={selectedSite.name_en}
-                    className="h-auto w-full object-cover"
-                  />
+                  <Carousel opts={{ loop: true }}>
+                    <CarouselContent>
+                      {carouselImages.map((url, i) => (
+                        <CarouselItem key={i}>
+                          <div className="relative aspect-video w-full overflow-hidden">
+                            <img
+                              src={url.replace("{size}", "large")}
+                              alt={`${selectedSite.name_en} - Image ${i + 1}`}
+                              className="absolute inset-0 h-full w-full object-cover"
+                            />
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    {carouselImages.length > 1 && (
+                      <>
+                        <CarouselPrevious className="left-2" />
+                        <CarouselNext className="right-2" />
+                      </>
+                    )}
+                  </Carousel>
                 </div>
                 <div className="text-sm text-foreground">
                   {selectedSite.short_description_en}
