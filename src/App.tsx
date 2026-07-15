@@ -8,6 +8,14 @@ import useSupercluster from "use-supercluster"
 import Supercluster from "supercluster"
 import { Toaster } from "@/components/ui/sonner"
 import { toast } from "sonner"
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription,
+} from "@/components/ui/sheet"
+import { Badge } from "@/components/ui/badge"
 
 const protocol = new Protocol()
 maplibregl.addProtocol("pmtiles", protocol.tile)
@@ -90,7 +98,11 @@ export function ClusterMarker({
   )
 }
 
-function MapComponent() {
+function MapComponent({
+  setSelectedSite,
+}: {
+  setSelectedSite: (site: HeritageSiteProperties | null) => void
+}) {
   const { current: map } = useMap()
   const [viewState, setViewState] = useState(getInitialViewState)
   const [sites, setSites] = useState<HeritageSite[]>([])
@@ -198,7 +210,7 @@ function MapComponent() {
                 className="group flex flex-col items-center outline-none"
                 onClick={(e) => {
                   e.stopPropagation()
-                  console.log("Clicked site:", name_en)
+                  setSelectedSite(cluster.properties as HeritageSiteProperties)
                 }}
               >
                 <div className="h-14 w-14 overflow-hidden rounded-xl border-[3px] border-background shadow-lg transition-transform duration-200 group-hover:scale-110 group-hover:border-primary group-focus-visible:ring-4 group-focus-visible:ring-ring">
@@ -219,11 +231,48 @@ function MapComponent() {
 }
 
 export function App() {
+  const [selectedSite, setSelectedSite] =
+    useState<HeritageSiteProperties | null>(null)
+
   return (
     <>
       <MapProvider>
-        <MapComponent />
+        <MapComponent setSelectedSite={setSelectedSite} />
       </MapProvider>
+      <Sheet
+        open={!!selectedSite}
+        onOpenChange={(isOpen) => {
+          if (!isOpen) setSelectedSite(null)
+        }}
+      >
+        <SheetContent className="w-100 overflow-y-auto sm:w-135">
+          {selectedSite && (
+            <>
+              <SheetHeader>
+                <SheetTitle>{selectedSite.name_en}</SheetTitle>
+                <SheetDescription className="mt-1 flex items-center gap-2">
+                  <Badge variant={selectedSite.category === "Natural" ? "secondary" : selectedSite.category === "Mixed" ? "outline" : "default"}>
+                    {selectedSite.category}
+                  </Badge>
+                </SheetDescription>
+              </SheetHeader>
+
+              <div className="flex flex-col gap-4 px-6 pb-6">
+                <div className="overflow-hidden rounded-xl">
+                  <img
+                    src={selectedSite.main_image_url.replace("{size}", "large")}
+                    alt={selectedSite.name_en}
+                    className="h-auto w-full object-cover"
+                  />
+                </div>
+                <div className="text-sm text-foreground">
+                  {selectedSite.short_description_en}
+                </div>
+              </div>
+            </>
+          )}
+        </SheetContent>
+      </Sheet>
       <Toaster position="top-center" />
     </>
   )
