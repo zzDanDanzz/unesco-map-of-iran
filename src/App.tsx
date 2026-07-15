@@ -3,7 +3,9 @@ import maplibregl from "maplibre-gl"
 import "maplibre-gl/dist/maplibre-gl.css"
 import { Protocol } from "pmtiles"
 import { useEffect, useState } from "react"
-import Map, { Marker } from "react-map-gl/maplibre"
+import Map, { Marker, MapProvider, useMap } from "react-map-gl/maplibre"
+import useSupercluster from "use-supercluster"
+import Supercluster from "supercluster"
 
 const protocol = new Protocol()
 maplibregl.addProtocol("pmtiles", protocol.tile)
@@ -24,7 +26,70 @@ interface HeritageSiteProperties {
 
 type HeritageSite = Feature<Point, HeritageSiteProperties>
 
-export function App() {
+type PointProperties = HeritageSiteProperties & { cluster: false }
+type ClusterProps = Supercluster.AnyProps
+
+interface ClusterMarkerProps {
+  cluster: Supercluster.ClusterFeature<ClusterProps>
+  supercluster: Supercluster<PointProperties, ClusterProps>
+  onClick: () => void
+}
+
+export function ClusterMarker({
+  cluster,
+  supercluster,
+  onClick,
+}: ClusterMarkerProps) {
+  const { cluster_id, point_count } = cluster.properties
+
+  const leaves = supercluster.getLeaves(cluster_id, 4)
+
+  return (
+    <button
+      className="group flex flex-col items-center outline-none"
+      onClick={(e) => {
+        e.stopPropagation()
+        onClick()
+      }}
+    >
+      <div className="relative h-14 w-14 overflow-hidden rounded-xl border-[3px] border-background shadow-lg transition-transform duration-200 group-hover:scale-110 group-hover:border-primary group-focus-visible:ring-4 group-focus-visible:ring-ring">
+        <div
+          className={`grid h-full w-full gap-0.5 bg-background ${leaves.length === 2 ? "grid-cols-2" : "grid-cols-2 grid-rows-2"}`}
+        >
+          {leaves.map((leaf, i) => {
+            const imgUrl = leaf.properties.main_image_url.replace(
+              "{size}",
+              "thumb"
+            )
+            return (
+              <div
+                key={leaf.properties.id_no}
+                className={`relative h-full w-full overflow-hidden ${leaves.length === 3 && i === 0 ? "col-span-2" : ""}`}
+              >
+                <img
+                  src={imgUrl}
+                  alt={leaf.properties.name_en}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            )
+          })}
+        </div>
+
+        {point_count > 4 && (
+          <div className="absolute bottom-0 left-0 flex items-center rounded-tr-md border-t border-r border-background/50 bg-background/90 px-1 text-[10px] font-bold backdrop-blur-sm">
+            +{point_count - 4}
+          </div>
+        )}
+      </div>
+      <div className="h-0 w-0 border-t-10 border-r-8 border-l-8 border-t-background border-r-transparent border-l-transparent transition-transform duration-200 group-hover:translate-y-1 group-hover:border-t-primary"></div>
+    </button>
+  )
+}
+
+function MapComponent() {
+  const { current: map } = useMap()
   const [viewState, setViewState] = useState(INITIAL_VIEW_STATE)
   const [sites, setSites] = useState<HeritageSite[]>([])
 
@@ -39,40 +104,96 @@ export function App() {
       .catch((err) => console.error("Failed to load GeoJSON:", err))
   }, [])
 
+  const points = sites.map((site) => ({
+    type: "Feature" as const,
+    properties: {
+      cluster: false as const,
+      ...site.properties,
+    },
+    geometry: {
+      type: "Point" as const,
+      coordinates: site.geometry.coordinates,
+    },
+  }))
+
+  // Use global bounds so markers outside the current viewport are still clustered and mounted
+  const GLOBAL_BOUNDS: [number, number, number, number] = [-180, -90, 180, 90]
+
+  const { clusters, supercluster } = useSupercluster({
+    points,
+    bounds: GLOBAL_BOUNDS,
+    zoom: viewState.zoom,
+    options: { radius: 72, maxZoom: 17 },
+  })
+
   return (
     <div className="relative h-screen">
       <Map
         {...viewState}
         hash
-        onMove={({ viewState }) => setViewState(viewState)}
+        onMove={(e) => setViewState(e.viewState)}
         mapStyle="/style.json"
         style={{ width: "100%", height: "100%" }}
         maxZoom={19}
       >
-        {sites.map((site) => {
-          const imageUrl = site.properties.main_image_url.replace(
-            "{size}",
-            "thumb"
-          )
+        {clusters.map((cluster) => {
+          const [longitude, latitude] = cluster.geometry.coordinates
+          const {
+            cluster: isCluster,
+            id_no,
+            name_en,
+            main_image_url,
+          } = cluster.properties
+
+          if (isCluster && supercluster) {
+            return (
+              <Marker
+                key={`cluster-${cluster.id}`}
+                longitude={longitude}
+                latitude={latitude}
+                anchor="bottom"
+              >
+                <ClusterMarker
+                  cluster={cluster as Supercluster.ClusterFeature<ClusterProps>}
+                  supercluster={supercluster}
+                  onClick={() => {
+                    const expansionZoom = Math.min(
+                      supercluster.getClusterExpansionZoom(
+                        cluster.id as number
+                      ),
+                      19
+                    )
+                    map?.flyTo({
+                      center: [longitude, latitude],
+                      zoom: expansionZoom,
+                      duration: 500,
+                    })
+                  }}
+                />
+              </Marker>
+            )
+          }
+
+          const imageUrl = main_image_url.replace("{size}", "thumb")
 
           return (
             <Marker
-              key={site.properties.id_no}
-              longitude={site.geometry.coordinates[0]}
-              latitude={site.geometry.coordinates[1]}
+              key={`site-${id_no}`}
+              longitude={longitude}
+              latitude={latitude}
               anchor="bottom"
             >
               <button
                 className="group flex flex-col items-center outline-none"
                 onClick={(e) => {
                   e.stopPropagation()
-                  console.log("Clicked site:", site.properties.name_en)
+                  console.log("Clicked site:", name_en)
                 }}
               >
                 <div className="h-14 w-14 overflow-hidden rounded-xl border-[3px] border-background shadow-lg transition-transform duration-200 group-hover:scale-110 group-hover:border-primary group-focus-visible:ring-4 group-focus-visible:ring-ring">
                   <img
                     src={imageUrl}
-                    alt={site.properties.name_en}
+                    alt={name_en}
                     className="h-full w-full object-cover"
                     loading="lazy"
                   />
@@ -84,6 +205,14 @@ export function App() {
         })}
       </Map>
     </div>
+  )
+}
+
+export function App() {
+  return (
+    <MapProvider>
+      <MapComponent />
+    </MapProvider>
   )
 }
 
