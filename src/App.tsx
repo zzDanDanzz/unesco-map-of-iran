@@ -2,7 +2,7 @@ import type { Feature, Point } from "geojson"
 import maplibregl from "maplibre-gl"
 import "maplibre-gl/dist/maplibre-gl.css"
 import { Protocol } from "pmtiles"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useMemo } from "react"
 import Map, { Marker, MapProvider, useMap } from "react-map-gl/maplibre"
 import useSupercluster from "use-supercluster"
 import Supercluster from "supercluster"
@@ -104,7 +104,7 @@ function MapComponent() {
       .catch((err) => console.error("Failed to load GeoJSON:", err))
   }, [])
 
-  const points = sites.map((site) => ({
+  const points = useMemo(() => sites.map((site) => ({
     type: "Feature" as const,
     properties: {
       cluster: false as const,
@@ -114,7 +114,7 @@ function MapComponent() {
       type: "Point" as const,
       coordinates: site.geometry.coordinates,
     },
-  }))
+  })), [sites])
 
   // Use global bounds so markers outside the current viewport are still clustered and mounted
   const GLOBAL_BOUNDS: [number, number, number, number] = [-180, -90, 180, 90]
