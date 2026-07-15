@@ -83,7 +83,6 @@ export function ClusterMarker({
           {point_count}
         </div>
       </div>
-      <div className="h-0 w-0 border-t-10 border-r-8 border-l-8 border-t-background border-r-transparent border-l-transparent transition-transform duration-200 group-hover:translate-y-1 group-hover:border-t-primary"></div>
     </button>
   )
 }
@@ -132,7 +131,7 @@ function MapComponent() {
     points,
     bounds: GLOBAL_BOUNDS,
     zoom: viewState.zoom,
-    options: { radius: 72, maxZoom: 17 },
+    options: { radius: 70, maxZoom: 17 },
   })
 
   return (
@@ -160,7 +159,7 @@ function MapComponent() {
                 key={`cluster-${cluster.id}`}
                 longitude={longitude}
                 latitude={latitude}
-                anchor="bottom"
+                anchor="center"
               >
                 <ClusterMarker
                   cluster={cluster as Supercluster.ClusterFeature<ClusterProps>}
@@ -190,7 +189,7 @@ function MapComponent() {
               key={`site-${id_no}`}
               longitude={longitude}
               latitude={latitude}
-              anchor="bottom"
+              anchor="center"
             >
               <button
                 className="group flex flex-col items-center outline-none"
@@ -207,7 +206,6 @@ function MapComponent() {
                     loading="lazy"
                   />
                 </div>
-                <div className="h-0 w-0 border-t-10 border-r-8 border-l-8 border-t-background border-r-transparent border-l-transparent transition-transform duration-200 group-hover:translate-y-1 group-hover:border-t-primary"></div>
               </button>
             </Marker>
           )
