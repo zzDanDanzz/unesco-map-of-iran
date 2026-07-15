@@ -1,33 +1,17 @@
-import { useState, useEffect } from "react"
-import Map, { Marker } from "react-map-gl/maplibre"
-import "maplibre-gl/dist/maplibre-gl.css"
-import type { StyleSpecification } from "maplibre-gl"
 import type { Feature, Point } from "geojson"
+import maplibregl from "maplibre-gl"
+import "maplibre-gl/dist/maplibre-gl.css"
+import { Protocol } from "pmtiles"
+import { useEffect, useState } from "react"
+import Map, { Marker } from "react-map-gl/maplibre"
+
+const protocol = new Protocol()
+maplibregl.addProtocol("pmtiles", protocol.tile)
 
 const INITIAL_VIEW_STATE = {
   longitude: 54.03,
   latitude: 33.03,
   zoom: 4.5,
-}
-
-const OSM_STYLE = {
-  version: 8,
-  sources: {
-    osm: {
-      type: "raster",
-      tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
-      tileSize: 256,
-      attribution: "&copy; OpenStreetMap Contributors",
-      maxzoom: 19,
-    },
-  },
-  layers: [
-    {
-      id: "osm",
-      type: "raster",
-      source: "osm",
-    },
-  ],
 }
 
 interface HeritageSiteProperties {
@@ -61,7 +45,7 @@ export function App() {
         {...viewState}
         hash
         onMove={({ viewState }) => setViewState(viewState)}
-        mapStyle={OSM_STYLE as StyleSpecification}
+        mapStyle="/style.json"
         style={{ width: "100%", height: "100%" }}
         maxZoom={19}
       >
