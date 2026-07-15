@@ -12,10 +12,13 @@ import { toast } from "sonner"
 const protocol = new Protocol()
 maplibregl.addProtocol("pmtiles", protocol.tile)
 
-const INITIAL_VIEW_STATE = {
-  longitude: 54.03,
-  latitude: 33.03,
-  zoom: 4.5,
+const getInitialViewState = () => {
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768
+  return {
+    longitude: 54.03,
+    latitude: 33.03,
+    zoom: isMobile ? 3.8 : 4.5,
+  }
 }
 
 interface HeritageSiteProperties {
@@ -89,7 +92,7 @@ export function ClusterMarker({
 
 function MapComponent() {
   const { current: map } = useMap()
-  const [viewState, setViewState] = useState(INITIAL_VIEW_STATE)
+  const [viewState, setViewState] = useState(getInitialViewState)
   const [sites, setSites] = useState<HeritageSite[]>([])
 
   useEffect(() => {
@@ -131,7 +134,7 @@ function MapComponent() {
     points,
     bounds: GLOBAL_BOUNDS,
     zoom: viewState.zoom,
-    options: { radius: 70, maxZoom: 17 },
+    options: { radius: 72, maxZoom: 17 },
   })
 
   return (
