@@ -45,7 +45,7 @@ export function App() {
   const [sites, setSites] = useState<HeritageSite[]>([])
 
   useEffect(() => {
-    fetch("/unesco_iran.geojson")
+    fetch("/data/unesco_top_level.geojson")
       .then((res) => res.json())
       .then((data) => {
         if (data && data.features) {

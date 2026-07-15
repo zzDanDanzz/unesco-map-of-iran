@@ -1,6 +1,5 @@
 {
   "type": "FeatureCollection",
-  "name": "whc001",
   "features": [
     {
       "type": "Feature",
@@ -12,127 +11,6 @@
         "main_image_author": "Fariba Babaei",
         "main_image_copyright": "Fariba Babaei",
         "id_no": "1584",
-        "components_list": [
-          {
-            "name": "Boola",
-            "ref": "1584bis-006",
-            "img": "/images/whc-unesco-org/166795-{size}.webp",
-            "latitude": 36.0988305555,
-            "longitude": 53.39375
-          },
-          {
-            "name": "Lisar",
-            "ref": "1584bis-015",
-            "img": "",
-            "latitude": 37.9355527777,
-            "longitude": 48.8323333334
-          },
-          {
-            "name": "Kojoor",
-            "ref": "1584bis-010",
-            "img": "/images/whc-unesco-org/166788-{size}.webp",
-            "latitude": 36.546025,
-            "longitude": 51.6676388889
-          },
-          {
-            "name": "Alimestan",
-            "ref": "1584bis-007",
-            "img": "/images/whc-unesco-org/166814-{size}.webp",
-            "latitude": 36.1735833334,
-            "longitude": 52.4039416667
-          },
-          {
-            "name": "Abr (East)",
-            "ref": "1584bis-003",
-            "img": "",
-            "latitude": 36.8125805556,
-            "longitude": 54.9448888889
-          },
-          {
-            "name": "Abr (West)",
-            "ref": "1584bis-004",
-            "img": "",
-            "latitude": 36.8158305556,
-            "longitude": 55.1009416667
-          },
-          {
-            "name": "Jahan Nama",
-            "ref": "1584bis-005",
-            "img": "/images/whc-unesco-org/166812-{size}.webp",
-            "latitude": 36.6652777778,
-            "longitude": 54.4015277778
-          },
-          {
-            "name": "Vaz (East)",
-            "ref": "1584bis-008",
-            "img": "",
-            "latitude": 36.2791083334,
-            "longitude": 52.1250555556
-          },
-          {
-            "name": "Vaz (West)",
-            "ref": "1584bis-009",
-            "img": "",
-            "latitude": 36.3074694444,
-            "longitude": 52.0610555556
-          },
-          {
-            "name": "Chahar-Bagh",
-            "ref": "1584bis-011",
-            "img": "/images/whc-unesco-org/166817-{size}.webp",
-            "latitude": 36.2585555556,
-            "longitude": 51.2171388889
-          },
-          {
-            "name": "Gast Roudkhan",
-            "ref": "1584bis-014",
-            "img": "",
-            "latitude": 37.0655555556,
-            "longitude": 49.1527472222
-          },
-          {
-            "name": "Khoshk-e-Daran",
-            "ref": "1584bis-012",
-            "img": "/images/whc-unesco-org/166836-{size}.webp",
-            "latitude": 36.7272472223,
-            "longitude": 51.0639694444
-          },
-          {
-            "name": "Golestan (North)",
-            "ref": "1584bis-001",
-            "img": "/images/whc-unesco-org/166800-{size}.webp",
-            "latitude": 37.425,
-            "longitude": 55.824
-          },
-          {
-            "name": "Golestan (South)",
-            "ref": "1584bis-002",
-            "img": "/images/whc-unesco-org/166802-{size}.webp",
-            "latitude": 37.342,
-            "longitude": 55.826
-          },
-          {
-            "name": "Siahroud-e-Roudbar",
-            "ref": "1584bis-013",
-            "img": "/images/whc-unesco-org/166819-{size}.webp",
-            "latitude": 36.899775,
-            "longitude": 49.6720277778
-          },
-          {
-            "name": "Dangyaband (Northern HNP)",
-            "ref": "1584bis-016",
-            "img": "",
-            "latitude": 38.754475,
-            "longitude": 48.6825055556
-          },
-          {
-            "name": "İstisuchay Valley (Southern HNP)",
-            "ref": "1584bis-017",
-            "img": "",
-            "latitude": 38.4549666667,
-            "longitude": 48.6793027778
-          }
-        ],
         "components_count": 17,
         "images_urls": [
           "/images/whc-unesco-org/166783-{size}.webp",
@@ -169,7 +47,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [55.7242777778, 37.4214722222]
+        "coordinates": [
+          55.7242777778,
+          37.4214722222
+        ]
       }
     },
     {
@@ -182,29 +63,6 @@
         "main_image_author": "Ali Jadidi",
         "main_image_copyright": "ICHHTO",
         "id_no": "1544",
-        "components_list": [
-          {
-            "name": "Area 1",
-            "ref": "1544-001",
-            "img": "/images/1544-001-{size}.webp",
-            "latitude": 31.9013888889,
-            "longitude": 54.3691666667
-          },
-          {
-            "name": "Area 2",
-            "img": "/images/1544-002-{size}.webp",
-            "ref": "1544-002",
-            "latitude": 31.8836111111,
-            "longitude": 54.3730555556
-          },
-          {
-            "name": "Area 3",
-            "img": "/images/whc-unesco-org/158106-{size}.webp",
-            "ref": "1544-003",
-            "latitude": 31.9033333333,
-            "longitude": 54.3513888889
-          }
-        ],
         "components_count": 3,
         "images_urls": [
           "/images/whc-unesco-org/158103-{size}.webp",
@@ -225,7 +83,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [54.3691666667, 31.9013888889]
+        "coordinates": [
+          54.3691666667,
+          31.9013888889
+        ]
       }
     },
     {
@@ -238,14 +99,6 @@
         "main_image_author": "Francesco Bandarin",
         "main_image_copyright": "UNESCO",
         "id_no": "114",
-        "components_list": [
-          {
-            "name": "Persepolis",
-            "ref": "114",
-            "latitude": 29.93444,
-            "longitude": 52.89028
-          }
-        ],
         "components_count": 1,
         "images_urls": [
           "/images/whc-unesco-org/107874-{size}.webp",
@@ -290,7 +143,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [52.89028, 29.93444]
+        "coordinates": [
+          52.89028,
+          29.93444
+        ]
       }
     },
     {
@@ -303,64 +159,6 @@
         "main_image_author": "B. Sedighi",
         "main_image_copyright": "ICHHTO",
         "id_no": "1568",
-        "components_list": [
-          {
-            "name": "Bishapur: Shapur cave",
-            "ref": "1568-007",
-            "img": "/images/1568-007-{size}.webp",
-            "latitude": 29.8068333333,
-            "longitude": 51.6130555556
-          },
-          {
-            "name": "Firuzabad : Qaleh Dokhtar",
-            "ref": "1568-001",
-            "img": "/images/1568-001-{size}.webp",
-            "latitude": 28.9208888889,
-            "longitude": 52.5300861111
-          },
-          {
-            "name": "Firuzabad: Ardashir Palace",
-            "ref": "1568-005",
-            "img": "/images/1568-005-{size}.webp",
-            "latitude": 28.8979805556,
-            "longitude": 52.5392138889
-          },
-          {
-            "name": "Firuzabad: Ardashir Khurreh",
-            "ref": "1568-004",
-            "img": "/images/1568-004-{size}.webp",
-            "latitude": 28.8521472222,
-            "longitude": 52.5325416667
-          },
-          {
-            "name": "Sarvestan: Sarvestan Monument",
-            "ref": "1568-008",
-            "img": "/images/1568-008-{size}.webp",
-            "latitude": 29.1955388889,
-            "longitude": 53.2310666667
-          },
-          {
-            "name": "Firuzabad : Ardashir investiture Relief",
-            "ref": "1568-002",
-            "img": "/images/1568-002-{size}.webp",
-            "latitude": 28.9165555556,
-            "longitude": 52.5373944444
-          },
-          {
-            "name": "Firuzabad: The Victory Relief of Ardashir",
-            "ref": "1568-003",
-            "img": "/images/1568-003-{size}.webp",
-            "latitude": 28.9098722222,
-            "longitude": 52.5409166667
-          },
-          {
-            "name": "Bishapur : The city of Bishapur and its related components",
-            "ref": "1568-006",
-            "img": "/images/1568-006-{size}.webp",
-            "latitude": 29.7774805556,
-            "longitude": 51.57045
-          }
-        ],
         "components_count": 8,
         "images_urls": [
           "/images/whc-unesco-org/166032-{size}.webp",
@@ -397,7 +195,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [51.57045, 29.7774805556]
+        "coordinates": [
+          51.57045,
+          29.7774805556
+        ]
       }
     },
     {
@@ -410,22 +211,19 @@
         "main_image_author": null,
         "main_image_copyright": "Nomination File",
         "id_no": "1315",
-        "components_list": [
-          {
-            "name": "Shushtar Historical Hydraulic System",
-            "ref": "1315",
-            "latitude": 32.0186111111,
-            "longitude": 48.8358333333
-          }
-        ],
         "components_count": 1,
-        "images_urls": ["/images/whc-unesco-org/204640-{size}.webp"],
+        "images_urls": [
+          "/images/whc-unesco-org/204640-{size}.webp"
+        ],
         "videos_urls": null,
         "main_video_url": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [48.8358333333, 32.0186111111]
+        "coordinates": [
+          48.8358333333,
+          32.0186111111
+        ]
       }
     },
     {
@@ -438,14 +236,6 @@
         "main_image_author": "Geoff Steven",
         "main_image_copyright": "OUR PLACE The World Heritage Collection",
         "id_no": "113",
-        "components_list": [
-          {
-            "name": "Tchogha Zanbil",
-            "ref": "113",
-            "latitude": 32.00857,
-            "longitude": 48.522118
-          }
-        ],
         "components_count": 1,
         "images_urls": [
           "/images/whc-unesco-org/119144-{size}.webp",
@@ -487,7 +277,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [48.522118, 32.00857]
+        "coordinates": [
+          48.522118,
+          32.00857
+        ]
       }
     },
     {
@@ -500,14 +293,6 @@
         "main_image_author": "Martin Gray",
         "main_image_copyright": "Sacred sites",
         "id_no": "1077",
-        "components_list": [
-          {
-            "name": "Takht-e Soleyman",
-            "ref": "1077",
-            "latitude": 36.60388889,
-            "longitude": 47.235
-          }
-        ],
         "components_count": 1,
         "images_urls": [
           "/images/whc-unesco-org/114722-{size}.webp",
@@ -540,7 +325,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [47.235, 36.60388889]
+        "coordinates": [
+          47.235,
+          36.60388889
+        ]
       }
     },
     {
@@ -553,22 +341,6 @@
         "main_image_author": "Babak Sedighi",
         "main_image_copyright": "ICCHTO",
         "id_no": "1455",
-        "components_list": [
-          {
-            "name": "Ardeshir Palace",
-            "ref": "1455-002",
-            "img": "/images/whc-unesco-org/137144-{size}.webp",
-            "latitude": 32.1938888889,
-            "longitude": 48.2430555556
-          },
-          {
-            "name": "Susa archaeological complex",
-            "ref": "1455-001",
-            "img": "/images/1455-001-{size}.webp",
-            "latitude": 32.1894583333,
-            "longitude": 48.2563722222
-          }
-        ],
         "components_count": 2,
         "images_urls": [
           "/images/whc-unesco-org/137112-{size}.webp",
@@ -596,7 +368,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [48.2561111111, 32.1894444444]
+        "coordinates": [
+          48.2561111111,
+          32.1894444444
+        ]
       }
     },
     {
@@ -609,14 +384,6 @@
         "main_image_author": "Babak Sedighi",
         "main_image_copyright": "UNESCO",
         "id_no": "1222",
-        "components_list": [
-          {
-            "name": "Bisotun",
-            "ref": "1222",
-            "latitude": 34.3883333333,
-            "longitude": 47.4366666666
-          }
-        ],
         "components_count": 1,
         "images_urls": [
           "/images/whc-unesco-org/113941-{size}.webp",
@@ -638,7 +405,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [47.4366666666, 34.3883333333]
+        "coordinates": [
+          47.4366666666,
+          34.3883333333
+        ]
       }
     },
     {
@@ -651,14 +421,6 @@
         "main_image_author": "P. Karamnejad",
         "main_image_copyright": "Maymand Cultural Heritage Base",
         "id_no": "1423",
-        "components_list": [
-          {
-            "name": "Cultural Landscape of Maymand",
-            "ref": "1423rev",
-            "latitude": 30.1680555556,
-            "longitude": 55.3755555556
-          }
-        ],
         "components_count": 1,
         "images_urls": [
           "/images/whc-unesco-org/137077-{size}.webp",
@@ -688,7 +450,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [55.3755555556, 30.1680555556]
+        "coordinates": [
+          55.3755555556,
+          30.1680555556
+        ]
       }
     },
     {
@@ -701,14 +466,6 @@
         "main_image_author": "Martin Gray",
         "main_image_copyright": "Sacred Sites",
         "id_no": "1208",
-        "components_list": [
-          {
-            "name": "Bam and its Cultural Landscape",
-            "ref": "1208bis",
-            "latitude": 29.11683,
-            "longitude": 58.3666666667
-          }
-        ],
         "components_count": 1,
         "images_urls": [
           "/images/whc-unesco-org/113829-{size}.webp",
@@ -737,7 +494,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [58.3666666667, 29.11683]
+        "coordinates": [
+          58.3666666667,
+          29.11683
+        ]
       }
     },
     {
@@ -750,14 +510,6 @@
         "main_image_author": "Sorush Angabini",
         "main_image_copyright": "Sorush Angabini",
         "id_no": "1422",
-        "components_list": [
-          {
-            "name": "Golestan Palace",
-            "ref": "1422",
-            "latitude": 35.6803666667,
-            "longitude": 51.4205111111
-          }
-        ],
         "components_count": 1,
         "images_urls": [
           "/images/whc-unesco-org/123732-{size}.webp",
@@ -769,7 +521,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [51.4205111111, 35.6803666667]
+        "coordinates": [
+          51.4205111111,
+          35.6803666667
+        ]
       }
     },
     {
@@ -782,14 +537,6 @@
         "main_image_author": "Einollah Khazaei",
         "main_image_copyright": "HHCH Base Archive",
         "id_no": "1716",
-        "components_list": [
-          {
-            "name": "Hegmataneh",
-            "ref": "1716",
-            "latitude": 34.8035555556,
-            "longitude": 48.5183333334
-          }
-        ],
         "components_count": 1,
         "images_urls": [
           "/images/whc-unesco-org/198673-{size}.webp",
@@ -814,7 +561,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [48.5166861111, 34.8023888889]
+        "coordinates": [
+          48.5166861111,
+          34.8023888889
+        ]
       }
     },
     {
@@ -827,50 +577,6 @@
         "main_image_author": "Mohammadreza Mahmoodi",
         "main_image_copyright": "IMCHTH",
         "id_no": "1744",
-        "components_list": [
-          {
-            "name": "Kunji Cave",
-            "ref": "1744-005",
-            "img": "/images/whc-unesco-org/220600-{size}.webp",
-            "latitude": 33.4426277777,
-            "longitude": 48.3566861111
-          },
-          {
-            "name": "Kaldar Cave",
-            "ref": "1744-001",
-            "img": "/images/whc-unesco-org/219756-{size}.webp",
-            "latitude": 33.5573166667,
-            "longitude": 48.2926361111
-          },
-          {
-            "name": "Yafteh Cave",
-            "ref": "1744-004",
-            "img": "/images/whc-unesco-org/219758-{size}.webp",
-            "latitude": 33.5082666667,
-            "longitude": 48.2114555556
-          },
-          {
-            "name": "Ghamari Cave",
-            "ref": "1744-002",
-            "img": "/images/whc-unesco-org/219760-{size}.webp",
-            "latitude": 33.4921083333,
-            "longitude": 48.3455722222
-          },
-          {
-            "name": "Gilvaran Cave",
-            "ref": "1744-003",
-            "img": "/images/whc-unesco-org/220601-{size}.webp",
-            "latitude": 33.4700944445,
-            "longitude": 48.3156111111
-          },
-          {
-            "name": "Gar Arjeneh Rock-shelter",
-            "ref": "1744-006",
-            "img": "/images/whc-unesco-org/219754-{size}.webp",
-            "latitude": 33.4418472222,
-            "longitude": 48.3393444444
-          }
-        ],
         "components_count": 6,
         "images_urls": [
           "/images/whc-unesco-org/219754-{size}.webp",
@@ -889,7 +595,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [48.3455722222, 33.4921083333]
+        "coordinates": [
+          48.3455722222,
+          33.4921083333
+        ]
       }
     },
     {
@@ -902,14 +611,6 @@
         "main_image_author": "MJIB",
         "main_image_copyright": "MJIB",
         "id_no": "1397",
-        "components_list": [
-          {
-            "name": "Masjed-e Jāmé of Isfahan",
-            "ref": "1397",
-            "latitude": 32.6697222222,
-            "longitude": 51.6852777778
-          }
-        ],
         "components_count": 1,
         "images_urls": [
           "/images/whc-unesco-org/117271-{size}.webp",
@@ -955,7 +656,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [51.6852777778, 32.6697222222]
+        "coordinates": [
+          51.6852777778,
+          32.6697222222
+        ]
       }
     },
     {
@@ -968,14 +672,6 @@
         "main_image_author": "Francesco Bandarin",
         "main_image_copyright": "UNESCO",
         "id_no": "115",
-        "components_list": [
-          {
-            "name": "Meidan Emam, Esfahan",
-            "ref": "115",
-            "latitude": 32.65745,
-            "longitude": 51.6777777777
-          }
-        ],
         "components_count": 1,
         "images_urls": [
           "/images/whc-unesco-org/107905-{size}.webp",
@@ -1034,7 +730,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [51.6777777777, 32.65745]
+        "coordinates": [
+          51.6777777777,
+          32.65745
+        ]
       }
     },
     {
@@ -1047,14 +746,6 @@
         "main_image_author": null,
         "main_image_copyright": null,
         "id_no": "1456",
-        "components_list": [
-          {
-            "name": "Shahr-i Sokhta",
-            "ref": "1456",
-            "latitude": 30.5938888889,
-            "longitude": 61.3277777778
-          }
-        ],
         "components_count": 1,
         "images_urls": [
           "/images/whc-unesco-org/131228-{size}.webp",
@@ -1072,7 +763,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [61.3277777778, 30.5938888889]
+        "coordinates": [
+          61.3277777778,
+          30.5938888889
+        ]
       }
     },
     {
@@ -1085,92 +779,6 @@
         "main_image_author": "Sorush Angabini",
         "main_image_copyright": "Sorush Angabini",
         "id_no": "1188",
-        "components_list": [
-          {
-            "name": "Tappeh Nur Kuchak (not marked but the only unmarked site is 303300 4033850)",
-            "ref": "1188-012",
-            "latitude": 36.4297222222,
-            "longitude": 48.8057222222
-          },
-          {
-            "name": "Karvangah",
-            "ref": "1188-004",
-            "latitude": 36.4475555556,
-            "longitude": 48.8303333333
-          },
-          {
-            "name": "Tappeh Dur",
-            "ref": "1188-009",
-            "latitude": 36.4393888889,
-            "longitude": 48.7825833333
-          },
-          {
-            "name": "Fenjanabad",
-            "ref": "1188-011",
-            "latitude": 36.4374722222,
-            "longitude": 48.8110833333
-          },
-          {
-            "name": "Seh Tappeh",
-            "ref": "1188-002",
-            "latitude": 36.4640555556,
-            "longitude": 48.78625
-          },
-          {
-            "name": "Qush Khaneh",
-            "ref": "1188-006",
-            "latitude": 36.4208333333,
-            "longitude": 48.7886944444
-          },
-          {
-            "name": "Tappeh Qal'eh",
-            "ref": "1188-003",
-            "latitude": 36.4536388889,
-            "longitude": 48.78275
-          },
-          {
-            "name": "Chelebi Oghlu",
-            "ref": "1188-005",
-            "latitude": 36.4307222222,
-            "longitude": 48.7863055556
-          },
-          {
-            "name": "Emamzadeh Dur",
-            "ref": "1188-010",
-            "latitude": 36.4384166667,
-            "longitude": 48.7830555556
-          },
-          {
-            "name": "Ruins and kilns",
-            "ref": "1188-008",
-            "latitude": 36.4192222222,
-            "longitude": 48.7987777778
-          },
-          {
-            "name": "Soltaniyeh Dome",
-            "ref": "1188-001",
-            "latitude": 36.4339722222,
-            "longitude": 48.7960277778
-          },
-          {
-            "name": "Tappeh Nur (TombTower)",
-            "ref": "1188-013",
-            "latitude": 36.4270277778,
-            "longitude": 48.8020277778
-          },
-          {
-            "name": "Mollah Hassan Kashi Tomb",
-            "ref": "1188-007",
-            "latitude": 36.4176111111,
-            "longitude": 48.7946944444
-          },
-          {
-            "name": "Soltaniyeh pasture including Mostafa Khan site",
-            "ref": "1188-014",
-            "latitude": 36.4441666667,
-            "longitude": 48.8170277778
-          }
-        ],
         "components_count": 14,
         "images_urls": [
           "/images/whc-unesco-org/113670-{size}.webp",
@@ -1192,7 +800,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [48.79667, 36.43528]
+        "coordinates": [
+          48.79667,
+          36.43528
+        ]
       }
     },
     {
@@ -1205,85 +816,6 @@
         "main_image_author": "S.H. Rashedi",
         "main_image_copyright": "S.H. Rashedi",
         "id_no": "1506",
-        "components_list": [
-          {
-            "name": "Akbar Abad",
-            "ref": "1506-011",
-            "img": "/images/whc-unesco-org/141566-{size}.webp",
-            "latitude": 29.0894444444,
-            "longitude": 58.3986111111
-          },
-          {
-            "name": "Ghasem Abad",
-            "ref": "1506-010",
-            "img": "/images/whc-unesco-org/141567-{size}.webp",
-            "latitude": 29.0902777778,
-            "longitude": 58.3988888889
-          },
-          {
-            "name": "Qanat of Zarch",
-            "ref": "1506-003",
-            "img": "/images/whc-unesco-org/141568-{size}.webp",
-            "latitude": 31.9074111424,
-            "longitude": 54.369128201
-          },
-          {
-            "name": "Qasabeh Gonabad",
-            "ref": "1506-001",
-            "img": "/images/whc-unesco-org/141569-{size}.webp",
-            "latitude": 34.29,
-            "longitude": 58.6544444444
-          },
-          {
-            "name": "Qanat of Vazvan",
-            "ref": "1506-006",
-            "img": "/images/whc-unesco-org/141570-{size}.webp",
-            "latitude": 33.4317415323,
-            "longitude": 51.1782763703
-          },
-          {
-            "name": "Mozd Abad Qanat",
-            "ref": "1506-007",
-            "img": "/images/whc-unesco-org/141565-{size}.webp",
-            "latitude": 33.2590794214,
-            "longitude": 51.600672942
-          },
-          {
-            "name": "Qanat of Baladeh",
-            "ref": "1506-002",
-            "img": "/images/whc-unesco-org/141582-{size}.webp",
-            "latitude": 34.1355177615,
-            "longitude": 58.3736686016
-          },
-          {
-            "name": "Qanat of the Moon",
-            "ref": "1506-008",
-            "img": "/images/whc-unesco-org/141561-{size}.webp",
-            "latitude": 33.3791666667,
-            "longitude": 52.375
-          },
-          {
-            "name": "Qanat of Gowhariz",
-            "ref": "1506-009",
-            "img": "/images/whc-unesco-org/141571-{size}.webp",
-            "latitude": 30.0439893975,
-            "longitude": 57.1141895875
-          },
-          {
-            "name": "Ebrahim Abad Qanat",
-            "ref": "1506-005",
-            "img": "/images/whc-unesco-org/141577-{size}.webp",
-            "latitude": 34.0941666666,
-            "longitude": 50.0252777778
-          },
-          {
-            "name": "Hasam Abad-e Moshir Qanat",
-            "ref": "1506-004",
-            "img": "/images/whc-unesco-org/141572-{size}.webp",
-            "latitude": 31.5824806019,
-            "longitude": 54.4127027741
-          }
-        ],
         "components_count": 11,
         "images_urls": [
           "/images/whc-unesco-org/141553-{size}.webp",
@@ -1313,7 +845,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [58.6544444444, 34.29]
+        "coordinates": [
+          58.6544444444,
+          34.29
+        ]
       }
     },
     {
@@ -1326,71 +861,6 @@
         "main_image_author": "Sébastien Moriset",
         "main_image_copyright": "CRA-terre",
         "id_no": "1372",
-        "components_list": [
-          {
-            "name": "Bagh-e Fin",
-            "ref": "1372-004",
-            "img": "/images/1372-004-{size}.webp",
-            "latitude": 33.9462714748,
-            "longitude": 51.3724531554
-          },
-          {
-            "name": "Bagh-e Eram",
-            "ref": "1372-002",
-            "img": "/images/1372-002-{size}.webp",
-            "latitude": 29.6361111111,
-            "longitude": 52.5252777778
-          },
-          {
-            "name": "Bagh-e Abas Abad",
-            "ref": "1372-005",
-            "img": "/images/1372-005-{size}.webp",
-            "latitude": 36.6638888889,
-            "longitude": 53.5938888889
-          },
-          {
-            "name": "Bagh-e Shahzadeh",
-            "ref": "1372-006",
-            "img": "/images/1372-006-{size}.webp",
-            "latitude": 30.025,
-            "longitude": 57.2830555556
-          },
-          {
-            "name": "Bagh-e Akbariyeh",
-            "ref": "1372-009",
-            "img": "/images/1372-009-{size}.webp",
-            "latitude": 32.8527777778,
-            "longitude": 59.2277777778
-          },
-          {
-            "name": "Bagh-e Dolat Abad",
-            "ref": "1372-007",
-            "img": "/images/1372-007-{size}.webp",
-            "latitude": 31.9033333333,
-            "longitude": 54.3519444444
-          },
-          {
-            "name": "Bagh-e Pahlavanpur",
-            "ref": "1372-008",
-            "img": "",
-            "latitude": 31.5602777778,
-            "longitude": 54.4402777778
-          },
-          {
-            "name": "Bagh-e Chehel Sotun",
-            "ref": "1372-003",
-            "img": "/images/1372-003-{size}.webp",
-            "latitude": 32.6575,
-            "longitude": 51.6722222222
-          },
-          {
-            "name": "Ancient Garden of Pasargadae",
-            "ref": "1372-001",
-            "img": "",
-            "latitude": 30.2013918168,
-            "longitude": 53.1788758778
-          }
-        ],
         "components_count": 9,
         "images_urls": [
           "/images/whc-unesco-org/119148-{size}.webp",
@@ -1406,7 +876,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [53.1666666667, 30.1666666667]
+        "coordinates": [
+          53.1666666667,
+          30.1666666667
+        ]
       }
     },
     {
@@ -1419,64 +892,6 @@
         "main_image_author": "Ko Hon Chiu Vincent",
         "main_image_copyright": "Ko Hon Chiu Vincent",
         "id_no": "1262",
-        "components_list": [
-          {
-            "name": "The main chapel (Dzordzor)",
-            "ref": "1262-007",
-            "img": "/images/1262-007-{size}.webp",
-            "latitude": 39.1877777778,
-            "longitude": 44.4761111111
-          },
-          {
-            "name": "The Baran village (Dzordzor)",
-            "ref": "1262-008",
-            "img": "",
-            "latitude": 39.1877777778,
-            "longitude": 44.4761111111
-          },
-          {
-            "name": "The Monastery of Saint Thaddeus",
-            "ref": "1262-001",
-            "img": "/images/1262-001-{size}.webp",
-            "latitude": 39.0922222222,
-            "longitude": 44.5444444444
-          },
-          {
-            "name": "The village (Saint Thaddeus Ensemble)",
-            "ref": "1262-002",
-            "img": "",
-            "latitude": 39.0922222222,
-            "longitude": 44.5444444444
-          },
-          {
-            "name": "Chupan Chapel (Saint Stepanos Esemble)",
-            "ref": "1262-006",
-            "img": "/images/1262-006-{size}.webp",
-            "latitude": 38.9752777778,
-            "longitude": 45.5727777778
-          },
-          {
-            "name": "Darresham Chapel (Saint Stepanos Esemble)",
-            "ref": "1262-005",
-            "img": "/images/1262-005-{size}.webp",
-            "latitude": 38.99,
-            "longitude": 45.4522222222
-          },
-          {
-            "name": "Chapel 5 (Sandokht) (Saint Thaddeus Ensemble)",
-            "ref": "1262-003",
-            "img": "/images/1262-006-{size}.webp",
-            "latitude": 39.0922222222,
-            "longitude": 44.5444444444
-          },
-          {
-            "name": "The main church (Monastery of Saint Stepanos Esemble)",
-            "ref": "1262-004",
-            "img": "/images/1262-004-{size}.webp",
-            "latitude": 38.9788888889,
-            "longitude": 45.4733333333
-          }
-        ],
         "components_count": 8,
         "images_urls": [
           "/images/whc-unesco-org/170217-{size}.webp",
@@ -1506,7 +921,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [45.4733333333, 38.9788888889]
+        "coordinates": [
+          45.4733333333,
+          38.9788888889
+        ]
       }
     },
     {
@@ -1519,24 +937,6 @@
         "main_image_author": "Hamid Binaei Faa",
         "main_image_copyright": "Hamid Binaei Faa",
         "id_no": "1647",
-        "components_list": [
-          {
-            "name": "Western Valley",
-            "ref": "1647-002",
-            "img": "/images/1647-002-{size}.webp",
-            "alt": "Kelash Lolem Village, Western Valley",
-            "latitude": 34.9462916666,
-            "longitude": 46.1365138889
-          },
-          {
-            "name": "Central-Eastern Valley",
-            "ref": "1647-001",
-            "img": "/images/1647-001-{size}.webp",
-            "alt": "Palangan Village, Central-Eastern Valley",
-            "latitude": 35.1073555556,
-            "longitude": 46.4778472223
-          }
-        ],
         "components_count": 2,
         "images_urls": [
           "/images/whc-unesco-org/181176-{size}.webp",
@@ -1557,7 +957,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [46.47785, 35.1073583333]
+        "coordinates": [
+          46.47785,
+          35.1073583333
+        ]
       }
     },
     {
@@ -1570,22 +973,19 @@
         "main_image_author": "Atusa Momeni",
         "main_image_copyright": "Atusa Momeni",
         "id_no": "1398",
-        "components_list": [
-          {
-            "name": "Gonbad-e Qābus",
-            "ref": "1398",
-            "latitude": 37.2580277778,
-            "longitude": 55.169
-          }
-        ],
         "components_count": 1,
-        "images_urls": ["/images/whc-unesco-org/118684-{size}.webp"],
+        "images_urls": [
+          "/images/whc-unesco-org/118684-{size}.webp"
+        ],
         "videos_urls": null,
         "main_video_url": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [55.169, 37.2580277778]
+        "coordinates": [
+          55.169,
+          37.2580277778
+        ]
       }
     },
     {
@@ -1598,14 +998,6 @@
         "main_image_author": "Naser Mizban",
         "main_image_copyright": "Naser Mizban",
         "id_no": "1505",
-        "components_list": [
-          {
-            "name": "Lut Desert",
-            "ref": "1505",
-            "latitude": 30.2161111111,
-            "longitude": 58.8388888889
-          }
-        ],
         "components_count": 1,
         "images_urls": [
           "/images/whc-unesco-org/141549-{size}.webp",
@@ -1644,7 +1036,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [58.8388888889, 30.2161111111]
+        "coordinates": [
+          58.8388888889,
+          30.2161111111
+        ]
       }
     },
     {
@@ -1657,14 +1052,6 @@
         "main_image_author": "Sorush Angabini",
         "main_image_copyright": "Sorush Angabini",
         "id_no": "1106",
-        "components_list": [
-          {
-            "name": "Pasargadae",
-            "ref": "1106",
-            "latitude": 30.19383,
-            "longitude": 53.16729
-          }
-        ],
         "components_count": 1,
         "images_urls": [
           "/images/whc-unesco-org/114967-{size}.webp",
@@ -1715,7 +1102,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [53.16729, 30.19383]
+        "coordinates": [
+          53.16729,
+          30.19383
+        ]
       }
     },
     {
@@ -1728,14 +1118,6 @@
         "main_image_author": "Iran Images/Mohammad Tajik",
         "main_image_copyright": "UNESCO",
         "id_no": "1345",
-        "components_list": [
-          {
-            "name": "Sheikh Safi al-din Khānegāh and Shrine Ensemble in Ardabil",
-            "ref": "1345",
-            "latitude": 38.2486111111,
-            "longitude": 48.2913888889
-          }
-        ],
         "components_count": 1,
         "images_urls": [
           "/images/whc-unesco-org/115031-{size}.webp",
@@ -1756,7 +1138,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [48.2913888889, 38.2486111111]
+        "coordinates": [
+          48.2913888889,
+          38.2486111111
+        ]
       }
     },
     {
@@ -1769,28 +1154,6 @@
         "main_image_author": "Iran Images/Mohammad Tajik",
         "main_image_copyright": "UNESCO",
         "id_no": "1346",
-        "components_list": [
-          {
-            "name": "Center",
-            "ref": "1346-001",
-            "img": "/images/1346-001-{size}.webp",
-            "latitude": 38.0813888889,
-            "longitude": 46.2930555556
-          },
-          {
-            "name": "Sorkhab",
-            "ref": "1346-003",
-            "latitude": 38.0847222222,
-            "longitude": 46.2980555556
-          },
-          {
-            "name": "Kabood Mosque",
-            "ref": "1346-002",
-            "img": "/images/1346-002-{size}.webp",
-            "latitude": 38.0736111111,
-            "longitude": 46.3008333333
-          }
-        ],
         "components_count": 3,
         "images_urls": [
           "/images/1346-001-{size}.webp",
@@ -1806,7 +1169,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [46.2930555556, 38.0813888889]
+        "coordinates": [
+          46.2930555556,
+          38.0813888889
+        ]
       }
     },
     {
@@ -1819,386 +1185,6 @@
         "main_image_author": "Ali Eqra",
         "main_image_copyright": "Ali Eqra",
         "id_no": "1668",
-        "components_list": [
-          {
-            "name": "Gaz",
-            "ref": "1668-017",
-            "img": "/images/1668-017-{size}.webp",
-            "latitude": 32.8093583333,
-            "longitude": 51.6093222222
-          },
-          {
-            "name": "Mehr",
-            "ref": "1668-020",
-            "img": "/images/1668-020-{size}.webp",
-            "latitude": 36.2845916666,
-            "longitude": 57.1436027777
-          },
-          {
-            "name": "Titi",
-            "ref": "1668-038",
-            "img": "/images/1668-038-{size}.webp",
-            "latitude": 37.044775,
-            "longitude": 49.9022361111
-          },
-          {
-            "name": "Khoy",
-            "ref": "1668-040",
-            "img": "",
-            "latitude": 38.466,
-            "longitude": 44.6235277778
-          },
-          {
-            "name": "Qelli",
-            "ref": "1668-010",
-            "img": "",
-            "latitude": 37.1532944444,
-            "longitude": 56.9207416667
-          },
-          {
-            "name": "Khān",
-            "ref": "1668-044",
-            "img": "/images/1668-044-{size}.webp",
-            "latitude": 33.3663805556,
-            "longitude": 56.0704138889
-          },
-          {
-            "name": "Afzal",
-            "ref": "1668-052",
-            "img": "/images/1668-052-{size}.webp",
-            "latitude": 32.0439611111,
-            "longitude": 48.8521277778
-          },
-          {
-            "name": "Parand",
-            "ref": "1668-004",
-            "img": "/images/1668-004-{size}.webp",
-            "latitude": 35.4582277778,
-            "longitude": 50.9745972223
-          },
-          {
-            "name": "Meybod",
-            "ref": "1668-029",
-            "img": "/images/1668-029-{size}.webp",
-            "latitude": 32.227925,
-            "longitude": 54.0091944444
-          },
-          {
-            "name": "Sāeen",
-            "ref": "1668-037",
-            "img": "/images/1668-037-{size}.webp",
-            "latitude": 38.0010444444,
-            "longitude": 47.8815861111
-          },
-          {
-            "name": "Rashti",
-            "ref": "1668-049",
-            "img": "/images/1668-049-{size}.webp",
-            "latitude": 32.4407222222,
-            "longitude": 53.6310527778
-          },
-          {
-            "name": "Bastak",
-            "ref": "1668-053",
-            "img": "/images/1668-053-{size}.webp",
-            "latitude": 27.1985,
-            "longitude": 54.3759722223
-          },
-          {
-            "name": "Mahyār",
-            "ref": "1668-016",
-            "img": "/images/1668-016-{size}.webp",
-            "latitude": 32.2650166667,
-            "longitude": 51.8097333333
-          },
-          {
-            "name": "Mazinān",
-            "ref": "1668-019",
-            "img": "/images/1668-019-{size}.webp",
-            "latitude": 36.3078777778,
-            "longitude": 56.8064416667
-          },
-          {
-            "name": "Mayāmey",
-            "ref": "1668-025",
-            "img": "/images/1668-025-{size}.webp",
-            "latitude": 36.4091861111,
-            "longitude": 55.6533
-          },
-          {
-            "name": "Farasfaj",
-            "ref": "1668-030",
-            "img": "/images/1668-030-{size}.webp",
-            "latitude": 34.4879666666,
-            "longitude": 48.2829888889
-          },
-          {
-            "name": "Bisotūn",
-            "ref": "1668-032",
-            "img": "/images/1668-032-{size}.webp",
-            "latitude": 34.3845333333,
-            "longitude": 47.4349333333
-          },
-          {
-            "name": "Goujebel",
-            "ref": "1668-036",
-            "img": "",
-            "latitude": 38.3438944444,
-            "longitude": 46.86335
-          },
-          {
-            "name": "Dehdasht",
-            "ref": "1668-039",
-            "img": "",
-            "latitude": 30.7882027777,
-            "longitude": 50.561525
-          },
-          {
-            "name": "Chameshk",
-            "ref": "1668-051",
-            "img": "",
-            "latitude": 33.2379555555,
-            "longitude": 48.2113361111
-          },
-          {
-            "name": "Āhovān",
-            "ref": "1668-003",
-            "img": "/images/1668-003-{size}.webp",
-            "latitude": 35.7705388889,
-            "longitude": 53.7301444445
-          },
-          {
-            "name": "Maranjāb",
-            "ref": "1668-013",
-            "img": "/images/1668-013-{size}.webp",
-            "latitude": 34.2991361111,
-            "longitude": 51.8123861111
-          },
-          {
-            "name": "Sarāyān",
-            "ref": "1668-023",
-            "img": "/images/1668-023-{size}.webp",
-            "latitude": 33.8552861111,
-            "longitude": 58.5180166667
-          },
-          {
-            "name": "Kharānaq",
-            "ref": "1668-048",
-            "img": "/images/1668-048-{size}.webp",
-            "latitude": 32.3449472222,
-            "longitude": 54.6679833334
-          },
-          {
-            "name": "Kūhpāyeh",
-            "ref": "1668-018",
-            "img": "",
-            "latitude": 32.7134305556,
-            "longitude": 52.4357861111
-          },
-          {
-            "name": "Miāndasht",
-            "ref": "1668-027",
-            "img": "/images/1668-027-{size}.webp",
-            "latitude": 36.4281305556,
-            "longitude": 56.0605777778
-          },
-          {
-            "name": "Zeynoddīn",
-            "ref": "1668-028",
-            "img": "/images/1668-028-{size}.webp",
-            "latitude": 31.4118583333,
-            "longitude": 54.7068527778
-          },
-          {
-            "name": "Borāzjān",
-            "ref": "1668-050",
-            "img": "/images/1668-050-{size}.webp",
-            "latitude": 29.2671138889,
-            "longitude": 51.2082583333
-          },
-          {
-            "name": "Noushirvān",
-            "ref": "1668-002",
-            "img": "/images/1668-002-{size}.webp",
-            "latitude": 35.7707305556,
-            "longitude": 53.7323722223
-          },
-          {
-            "name": "Amin Ābād",
-            "ref": "1668-014",
-            "img": "/images/1668-014-{size}.webp",
-            "latitude": 31.6726944445,
-            "longitude": 52.0684472223
-          },
-          {
-            "name": "Gabr Ābād",
-            "ref": "1668-015",
-            "img": "",
-            "latitude": 33.7686,
-            "longitude": 51.489525
-          },
-          {
-            "name": "Īzadkhāst",
-            "ref": "1668-031",
-            "img": "/images/1668-031-{size}.webp",
-            "latitude": 31.5133638889,
-            "longitude": 52.1332055556
-          },
-          {
-            "name": "Neyestānak",
-            "ref": "1668-042",
-            "img": "",
-            "latitude": 32.9712055556,
-            "longitude": 52.7993638889
-          },
-          {
-            "name": "Tāj Ābād",
-            "ref": "1668-046",
-            "img": "/images/1668-046-{size}.webp",
-            "latitude": 34.8766333334,
-            "longitude": 48.2207277778
-          },
-          {
-            "name": "Zafarāniyeh",
-            "ref": "1668-021",
-            "img": "/images/1668-021-{size}.webp",
-            "latitude": 36.1657194444,
-            "longitude": 58.0862305555
-          },
-          {
-            "name": "Fakhr Ābād",
-            "ref": "1668-022",
-            "img": "",
-            "latitude": 34.7446361111,
-            "longitude": 58.0553861111
-          },
-          {
-            "name": "Yengeh Emām",
-            "ref": "1668-034",
-            "img": "/images/1668-034-{size}.webp",
-            "latitude": 35.9362861111,
-            "longitude": 50.7196222223
-          },
-          {
-            "name": "Deh Mohammad",
-            "ref": "1668-045",
-            "img": "",
-            "latitude": 33.9915611111,
-            "longitude": 56.9791777778
-          },
-          {
-            "name": "Deyr-e Gachin",
-            "ref": "1668-001",
-            "img": "/images/1668-001-{size}.webp",
-            "latitude": 35.0583527778,
-            "longitude": 51.4201361111
-          },
-          {
-            "name": "Anjireh Sangi",
-            "ref": "1668-007",
-            "img": "",
-            "latitude": 32.1622111111,
-            "longitude": 54.4840388889
-          },
-          {
-            "name": "Jamāl Ābād",
-            "ref": "1668-009",
-            "img": "/images/1668-009-{size}.webp",
-            "latitude": 37.2719138889,
-            "longitude": 47.8431
-          },
-          {
-            "name": "Abbās Ābād",
-            "ref": "1668-026",
-            "img": "/images/1668-026-{size}.webp",
-            "latitude": 36.3612194444,
-            "longitude": 56.387875
-          },
-          {
-            "name": "Ganjali Khān",
-            "ref": "1668-033",
-            "img": "/images/1668-033-{size}.webp",
-            "latitude": 30.2909555555,
-            "longitude": 57.0789361111
-          },
-          {
-            "name": "Khājeh Nazar",
-            "ref": "1668-035",
-            "img": "/images/1668-035-{size}.webp",
-            "latitude": 38.9774444445,
-            "longitude": 45.5769722223
-          },
-          {
-            "name": "Chehel Pāyeh",
-            "ref": "1668-043",
-            "img": "",
-            "latitude": 31.9400111111,
-            "longitude": 57.1404083333
-          },
-          {
-            "name": "Chāh kūrān",
-            "ref": "1668-047",
-            "img": "/images/1668-047-{size}.webp",
-            "latitude": 31.5693333334,
-            "longitude": 56.8501694444
-          },
-          {
-            "name": "Anjireh Ājori",
-            "ref": "1668-006",
-            "img": "",
-            "latitude": 32.1532444444,
-            "longitude": 54.4771083334
-          },
-          {
-            "name": "Qasr-e Bahrām",
-            "ref": "1668-024",
-            "img": "/images/1668-024-{size}.webp",
-            "latitude": 34.7652805556,
-            "longitude": 52.1771361111
-          },
-          {
-            "name": "Bāgh-e Sheikh",
-            "ref": "1668-041",
-            "img": "",
-            "latitude": 34.9908305555,
-            "longitude": 50.4469555555
-          },
-          {
-            "name": "Fakhr-e Dāvūd",
-            "ref": "1668-011",
-            "img": "/images/1668-011-{size}.webp",
-            "latitude": 35.9998861111,
-            "longitude": 59.3134861111
-          },
-          {
-            "name": "Sheikhali Khān",
-            "ref": "1668-012",
-            "img": "/images/1668-012-{size}.webp",
-            "latitude": 32.8681583334,
-            "longitude": 51.3704027778
-          },
-          {
-            "name": "Robāt-e Sharaf",
-            "ref": "1668-005",
-            "img": "/images/1668-005-{size}.webp",
-            "latitude": 36.2665694444,
-            "longitude": 60.6551611111
-          },
-          {
-            "name": "Saʿadossaltaneh",
-            "ref": "1668-054",
-            "img": "/images/1668-054-{size}.webp",
-            "latitude": 36.2692944445,
-            "longitude": 50.0007083333
-          },
-          {
-            "name": "Abbās Ābād Tāybād",
-            "ref": "1668-008",
-            "img": "/images/1668-008-{size}.webp",
-            "latitude": 34.9959361111,
-            "longitude": 60.7183666667
-          }
-        ],
         "components_count": 54,
         "images_urls": [
           "/images/whc-unesco-org/196537-{size}.webp",
@@ -2221,7 +1207,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [51.4201361111, 35.0583527778]
+        "coordinates": [
+          51.4201361111,
+          35.0583527778
+        ]
       }
     },
     {
@@ -2234,14 +1223,6 @@
         "main_image_author": "Hossein Javadi",
         "main_image_copyright": "Hossein Javadi",
         "id_no": "1585",
-        "components_list": [
-          {
-            "name": "Trans-Iranian Railway",
-            "ref": "1585",
-            "latitude": 35.6583055556,
-            "longitude": 51.3983333333
-          }
-        ],
         "components_count": 1,
         "images_urls": [
           "/images/whc-unesco-org/172359-{size}.webp",
@@ -2259,7 +1240,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [51.3983333333, 35.6583055556]
+        "coordinates": [
+          51.3983333333,
+          35.6583055556
+        ]
       }
     }
   ]
