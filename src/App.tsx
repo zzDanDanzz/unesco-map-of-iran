@@ -6,6 +6,8 @@ import { useEffect, useState, useMemo } from "react"
 import Map, { Marker, MapProvider, useMap } from "react-map-gl/maplibre"
 import useSupercluster from "use-supercluster"
 import Supercluster from "supercluster"
+import { Toaster } from "@/components/ui/sonner"
+import { toast } from "sonner"
 
 const protocol = new Protocol()
 maplibregl.addProtocol("pmtiles", protocol.tile)
@@ -95,26 +97,35 @@ function MapComponent() {
 
   useEffect(() => {
     fetch("/data/unesco_top_level.geojson")
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch map data")
+        return res.json()
+      })
       .then((data) => {
         if (data && data.features) {
           setSites(data.features)
         }
       })
-      .catch((err) => console.error("Failed to load GeoJSON:", err))
+      .catch(() => {
+        toast.error("Failed to load map data. Please try again later.")
+      })
   }, [])
 
-  const points = useMemo(() => sites.map((site) => ({
-    type: "Feature" as const,
-    properties: {
-      cluster: false as const,
-      ...site.properties,
-    },
-    geometry: {
-      type: "Point" as const,
-      coordinates: site.geometry.coordinates,
-    },
-  })), [sites])
+  const points = useMemo(
+    () =>
+      sites.map((site) => ({
+        type: "Feature" as const,
+        properties: {
+          cluster: false as const,
+          ...site.properties,
+        },
+        geometry: {
+          type: "Point" as const,
+          coordinates: site.geometry.coordinates,
+        },
+      })),
+    [sites]
+  )
 
   // Use global bounds so markers outside the current viewport are still clustered and mounted
   const GLOBAL_BOUNDS: [number, number, number, number] = [-180, -90, 180, 90]
@@ -210,9 +221,12 @@ function MapComponent() {
 
 export function App() {
   return (
-    <MapProvider>
-      <MapComponent />
-    </MapProvider>
+    <>
+      <MapProvider>
+        <MapComponent />
+      </MapProvider>
+      <Toaster position="top-center" />
+    </>
   )
 }
 
