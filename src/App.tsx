@@ -79,11 +79,9 @@ export function ClusterMarker({
           })}
         </div>
 
-        {point_count > 4 && (
-          <div className="absolute bottom-0 left-0 flex items-center rounded-tr-md border-t border-r border-background/50 bg-background/90 px-1 text-[10px] font-bold backdrop-blur-sm">
-            +{point_count - 4}
-          </div>
-        )}
+        <div className="absolute bottom-0 left-0 flex items-center rounded-tr-md border-t border-r border-background/50 bg-background/90 px-1 text-[10px] font-bold backdrop-blur-sm">
+          {point_count}
+        </div>
       </div>
       <div className="h-0 w-0 border-t-10 border-r-8 border-l-8 border-t-background border-r-transparent border-l-transparent transition-transform duration-200 group-hover:translate-y-1 group-hover:border-t-primary"></div>
     </button>
