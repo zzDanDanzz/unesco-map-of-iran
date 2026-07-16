@@ -14,11 +14,11 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet"
 import { IconMaximize } from "@tabler/icons-react"
-import { useExploreStore } from "@/stores/exploreStore"
+import { useExploreStore, useExploreActions } from "@/stores/exploreStore"
 
 export function SiteDetailsPanel() {
-  const { selectedSite, setSelectedSite, setFullScreenImageIndex } =
-    useExploreStore()
+  const selectedSite = useExploreStore((state) => state.selectedSite)
+  const { setSelectedSite, setFullScreenImageIndex } = useExploreActions()
 
   const carouselImages = selectedSite
     ? Array.from(

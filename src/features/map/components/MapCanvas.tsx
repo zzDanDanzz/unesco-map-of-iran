@@ -4,7 +4,7 @@ import Map, { Marker, type MapRef } from "react-map-gl/maplibre"
 import bbox from "@turf/bbox"
 import { featureCollection } from "@turf/helpers"
 import Supercluster from "supercluster"
-import { useExploreStore } from "@/stores/exploreStore"
+import { useExploreStore, useExploreActions } from "@/stores/exploreStore"
 import { useHeritageData } from "../hooks/useHeritageData"
 import { useMapClustering } from "../hooks/useMapClustering"
 import { ClusterMarker } from "./ClusterMarker"
@@ -28,7 +28,8 @@ export function MapCanvas() {
     zoom: number
   } | null>(null)
 
-  const { selectedSite, setSelectedSite } = useExploreStore()
+  const selectedSite = useExploreStore((state) => state.selectedSite)
+  const { setSelectedSite } = useExploreActions()
   const { sites, subcomponentsData, isLoading } = useHeritageData()
   const { clusters, supercluster } = useMapClustering(sites, viewState.zoom)
 

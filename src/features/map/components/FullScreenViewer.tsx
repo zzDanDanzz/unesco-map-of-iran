@@ -7,11 +7,17 @@ import {
 } from "@/components/ui/carousel"
 import { IconX } from "@tabler/icons-react"
 import { Dialog as RadixDialog } from "radix-ui"
-import { useExploreStore } from "@/stores/exploreStore"
+import { useShallow } from "zustand/react/shallow"
+import { useExploreStore, useExploreActions } from "@/stores/exploreStore"
 
 export function FullScreenViewer() {
-  const { selectedSite, fullScreenImageIndex, setFullScreenImageIndex } =
-    useExploreStore()
+  const { selectedSite, fullScreenImageIndex } = useExploreStore(
+    useShallow((state) => ({
+      selectedSite: state.selectedSite,
+      fullScreenImageIndex: state.fullScreenImageIndex,
+    }))
+  )
+  const { setFullScreenImageIndex } = useExploreActions()
 
   const carouselImages = selectedSite
     ? Array.from(
