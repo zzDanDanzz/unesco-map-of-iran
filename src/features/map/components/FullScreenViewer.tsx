@@ -1,4 +1,6 @@
+import { useState, useSyncExternalStore } from "react"
 import {
+  type CarouselApi,
   Carousel,
   CarouselContent,
   CarouselItem,
@@ -19,6 +21,19 @@ export function FullScreenViewer() {
   )
   const { setFullScreenImageIndex } = useExploreActions()
 
+  const [api, setApi] = useState<CarouselApi>()
+
+  const current = useSyncExternalStore(
+    (callback) => {
+      if (!api) return () => {}
+      api.on("select", callback)
+      return () => {
+        api.off("select", callback)
+      }
+    },
+    () => (api ? api.selectedScrollSnap() + 1 : 1)
+  )
+
   const carouselImages = selectedSite
     ? Array.from(
         new Set([
@@ -27,6 +42,8 @@ export function FullScreenViewer() {
         ])
       )
     : []
+
+  const count = carouselImages.length
 
   return (
     <RadixDialog.Root
@@ -41,6 +58,17 @@ export function FullScreenViewer() {
           className="fixed inset-0 z-100 flex flex-col focus:outline-none"
           aria-describedby={undefined}
           onClick={() => setFullScreenImageIndex(null)}
+          onKeyDown={(e) => {
+            if (e.key === "ArrowLeft") {
+              e.preventDefault()
+              e.stopPropagation()
+              api?.scrollPrev()
+            } else if (e.key === "ArrowRight") {
+              e.preventDefault()
+              e.stopPropagation()
+              api?.scrollNext()
+            }
+          }}
         >
           <RadixDialog.Title className="sr-only">
             Full Screen Viewer
@@ -57,11 +85,12 @@ export function FullScreenViewer() {
               </div>
               <div className="flex h-full w-full items-center justify-center p-4 sm:p-8">
                 <Carousel
+                  setApi={setApi}
                   opts={{
                     loop: true,
                     startIndex: fullScreenImageIndex,
                   }}
-                  className="w-full max-w-6xl"
+                  className="w-full max-w-6xl relative"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <CarouselContent>
@@ -79,8 +108,12 @@ export function FullScreenViewer() {
                   </CarouselContent>
                   {carouselImages.length > 1 && (
                     <>
-                      <CarouselPrevious className="left-4 z-50 border-0 bg-black/50 text-white hover:bg-black/80 hover:text-white" />
-                      <CarouselNext className="right-4 z-50 border-0 bg-black/50 text-white hover:bg-black/80 hover:text-white" />
+                      <CarouselPrevious className="hidden sm:flex left-4 z-50 border-0 bg-black/50 text-white hover:bg-black/80 hover:text-white" />
+                      <CarouselNext className="hidden sm:flex right-4 z-50 border-0 bg-black/50 text-white hover:bg-black/80 hover:text-white" />
+                      
+                      <div className="absolute bottom-4 left-1/2 z-50 -translate-x-1/2 rounded-full bg-black/60 px-4 py-1.5 text-sm font-medium text-white backdrop-blur-sm">
+                        {current} / {count}
+                      </div>
                     </>
                   )}
                 </Carousel>

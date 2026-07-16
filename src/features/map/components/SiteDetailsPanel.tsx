@@ -1,5 +1,7 @@
 import { Badge } from "@/components/ui/badge"
+import { useState, useSyncExternalStore } from "react"
 import {
+  type CarouselApi,
   Carousel,
   CarouselContent,
   CarouselItem,
@@ -20,6 +22,19 @@ export function SiteDetailsPanel() {
   const selectedSite = useExploreStore((state) => state.selectedSite)
   const { setSelectedSite, setFullScreenImageIndex } = useExploreActions()
 
+  const [api, setApi] = useState<CarouselApi>()
+
+  const current = useSyncExternalStore(
+    (callback) => {
+      if (!api) return () => {}
+      api.on("select", callback)
+      return () => {
+        api.off("select", callback)
+      }
+    },
+    () => (api ? api.selectedScrollSnap() + 1 : 1)
+  )
+
   const carouselImages = selectedSite
     ? Array.from(
         new Set([
@@ -28,6 +43,8 @@ export function SiteDetailsPanel() {
         ])
       )
     : []
+
+  const count = carouselImages.length
 
   return (
     <Sheet
@@ -40,6 +57,19 @@ export function SiteDetailsPanel() {
       <SheetContent
         hasOverlay={false}
         className="w-100 overflow-y-auto sm:w-135"
+        onKeyDown={(e) => {
+          if (useExploreStore.getState().fullScreenImageIndex !== null) return
+
+          if (e.key === "ArrowLeft") {
+            e.preventDefault()
+            e.stopPropagation()
+            api?.scrollPrev()
+          } else if (e.key === "ArrowRight") {
+            e.preventDefault()
+            e.stopPropagation()
+            api?.scrollNext()
+          }
+        }}
         onInteractOutside={(e) => {
           if (useExploreStore.getState().fullScreenImageIndex !== null) {
             e.preventDefault()
@@ -67,7 +97,7 @@ export function SiteDetailsPanel() {
 
             <div className="flex flex-col gap-4 px-6 pb-6">
               <div className="overflow-hidden rounded-xl">
-                <Carousel opts={{ loop: true }}>
+                <Carousel opts={{ loop: true }} setApi={setApi}>
                   <CarouselContent>
                     {carouselImages.map((url, i) => (
                       <CarouselItem key={i}>
@@ -92,8 +122,12 @@ export function SiteDetailsPanel() {
                   </CarouselContent>
                   {carouselImages.length > 1 && (
                     <>
-                      <CarouselPrevious className="left-2" />
-                      <CarouselNext className="right-2" />
+                      <CarouselPrevious className="left-2 hidden sm:flex" />
+                      <CarouselNext className="right-2 hidden sm:flex" />
+
+                      <div className="absolute bottom-2 left-1/2 z-10 -translate-x-1/2 rounded-full bg-black/60 px-3 py-1 text-xs text-white backdrop-blur-sm">
+                        {current} / {count}
+                      </div>
                     </>
                   )}
                 </Carousel>
