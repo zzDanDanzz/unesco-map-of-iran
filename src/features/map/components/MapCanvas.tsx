@@ -1,14 +1,15 @@
-import { IconPhotoOff } from "@tabler/icons-react"
 import { useEffect, useRef, useState } from "react"
-import Map, { Marker, type MapRef } from "react-map-gl/maplibre"
+import Map, { type MapRef } from "react-map-gl/maplibre"
 import bbox from "@turf/bbox"
 import { featureCollection } from "@turf/helpers"
 import Supercluster from "supercluster"
 import { useExploreStore, useExploreActions } from "@/stores/exploreStore"
-import { useHeritageData } from "../hooks/useHeritageData"
 import { useMapClustering } from "../hooks/useMapClustering"
+import { useHeritageData } from "../hooks/useHeritageData"
 import { ClusterMarker } from "./ClusterMarker"
-import { type HeritageSiteProperties, type ClusterProps, type SubcomponentFeature } from "../types"
+import { SubcomponentMarkers } from "./SubcomponentMarkers"
+import { SiteMarker } from "./SiteMarker"
+import { type HeritageSiteProperties, type ClusterProps } from "../types"
 
 const getInitialViewState = () => {
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768
@@ -140,39 +141,10 @@ export function MapCanvas() {
         maxZoom={19}
       >
         {selectedSite
-          ? subcomponentsData[selectedSite.id_no]?.features.map(
-              (feature: SubcomponentFeature, idx: number) => {
-                const [longitude, latitude] = feature.geometry.coordinates
-                const imgUrl = feature.properties?.img
-                  ? feature.properties.img.replace("{size}", "thumb")
-                  : null
-
-                return (
-                  <Marker
-                    key={`sub-${idx}`}
-                    longitude={longitude}
-                    latitude={latitude}
-                    anchor="center"
-                  >
-                    <div className="group flex flex-col items-center outline-none">
-                      <div className="h-14 w-14 overflow-hidden rounded-xl border-[3px] border-primary shadow-lg transition-transform duration-200 group-hover:scale-110">
-                        {imgUrl ? (
-                          <img
-                            src={imgUrl}
-                            alt={feature.properties?.name || "Image"}
-                            className="h-full w-full object-cover"
-                            loading="lazy"
-                          />
-                        ) : (
-                          <div className="flex h-full w-full items-center justify-center bg-muted text-muted-foreground">
-                            <IconPhotoOff className="h-6 w-6" />
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </Marker>
-                )
-              }
+          ? (
+              <SubcomponentMarkers
+                features={subcomponentsData[selectedSite.id_no]?.features || []}
+              />
             )
           : clusters.map((cluster) => {
               const [longitude, latitude] = cluster.geometry.coordinates
@@ -190,64 +162,38 @@ export function MapCanvas() {
 
               if (isCluster && supercluster) {
                 return (
-                  <Marker
+                  <ClusterMarker
                     key={`cluster-${cluster.id}`}
-                    longitude={longitude}
-                    latitude={latitude}
-                    anchor="center"
-                  >
-                    <ClusterMarker
-                      cluster={
-                        cluster as Supercluster.ClusterFeature<ClusterProps>
-                      }
-                      supercluster={supercluster}
-                      onClick={() => {
-                        const map = mapRef.current
-                        const expansionZoom = Math.min(
-                          supercluster.getClusterExpansionZoom(
-                            cluster.id as number
-                          ),
-                          19
-                        )
-                        map?.flyTo({
-                          center: [longitude, latitude],
-                          zoom: expansionZoom,
-                          duration: 500,
-                        })
-                      }}
-                    />
-                  </Marker>
+                    cluster={
+                      cluster as Supercluster.ClusterFeature<ClusterProps>
+                    }
+                    supercluster={supercluster}
+                    onClick={() => {
+                      const map = mapRef.current
+                      const expansionZoom = Math.min(
+                        supercluster.getClusterExpansionZoom(
+                          cluster.id as number
+                        ),
+                        19
+                      )
+                      map?.flyTo({
+                        center: [longitude, latitude],
+                        zoom: expansionZoom,
+                        duration: 500,
+                      })
+                    }}
+                  />
                 )
               }
 
-              const imageUrl = main_image_url.replace("{size}", "thumb")
-
               return (
-                <Marker
+                <SiteMarker
                   key={`site-${id_no}`}
+                  site={cluster.properties as HeritageSiteProperties}
                   longitude={longitude}
                   latitude={latitude}
-                  anchor="center"
-                >
-                  <button
-                    className="group flex flex-col items-center outline-none"
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      handleSiteClick(
-                        cluster.properties as HeritageSiteProperties
-                      )
-                    }}
-                  >
-                    <div className="h-14 w-14 overflow-hidden rounded-xl border-[3px] border-background shadow-lg transition-transform duration-200 group-hover:scale-110 group-hover:border-primary group-focus-visible:ring-4 group-focus-visible:ring-ring">
-                      <img
-                        src={imageUrl}
-                        alt={name_en}
-                        className="h-full w-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                  </button>
-                </Marker>
+                  onClick={handleSiteClick}
+                />
               )
             })}
       </Map>
