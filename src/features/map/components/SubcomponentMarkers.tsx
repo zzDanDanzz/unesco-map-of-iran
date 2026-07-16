@@ -4,16 +4,23 @@ import { type SubcomponentFeature } from "../types"
 
 interface SubcomponentMarkersProps {
   features: SubcomponentFeature[]
+  mainImageUrl: string
 }
 
-export function SubcomponentMarkers({ features }: SubcomponentMarkersProps) {
+export function SubcomponentMarkers({ features, mainImageUrl }: SubcomponentMarkersProps) {
+  const isSingleSubcomponent = features.length === 1
+
   return (
     <>
       {features.map((feature, idx) => {
         const [longitude, latitude] = feature.geometry.coordinates
-        const imgUrl = feature.properties?.img
+        let imgUrl = feature.properties?.img
           ? feature.properties.img.replace("{size}", "thumb")
           : null
+
+        if (!imgUrl && isSingleSubcomponent && mainImageUrl) {
+          imgUrl = mainImageUrl.replace("{size}", "thumb")
+        }
 
         return (
           <Marker

@@ -140,62 +140,51 @@ export function MapCanvas() {
         style={{ width: "100%", height: "100%" }}
         maxZoom={19}
       >
-        {selectedSite
-          ? (
-              <SubcomponentMarkers
-                features={subcomponentsData[selectedSite.id_no]?.features || []}
-              />
-            )
-          : clusters.map((cluster) => {
-              const [longitude, latitude] = cluster.geometry.coordinates
-              const {
-                cluster: isCluster,
-                id_no,
-                name_en,
-                main_image_url,
-              } = cluster.properties as {
-                cluster: boolean
-                id_no: string
-                name_en: string
-                main_image_url: string
-              }
+        {selectedSite ? (
+          <SubcomponentMarkers
+            features={subcomponentsData[selectedSite.id_no]?.features || []}
+            mainImageUrl={selectedSite.main_image_url}
+          />
+        ) : (
+          clusters.map((cluster) => {
+            const [longitude, latitude] = cluster.geometry.coordinates
+            const { cluster: isCluster, id_no } = cluster.properties
 
-              if (isCluster && supercluster) {
-                return (
-                  <ClusterMarker
-                    key={`cluster-${cluster.id}`}
-                    cluster={
-                      cluster as Supercluster.ClusterFeature<ClusterProps>
-                    }
-                    supercluster={supercluster}
-                    onClick={() => {
-                      const map = mapRef.current
-                      const expansionZoom = Math.min(
-                        supercluster.getClusterExpansionZoom(
-                          cluster.id as number
-                        ),
-                        19
-                      )
-                      map?.flyTo({
-                        center: [longitude, latitude],
-                        zoom: expansionZoom,
-                        duration: 500,
-                      })
-                    }}
-                  />
-                )
-              }
-
+            if (isCluster && supercluster) {
               return (
-                <SiteMarker
-                  key={`site-${id_no}`}
-                  site={cluster.properties as HeritageSiteProperties}
-                  longitude={longitude}
-                  latitude={latitude}
-                  onClick={handleSiteClick}
+                <ClusterMarker
+                  key={`cluster-${cluster.id}`}
+                  cluster={cluster as Supercluster.ClusterFeature<ClusterProps>}
+                  supercluster={supercluster}
+                  onClick={() => {
+                    const map = mapRef.current
+                    const expansionZoom = Math.min(
+                      supercluster.getClusterExpansionZoom(
+                        cluster.id as number
+                      ),
+                      19
+                    )
+                    map?.flyTo({
+                      center: [longitude, latitude],
+                      zoom: expansionZoom,
+                      duration: 500,
+                    })
+                  }}
                 />
               )
-            })}
+            }
+
+            return (
+              <SiteMarker
+                key={`site-${id_no}`}
+                site={cluster.properties as HeritageSiteProperties}
+                longitude={longitude}
+                latitude={latitude}
+                onClick={handleSiteClick}
+              />
+            )
+          })
+        )}
       </Map>
     </div>
   )
