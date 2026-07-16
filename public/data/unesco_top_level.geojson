@@ -43,7 +43,8 @@
           "/images/whc-unesco-org/166836-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": []
       },
       "geometry": {
         "type": "Point",
@@ -79,7 +80,14 @@
           "/images/whc-unesco-org/158111-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": [
+          "Sasanian",
+          "Early Islamic",
+          "Seljuk/Ilkhanid",
+          "Safavid",
+          "Qajar"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -139,7 +147,10 @@
           "/images/whc-unesco-org/155383-{size}.webp"
         ],
         "videos_urls": "https://www.youtube-nocookie.com/embed/YIJW-5GeNpk, https://www.youtube-nocookie.com/embed/FFEE4cTCijs, https://www.youtube-nocookie.com/embed/yb8J-UAx3pg, https://www.youtube-nocookie.com/embed/eHlWjxH5Bik, https://www.youtube-nocookie.com/embed/fPNdOKGpu0Q",
-        "main_video_url": "https://www.youtube-nocookie.com/embed/YIJW-5GeNpk"
+        "main_video_url": "https://www.youtube-nocookie.com/embed/YIJW-5GeNpk",
+        "eras": [
+          "Achaemenid"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -191,7 +202,10 @@
           "/images/whc-unesco-org/166131-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": [
+          "Sasanian"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -216,7 +230,12 @@
           "/images/whc-unesco-org/204640-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": [
+          "Achaemenid",
+          "Parthian",
+          "Sasanian"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -273,7 +292,10 @@
           "/images/whc-unesco-org/170148-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": [
+          "Elamite"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -321,7 +343,11 @@
           "/images/whc-unesco-org/170166-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": [
+          "Sasanian",
+          "Seljuk/Ilkhanid"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -364,7 +390,13 @@
           "/images/whc-unesco-org/137146-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": [
+          "Elamite",
+          "Achaemenid",
+          "Parthian",
+          "Sasanian"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -401,7 +433,14 @@
           "/images/whc-unesco-org/170211-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": [
+          "Prehistoric",
+          "Achaemenid",
+          "Parthian",
+          "Sasanian",
+          "Seljuk/Ilkhanid"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -446,7 +485,19 @@
           "/images/whc-unesco-org/137099-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": [
+          "Prehistoric",
+          "Elamite",
+          "Achaemenid",
+          "Parthian",
+          "Sasanian",
+          "Early Islamic",
+          "Seljuk/Ilkhanid",
+          "Safavid",
+          "Qajar",
+          "Modern"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -490,7 +541,14 @@
           "/images/whc-unesco-org/133147-{size}.webp"
         ],
         "videos_urls": "https://www.youtube-nocookie.com/embed/qGr9HjeoMCM, https://www.youtube-nocookie.com/embed/9ICFkZrngUo, https://www.youtube-nocookie.com/embed/HlOW8Kd4a78, https://www.youtube-nocookie.com/embed/ER00EYGnY4k, https://www.youtube-nocookie.com/embed/wr4PG4AMc0E",
-        "main_video_url": "https://www.youtube-nocookie.com/embed/qGr9HjeoMCM"
+        "main_video_url": "https://www.youtube-nocookie.com/embed/qGr9HjeoMCM",
+        "eras": [
+          "Achaemenid",
+          "Parthian",
+          "Sasanian",
+          "Early Islamic",
+          "Seljuk/Ilkhanid"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -517,7 +575,10 @@
           "/images/whc-unesco-org/123734-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": [
+          "Qajar"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -557,7 +618,13 @@
           "/images/whc-unesco-org/207869-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": [
+          "Prehistoric",
+          "Achaemenid",
+          "Parthian",
+          "Sasanian"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -591,7 +658,10 @@
           "/images/whc-unesco-org/221349-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": [
+          "Prehistoric"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -652,7 +722,13 @@
           "/images/whc-unesco-org/170245-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": [
+          "Early Islamic",
+          "Seljuk/Ilkhanid",
+          "Safavid",
+          "Qajar"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -726,7 +802,10 @@
           "/images/whc-unesco-org/170126-{size}.webp"
         ],
         "videos_urls": "https://www.youtube-nocookie.com/embed/QuHamVDB_PY",
-        "main_video_url": "https://www.youtube-nocookie.com/embed/QuHamVDB_PY"
+        "main_video_url": "https://www.youtube-nocookie.com/embed/QuHamVDB_PY",
+        "eras": [
+          "Safavid"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -759,7 +838,10 @@
           "/images/whc-unesco-org/131236-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": [
+          "Prehistoric"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -796,7 +878,10 @@
           "/images/whc-unesco-org/170202-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": [
+          "Seljuk/Ilkhanid"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -841,7 +926,17 @@
           "/images/whc-unesco-org/141585-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": [
+          "Achaemenid",
+          "Parthian",
+          "Sasanian",
+          "Early Islamic",
+          "Seljuk/Ilkhanid",
+          "Safavid",
+          "Qajar",
+          "Modern"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -872,7 +967,17 @@
           "/images/whc-unesco-org/128890-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": [
+          "Achaemenid",
+          "Parthian",
+          "Sasanian",
+          "Early Islamic",
+          "Seljuk/Ilkhanid",
+          "Safavid",
+          "Qajar",
+          "Modern"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -917,7 +1022,14 @@
           "/images/whc-unesco-org/170228-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": [
+          "Early Islamic",
+          "Seljuk/Ilkhanid",
+          "Safavid",
+          "Qajar",
+          "Modern"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -953,7 +1065,19 @@
           "/images/whc-unesco-org/181187-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": [
+          "Prehistoric",
+          "Elamite",
+          "Achaemenid",
+          "Parthian",
+          "Sasanian",
+          "Early Islamic",
+          "Seljuk/Ilkhanid",
+          "Safavid",
+          "Qajar",
+          "Modern"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -978,7 +1102,10 @@
           "/images/whc-unesco-org/118684-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": [
+          "Early Islamic"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -1032,7 +1159,8 @@
           "/images/whc-unesco-org/148400-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": []
       },
       "geometry": {
         "type": "Point",
@@ -1098,7 +1226,10 @@
           "/images/whc-unesco-org/170191-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": [
+          "Achaemenid"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -1134,7 +1265,11 @@
           "/images/whc-unesco-org/115054-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": [
+          "Safavid",
+          "Qajar"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -1165,7 +1300,12 @@
           "/images/whc-unesco-org/119139-{size}.webp"
         ],
         "videos_urls": "https://www.youtube-nocookie.com/embed/eQT8S9ADDUQ",
-        "main_video_url": "https://www.youtube-nocookie.com/embed/eQT8S9ADDUQ"
+        "main_video_url": "https://www.youtube-nocookie.com/embed/eQT8S9ADDUQ",
+        "eras": [
+          "Seljuk/Ilkhanid",
+          "Safavid",
+          "Qajar"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -1203,7 +1343,16 @@
           "/images/whc-unesco-org/196532-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": [
+          "Achaemenid",
+          "Parthian",
+          "Sasanian",
+          "Early Islamic",
+          "Seljuk/Ilkhanid",
+          "Safavid",
+          "Qajar"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -1236,7 +1385,10 @@
           "/images/whc-unesco-org/172371-{size}.webp"
         ],
         "videos_urls": null,
-        "main_video_url": null
+        "main_video_url": null,
+        "eras": [
+          "Modern"
+        ]
       },
       "geometry": {
         "type": "Point",
