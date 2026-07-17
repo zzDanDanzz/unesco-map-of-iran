@@ -17,10 +17,12 @@ import {
 } from "@/components/ui/sheet"
 import { IconMaximize } from "@tabler/icons-react"
 import { useExploreStore, useExploreActions } from "@/stores/exploreStore"
+import { useSiteSelection } from "../hooks/useSiteSelection"
 
 export function SiteDetailsPanel() {
   const selectedSite = useExploreStore((state) => state.selectedSite)
-  const { setSelectedSite, setFullScreenImageIndex } = useExploreActions()
+  const { setFullScreenImageIndex } = useExploreActions()
+  const { handleSiteDeselect } = useSiteSelection()
 
   const [api, setApi] = useState<CarouselApi>()
 
@@ -51,7 +53,7 @@ export function SiteDetailsPanel() {
       modal={false}
       open={!!selectedSite}
       onOpenChange={(isOpen) => {
-        if (!isOpen) setSelectedSite(null)
+        if (!isOpen) handleSiteDeselect()
       }}
     >
       <SheetContent
