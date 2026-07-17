@@ -71,6 +71,12 @@ export function SiteDetailsPanel() {
           }
         }}
         onInteractOutside={(e) => {
+          const target = e.target as HTMLElement
+          
+          if (target.closest('.maplibregl-marker') || target.closest('.maplibregl-popup')) {
+            e.preventDefault()
+          }
+
           if (useExploreStore.getState().fullScreenImageIndex !== null) {
             e.preventDefault()
           }

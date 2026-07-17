@@ -131,3 +131,23 @@
     @apply font-sans;
     }
 }
+
+.maplibregl-popup-content {
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.custom-marker-popup.maplibregl-popup-anchor-bottom .maplibregl-popup-tip {
+  border-top-color: var(--background);
+}
+.custom-marker-popup.maplibregl-popup-anchor-top .maplibregl-popup-tip {
+  border-bottom-color: var(--background);
+}
+.custom-marker-popup.maplibregl-popup-anchor-left .maplibregl-popup-tip {
+  border-right-color: var(--background);
+}
+.custom-marker-popup.maplibregl-popup-anchor-right .maplibregl-popup-tip {
+  border-left-color: var(--background);
+}
