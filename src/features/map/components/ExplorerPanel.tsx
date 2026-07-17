@@ -7,7 +7,6 @@ import {
   IconFolderFilled,
   IconMapPinFilled,
 } from "@tabler/icons-react"
-import { useState } from "react"
 import { useHeritageData } from "../hooks/useHeritageData"
 import { useSiteSelection } from "../hooks/useSiteSelection"
 
@@ -15,21 +14,6 @@ export function ExplorerPanel() {
   const { sites, subcomponentsData } = useHeritageData()
   const selectedSite = useExploreStore((state) => state.selectedSite)
   const { handleSiteSelect, handleSiteDeselect } = useSiteSelection()
-  const [expandedFolders, setExpandedFolders] = useState<Set<string>>(new Set())
-
-  const toggleFolder = (id: string, e: React.MouseEvent) => {
-    e.stopPropagation()
-    setExpandedFolders((prev) => {
-      const next = new Set(prev)
-      if (next.has(id)) {
-        next.delete(id)
-      } else {
-        next.add(id)
-      }
-      return next
-    })
-  }
-
   const selectSite = (site: (typeof sites)[0]) => {
     if (selectedSite?.id_no === site.properties.id_no) {
       handleSiteDeselect()
@@ -59,7 +43,7 @@ export function ExplorerPanel() {
                 subcomponentsData[props.id_no]?.features || []
               const isMulti = subcomponents.length > 1
               const isSelected = selectedSite?.id_no === props.id_no
-              const isExpanded = expandedFolders.has(props.id_no)
+              const isExpanded = isSelected
 
               return (
                 <li key={props.id_no} className="flex w-full flex-col">
@@ -71,7 +55,10 @@ export function ExplorerPanel() {
                   >
                     {isMulti ? (
                       <button
-                        onClick={(e) => toggleFolder(props.id_no, e)}
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          selectSite(site)
+                        }}
                         data-selected={isSelected}
                         className="flex h-5 w-5 shrink-0 items-center justify-center rounded-sm text-muted-foreground hover:bg-muted-foreground/20 hover:text-foreground data-[selected=true]:text-white/80 data-[selected=true]:hover:bg-white/20 data-[selected=true]:hover:text-white"
                       >
