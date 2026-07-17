@@ -18,26 +18,31 @@ export function useSiteSelection() {
 
   const handleSiteSelect = (
     site: HeritageSiteProperties,
-    subcomponentsData: Record<string, FeatureCollection<Point, SubcomponentProperties>>
+    subcomponentsData: Record<string, FeatureCollection<Point, SubcomponentProperties>>,
+    saveState: boolean = true
   ) => {
     setSelectedSite(site)
 
     if (!mapInstance) return
 
-    if (!previousViewState) {
-      const center = mapInstance.getCenter()
-      previousViewState = {
-        longitude: center.lng,
-        latitude: center.lat,
-        zoom: mapInstance.getZoom(),
+    if (saveState) {
+      if (!previousViewState) {
+        const center = mapInstance.getCenter()
+        previousViewState = {
+          longitude: center.lng,
+          latitude: center.lat,
+          zoom: mapInstance.getZoom(),
+        }
       }
+    } else {
+      previousViewState = null
     }
 
     const features = subcomponentsData[site.id_no]?.features
     if (features && features.length > 0) {
-      const EXPLORER_PANEL_WIDTH = 340
-      const DETAILS_PANEL_WIDTH = 540
-      const VERTICAL_PADDING = 100
+      const EXPLORER_PANEL_WIDTH = 375
+      const DETAILS_PANEL_WIDTH = 450
+      const VERTICAL_PADDING = 75
 
       const padding = {
         top: VERTICAL_PADDING,

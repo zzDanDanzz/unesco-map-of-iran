@@ -21,7 +21,7 @@ export function ExplorerPanel() {
     if (selectedSite?.id_no === site.properties.id_no) {
       handleSiteDeselect()
     } else {
-      handleSiteSelect(site.properties, subcomponentsData)
+      handleSiteSelect(site.properties, subcomponentsData, false)
     }
   }
 
