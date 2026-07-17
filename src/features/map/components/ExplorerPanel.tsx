@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react"
 import { ScrollArea } from "@/components/ui/scroll-area"
 
 import { useExploreStore } from "@/stores/exploreStore"
@@ -14,6 +15,8 @@ export function ExplorerPanel() {
   const { sites, subcomponentsData } = useHeritageData()
   const selectedSite = useExploreStore((state) => state.selectedSite)
   const { handleSiteSelect, handleSiteDeselect } = useSiteSelection()
+  const itemRefs = useRef<Map<string, HTMLLIElement>>(new Map())
+
   const selectSite = (site: (typeof sites)[0]) => {
     if (selectedSite?.id_no === site.properties.id_no) {
       handleSiteDeselect()
@@ -21,6 +24,15 @@ export function ExplorerPanel() {
       handleSiteSelect(site.properties, subcomponentsData)
     }
   }
+
+  useEffect(() => {
+    if (selectedSite?.id_no) {
+      const element = itemRefs.current.get(selectedSite.id_no)
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "nearest" })
+      }
+    }
+  }, [selectedSite?.id_no])
 
   // Sort by subcomponent count (descending)
   const sortedSites = [...sites].sort((a, b) => {
@@ -46,7 +58,17 @@ export function ExplorerPanel() {
               const isExpanded = isSelected
 
               return (
-                <li key={props.id_no} className="flex w-full flex-col">
+                <li
+                  key={props.id_no}
+                  ref={(node) => {
+                    if (node) {
+                      itemRefs.current.set(props.id_no, node)
+                    } else {
+                      itemRefs.current.delete(props.id_no)
+                    }
+                  }}
+                  className="flex w-full flex-col"
+                >
                   {/* Parent Node */}
                   <div
                     data-selected={isSelected}
@@ -85,7 +107,10 @@ export function ExplorerPanel() {
                           data-selected={isSelected}
                         />
                       )}
-                      <span title={props.name_en} className="block min-w-0 flex-1 line-clamp-2 font-medium tracking-tight">
+                      <span
+                        title={props.name_en}
+                        className="line-clamp-2 block min-w-0 flex-1 font-medium tracking-tight"
+                      >
                         {props.name_en}
                       </span>
                     </div>
@@ -107,7 +132,10 @@ export function ExplorerPanel() {
                                 size={14}
                                 className="mt-0.5 shrink-0 text-muted-foreground/60"
                               />
-                              <span title={subName} className="block min-w-0 flex-1 line-clamp-2">
+                              <span
+                                title={subName}
+                                className="line-clamp-2 block min-w-0 flex-1"
+                              >
                                 {subName}
                               </span>
                             </div>
