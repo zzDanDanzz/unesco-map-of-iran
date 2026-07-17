@@ -1,18 +1,46 @@
+import { ScrollArea } from "@/components/ui/scroll-area"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 import { useExploreStore } from "@/stores/exploreStore"
+import {
+  IconChevronDown,
+  IconChevronRight,
+  IconFolderFilled,
+  IconMapPinFilled,
+} from "@tabler/icons-react"
+import { useState } from "react"
 import { useHeritageData } from "../hooks/useHeritageData"
 import { useSiteSelection } from "../hooks/useSiteSelection"
-import {
-  Accordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent,
-} from "@/components/ui/accordion"
-import { ScrollArea } from "@/components/ui/scroll-area"
 
 export function ExplorerPanel() {
   const { sites, subcomponentsData } = useHeritageData()
   const selectedSite = useExploreStore((state) => state.selectedSite)
   const { handleSiteSelect, handleSiteDeselect } = useSiteSelection()
+  const [expandedFolders, setExpandedFolders] = useState<Set<string>>(new Set())
+
+  const toggleFolder = (id: string, e: React.MouseEvent) => {
+    e.stopPropagation()
+    setExpandedFolders((prev) => {
+      const next = new Set(prev)
+      if (next.has(id)) {
+        next.delete(id)
+      } else {
+        next.add(id)
+      }
+      return next
+    })
+  }
+
+  const selectSite = (site: (typeof sites)[0]) => {
+    if (selectedSite?.id_no === site.properties.id_no) {
+      handleSiteDeselect()
+    } else {
+      handleSiteSelect(site.properties, subcomponentsData)
+    }
+  }
 
   // Sort by subcomponent count (descending)
   const sortedSites = [...sites].sort((a, b) => {
@@ -22,82 +50,116 @@ export function ExplorerPanel() {
   })
 
   return (
-    <div className="absolute top-4 left-4 z-10 flex hidden max-h-[calc(100vh-2rem)] w-80 flex-col overflow-hidden rounded-xl border bg-background/95 shadow-xl backdrop-blur-md md:flex">
-      <div className="border-b bg-muted/20 p-4">
-        <h2 className="text-sm font-semibold tracking-tight">Explorer</h2>
+    <div className="absolute top-4 left-4 z-10 hidden w-80 flex-col overflow-hidden rounded-xl border bg-background/80 shadow-xl backdrop-blur-md md:flex">
+      <div className="border-b bg-muted/20 p-3">
+        <h2 className="px-2 text-sm font-semibold tracking-tight">Explorer</h2>
       </div>
-      <ScrollArea className="flex-1">
-        <Accordion
-          type="single"
-          collapsible
-          value={selectedSite?.id_no || ""}
-          onValueChange={(val) => {
-            const site = sites.find((s) => s.properties.id_no === val)
-            if (site) {
-              handleSiteSelect(site.properties, subcomponentsData)
-            } else {
-              handleSiteDeselect()
-            }
-          }}
-          className="w-full"
-        >
-          {sortedSites.map((site) => {
-            const props = site.properties
-            const subcomponents = subcomponentsData[props.id_no]?.features || []
-            const isMulti = subcomponents.length > 1
-
-            if (isMulti) {
-              return (
-                <AccordionItem
-                  value={props.id_no}
-                  key={props.id_no}
-                  className="border-b-0 px-3"
-                >
-                  <AccordionTrigger className="py-2.5 text-sm hover:no-underline data-[state=open]:text-primary">
-                    <div className="flex w-full items-center justify-between pr-2 text-left">
-                      <span className="mr-2 line-clamp-1 font-medium">
-                        {props.name_en}
-                      </span>
-                      <span className="shrink-0 text-xs text-muted-foreground">
-                        {subcomponents.length} items
-                      </span>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="pt-0 pb-3">
-                    <ul className="mt-1 ml-2 flex flex-col gap-1 border-l pl-6">
-                      {subcomponents.map((sub, i) => (
-                        <li
-                          key={i}
-                          className="line-clamp-1 py-1 text-xs text-muted-foreground"
-                        >
-                          {sub.properties?.name || `Component ${i + 1}`}
-                        </li>
-                      ))}
-                    </ul>
-                  </AccordionContent>
-                </AccordionItem>
-              )
-            } else {
+      <ScrollArea className="h-[calc(100vh-5rem)]">
+        <div className="py-2">
+          <ul className="flex flex-col gap-0.5 px-2">
+            {sortedSites.map((site) => {
+              const props = site.properties
+              const subcomponents =
+                subcomponentsData[props.id_no]?.features || []
+              const isMulti = subcomponents.length > 1
               const isSelected = selectedSite?.id_no === props.id_no
+              const isExpanded = expandedFolders.has(props.id_no)
+
               return (
-                <div key={props.id_no} className="px-3 py-1">
+                <li key={props.id_no} className="flex w-full flex-col">
+                  {/* Parent Node */}
                   <div
-                    onClick={() => {
-                      if (isSelected) {
-                        handleSiteDeselect()
-                      } else {
-                        handleSiteSelect(props, subcomponentsData)
-                      }
-                    }}
-                    className={`cursor-pointer rounded-md px-4 py-2.5 text-sm font-medium transition-colors ${isSelected ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted/50"}`}
+                    data-selected={isSelected}
+                    onClick={() => selectSite(site)}
+                    className="group flex w-full min-w-0 cursor-pointer items-center gap-1 rounded-md px-1 py-1.5 text-sm transition-colors select-none hover:bg-muted/60 data-[selected=true]:bg-blue-500 data-[selected=true]:text-white"
                   >
-                    <span className="line-clamp-1">{props.name_en}</span>
+                    {isMulti ? (
+                      <button
+                        onClick={(e) => toggleFolder(props.id_no, e)}
+                        data-selected={isSelected}
+                        className="flex h-5 w-5 shrink-0 items-center justify-center rounded-sm text-muted-foreground hover:bg-muted-foreground/20 hover:text-foreground data-[selected=true]:text-white/80 data-[selected=true]:hover:bg-white/20 data-[selected=true]:hover:text-white"
+                      >
+                        {isExpanded ? (
+                          <IconChevronDown size={14} />
+                        ) : (
+                          <IconChevronRight size={14} />
+                        )}
+                      </button>
+                    ) : (
+                      <div className="w-5 shrink-0" />
+                    )}
+                    <div className="flex min-w-0 flex-1 items-center gap-2 overflow-hidden pr-2">
+                      {isMulti ? (
+                        <IconFolderFilled
+                          size={16}
+                          className="shrink-0 text-blue-500 data-[selected=true]:text-white"
+                          data-selected={isSelected}
+                        />
+                      ) : (
+                        <IconMapPinFilled
+                          size={16}
+                          className="shrink-0 text-muted-foreground data-[selected=true]:text-white/90"
+                          data-selected={isSelected}
+                        />
+                      )}
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <span className="block min-w-0 flex-1 truncate font-medium tracking-tight">
+                            {props.name_en}
+                          </span>
+                        </TooltipTrigger>
+                        <TooltipContent
+                          side="bottom"
+                          align="start"
+                          className="max-w-64 text-center"
+                        >
+                          <p>{props.name_en}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </div>
                   </div>
-                </div>
+
+                  {/* Children Nodes */}
+                  {isMulti && isExpanded && (
+                    <ul className="mt-0.5 flex w-full flex-col gap-0.5 pl-6.5">
+                      {subcomponents.map((sub, i) => {
+                        const subName =
+                          sub.properties?.name || `Component ${i + 1}`
+                        return (
+                          <li key={i} className="w-full">
+                            <div
+                              onClick={() => selectSite(site)}
+                              className="flex w-full min-w-0 cursor-pointer items-center gap-2 rounded-md px-1.5 py-1.5 text-xs text-muted-foreground transition-colors select-none hover:bg-muted/60"
+                            >
+                              <IconMapPinFilled
+                                size={14}
+                                className="shrink-0 text-muted-foreground/60"
+                              />
+                              <Tooltip>
+                                <TooltipTrigger asChild>
+                                  <span className="block min-w-0 flex-1 truncate">
+                                    {subName}
+                                  </span>
+                                </TooltipTrigger>
+                                <TooltipContent
+                                  side="bottom"
+                                  align="start"
+                                  className="max-w-64 text-center"
+                                >
+                                  <p>{subName}</p>
+                                </TooltipContent>
+                              </Tooltip>
+                            </div>
+                          </li>
+                        )
+                      })}
+                    </ul>
+                  )}
+                </li>
               )
-            }
-          })}
-        </Accordion>
+            })}
+          </ul>
+        </div>
       </ScrollArea>
     </div>
   )

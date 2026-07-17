@@ -13,7 +13,7 @@ let previousViewState: {
   zoom: number
 } | null = null
 
-export function useSiteSelection(mapRef: RefObject<MapRef | null>) {
+export function useSiteSelection(mapRef?: RefObject<MapRef | null>) {
   const { setSelectedSite } = useExploreActions()
 
   const handleSiteSelect = (
@@ -22,7 +22,7 @@ export function useSiteSelection(mapRef: RefObject<MapRef | null>) {
   ) => {
     setSelectedSite(site)
 
-    if (!mapRef.current) return
+    if (!mapRef?.current) return
     const mapInstance = mapRef.current.getMap()
 
     if (!previousViewState) {
@@ -36,8 +36,8 @@ export function useSiteSelection(mapRef: RefObject<MapRef | null>) {
 
     const features = subcomponentsData[site.id_no]?.features
     if (features && features.length > 0) {
-      const EXPLORER_PANEL_WIDTH = 340 // ~320px (w-80) + margin
-      const DETAILS_PANEL_WIDTH = 540 // sm:w-135 is ~540px
+      const EXPLORER_PANEL_WIDTH = 340
+      const DETAILS_PANEL_WIDTH = 540
       const VERTICAL_PADDING = 100
 
       const padding = {
@@ -78,7 +78,7 @@ export function useSiteSelection(mapRef: RefObject<MapRef | null>) {
   const handleSiteDeselect = () => {
     setSelectedSite(null)
 
-    if (mapRef.current && previousViewState) {
+    if (mapRef?.current && previousViewState) {
       mapRef.current.getMap().flyTo({
         center: [previousViewState.longitude, previousViewState.latitude],
         zoom: previousViewState.zoom,
