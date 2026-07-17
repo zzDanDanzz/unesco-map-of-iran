@@ -4,7 +4,7 @@ import { featureCollection } from "@turf/helpers"
 import { useExploreActions } from "@/stores/exploreStore"
 import { type HeritageSiteProperties } from "../types"
 import type { FeatureCollection, Point } from "geojson"
-import type { SubcomponentProperties } from "../types"
+import type { SubcomponentProperties, SubcomponentFeature } from "../types"
 
 let previousViewState: {
   longitude: number
@@ -13,7 +13,7 @@ let previousViewState: {
 } | null = null
 
 export function useSiteSelection() {
-  const { setSelectedSite } = useExploreActions()
+  const { setSelectedSite, setSelectedSubcomponent } = useExploreActions()
   const { "main-map": mapInstance } = useMap()
 
   const handleSiteSelect = (
@@ -92,5 +92,19 @@ export function useSiteSelection() {
     }
   }
 
-  return { handleSiteSelect, handleSiteDeselect }
+  const handleSubcomponentSelect = (feature: SubcomponentFeature) => {
+    setSelectedSubcomponent(feature)
+
+    if (!mapInstance) return
+
+    const [longitude, latitude] = feature.geometry.coordinates
+
+    mapInstance.flyTo({
+      center: [longitude, latitude],
+      zoom: Math.max(mapInstance.getZoom(), 12),
+      duration: 1000,
+    })
+  }
+
+  return { handleSiteSelect, handleSiteDeselect, handleSubcomponentSelect }
 }

@@ -14,7 +14,7 @@ import { useSiteSelection } from "../hooks/useSiteSelection"
 export function ExplorerPanel() {
   const { sites, subcomponentsData } = useHeritageData()
   const selectedSite = useExploreStore((state) => state.selectedSite)
-  const { handleSiteSelect, handleSiteDeselect } = useSiteSelection()
+  const { handleSiteSelect, handleSiteDeselect, handleSubcomponentSelect } = useSiteSelection()
   const itemRefs = useRef<Map<string, HTMLLIElement>>(new Map())
 
   const selectSite = (site: (typeof sites)[0]) => {
@@ -125,7 +125,13 @@ export function ExplorerPanel() {
                         return (
                           <li key={i} className="w-full">
                             <div
-                              onClick={() => selectSite(site)}
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                if (selectedSite?.id_no !== props.id_no) {
+                                  handleSiteSelect(site.properties, subcomponentsData, false)
+                                }
+                                handleSubcomponentSelect(sub)
+                              }}
                               className="flex w-full min-w-0 cursor-pointer items-start gap-2 rounded-md px-2 py-2 text-xs text-muted-foreground transition-colors select-none hover:bg-muted/60"
                             >
                               <IconMapPinFilled

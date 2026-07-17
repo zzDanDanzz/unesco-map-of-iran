@@ -1,8 +1,8 @@
-import { useState } from "react"
 import { Marker } from "react-map-gl/maplibre"
 import { SubcomponentPopup } from "./SubcomponentPopup"
 import { IconPhotoOff } from "@tabler/icons-react"
 import { type SubcomponentFeature } from "../types"
+import { useExploreStore, useExploreActions } from "@/stores/exploreStore"
 
 interface SubcomponentMarkersProps {
   features: SubcomponentFeature[]
@@ -11,7 +11,8 @@ interface SubcomponentMarkersProps {
 
 export function SubcomponentMarkers({ features, mainImageUrl }: SubcomponentMarkersProps) {
   const isSingleSubcomponent = features.length === 1
-  const [activeFeature, setActiveFeature] = useState<SubcomponentFeature | null>(null)
+  const activeFeature = useExploreStore((state) => state.selectedSubcomponent)
+  const { setSelectedSubcomponent } = useExploreActions()
 
   return (
     <>
@@ -33,7 +34,7 @@ export function SubcomponentMarkers({ features, mainImageUrl }: SubcomponentMark
             anchor="center"
             onClick={(e) => {
               e.originalEvent.stopPropagation()
-              setActiveFeature(feature)
+              setSelectedSubcomponent(feature)
             }}
           >
             <button className="group flex flex-col items-center outline-none cursor-pointer">
@@ -61,7 +62,7 @@ export function SubcomponentMarkers({ features, mainImageUrl }: SubcomponentMark
           activeFeature={activeFeature}
           mainImageUrl={mainImageUrl}
           isSingleSubcomponent={isSingleSubcomponent}
-          onClose={() => setActiveFeature(null)}
+          onClose={() => setSelectedSubcomponent(null)}
         />
       )}
     </>
