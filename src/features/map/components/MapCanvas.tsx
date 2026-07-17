@@ -26,7 +26,7 @@ export function MapCanvas() {
   const selectedSite = useExploreStore((state) => state.selectedSite)
   const { sites, subcomponentsData, isLoading } = useHeritageData()
   const { clusters, supercluster } = useMapClustering(sites, viewState.zoom)
-  const { handleSiteSelect } = useSiteSelection(mapRef)
+  const { handleSiteSelect } = useSiteSelection()
 
   const handleSiteClick = (site: HeritageSiteProperties) => {
     handleSiteSelect(site, subcomponentsData)
@@ -39,6 +39,7 @@ export function MapCanvas() {
   return (
     <div className="relative h-screen">
       <Map
+        id="main-map"
         ref={mapRef}
         {...viewState}
         onMove={(e) => setViewState(e.viewState)}

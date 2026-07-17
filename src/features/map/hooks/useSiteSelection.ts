@@ -1,5 +1,4 @@
-import type { MapRef } from "react-map-gl/maplibre"
-import type { RefObject } from "react"
+import { useMap } from "react-map-gl/maplibre"
 import bbox from "@turf/bbox"
 import { featureCollection } from "@turf/helpers"
 import { useExploreActions } from "@/stores/exploreStore"
@@ -13,8 +12,9 @@ let previousViewState: {
   zoom: number
 } | null = null
 
-export function useSiteSelection(mapRef?: RefObject<MapRef | null>) {
+export function useSiteSelection() {
   const { setSelectedSite } = useExploreActions()
+  const { "main-map": mapInstance } = useMap()
 
   const handleSiteSelect = (
     site: HeritageSiteProperties,
@@ -22,8 +22,7 @@ export function useSiteSelection(mapRef?: RefObject<MapRef | null>) {
   ) => {
     setSelectedSite(site)
 
-    if (!mapRef?.current) return
-    const mapInstance = mapRef.current.getMap()
+    if (!mapInstance) return
 
     if (!previousViewState) {
       const center = mapInstance.getCenter()
@@ -78,8 +77,8 @@ export function useSiteSelection(mapRef?: RefObject<MapRef | null>) {
   const handleSiteDeselect = () => {
     setSelectedSite(null)
 
-    if (mapRef?.current && previousViewState) {
-      mapRef.current.getMap().flyTo({
+    if (mapInstance && previousViewState) {
+      mapInstance.flyTo({
         center: [previousViewState.longitude, previousViewState.latitude],
         zoom: previousViewState.zoom,
         duration: 1000,
