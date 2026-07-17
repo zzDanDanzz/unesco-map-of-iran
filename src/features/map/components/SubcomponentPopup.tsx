@@ -40,7 +40,7 @@ export function SubcomponentPopup({
       }}
       onClose={onClose}
       closeButton={false}
-      closeOnClick={false}
+      closeOnClick={true}
       className="custom-marker-popup z-50"
     >
       <div className="flex w-48 flex-col overflow-hidden rounded-xl bg-background border border-border shadow-lg">
