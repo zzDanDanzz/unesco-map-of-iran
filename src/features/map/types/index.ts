@@ -8,6 +8,7 @@ export interface HeritageSiteProperties {
   main_image_url: string
   images_urls: string[]
   id_no: string
+  main_image_author?: string
 }
 
 export type HeritageSite = Feature<Point, HeritageSiteProperties>
@@ -23,6 +24,7 @@ export interface ClusterMarkerProps {
 export interface SubcomponentProperties {
   img?: string
   name?: string
+  img_original?: string
 }
 
 export type SubcomponentFeature = Feature<Point, SubcomponentProperties>

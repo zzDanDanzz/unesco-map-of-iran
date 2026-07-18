@@ -1,5 +1,13 @@
 import { Popup } from "react-map-gl/maplibre"
 import { type SubcomponentFeature } from "../types"
+import { IconInfoCircle } from "@tabler/icons-react"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
+import { useExploreActions } from "@/stores/exploreStore"
 
 interface SubcomponentPopupProps {
   activeFeature: SubcomponentFeature
@@ -14,6 +22,7 @@ export function SubcomponentPopup({
   isSingleSubcomponent,
   onClose,
 }: SubcomponentPopupProps) {
+  const { setFullScreenImageIndex } = useExploreActions()
   const [longitude, latitude] = activeFeature.geometry.coordinates
   let activeImgUrl = activeFeature.properties?.img
     ? activeFeature.properties.img.replace("{size}", "large")
@@ -45,19 +54,45 @@ export function SubcomponentPopup({
     >
       <div className="flex w-48 flex-col overflow-hidden rounded-xl bg-background border border-border shadow-lg">
         {activeImgUrl && (
-          <div className="h-32 w-full overflow-hidden bg-muted">
+          <button 
+            type="button"
+            onClick={() => setFullScreenImageIndex(0, 'subcomponent')}
+            className="h-32 w-full overflow-hidden bg-muted cursor-pointer"
+          >
             <img
               src={activeImgUrl}
               alt={activeFeature.properties?.name || "Image"}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover transition-transform hover:scale-105"
             />
-          </div>
+          </button>
         )}
         {activeFeature.properties?.name && (
           <div className="p-3">
             <h4 className="text-sm font-semibold text-foreground line-clamp-2 leading-tight">
               {activeFeature.properties.name}
             </h4>
+            <div className="mt-2 flex items-center gap-1">
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-muted-foreground hover:text-foreground underline underline-offset-2"
+              >
+                Open in Google Maps
+              </a>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button type="button" className="text-muted-foreground hover:text-foreground">
+                      <IconInfoCircle className="h-4 w-4" />
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Approximate location based on UNESCO data.</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </div>
           </div>
         )}
       </div>

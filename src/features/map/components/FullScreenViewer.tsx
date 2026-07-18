@@ -13,10 +13,12 @@ import { useShallow } from "zustand/react/shallow"
 import { useExploreStore, useExploreActions } from "@/stores/exploreStore"
 
 export function FullScreenViewer() {
-  const { selectedSite, fullScreenImageIndex } = useExploreStore(
+  const { selectedSite, fullScreenImageIndex, selectedSubcomponent, fullScreenViewerContext } = useExploreStore(
     useShallow((state) => ({
       selectedSite: state.selectedSite,
       fullScreenImageIndex: state.fullScreenImageIndex,
+      selectedSubcomponent: state.selectedSubcomponent,
+      fullScreenViewerContext: state.fullScreenViewerContext,
     }))
   )
   const { setFullScreenImageIndex } = useExploreActions()
@@ -34,14 +36,19 @@ export function FullScreenViewer() {
     () => (api ? api.selectedScrollSnap() + 1 : 1)
   )
 
-  const carouselImages = selectedSite
-    ? Array.from(
-        new Set([
-          selectedSite.main_image_url,
-          ...(selectedSite.images_urls || []),
-        ])
-      )
-    : []
+  const carouselImages = (() => {
+    if (fullScreenViewerContext === 'subcomponent' && selectedSubcomponent?.properties?.img) {
+      return [selectedSubcomponent.properties.img];
+    }
+    return selectedSite
+      ? Array.from(
+          new Set([
+            selectedSite.main_image_url,
+            ...(selectedSite.images_urls || []),
+          ])
+        ).filter(Boolean)
+      : [];
+  })();
 
   const count = carouselImages.length
 
@@ -76,6 +83,42 @@ export function FullScreenViewer() {
 
           {selectedSite && fullScreenImageIndex !== null && (
             <>
+              <div className="absolute top-4 left-4 z-110 flex flex-col items-start gap-2 max-w-[70vw]">
+                <div className="rounded-full bg-black/60 px-4 py-1.5 text-sm font-medium text-white backdrop-blur-sm shadow-sm">
+                  {fullScreenViewerContext === 'subcomponent' && selectedSubcomponent?.properties?.name
+                    ? `${selectedSite.name_en} > ${selectedSubcomponent.properties.name}`
+                    : selectedSite.name_en}
+                </div>
+                {(() => {
+                  const sourceUrl = fullScreenViewerContext === 'subcomponent' ? selectedSubcomponent?.properties?.img_original : null;
+                  const authorText = fullScreenViewerContext === 'site' ? selectedSite.main_image_author : null;
+
+                  if (sourceUrl) {
+                    return (
+                      <div className="rounded-full bg-black/60 px-4 py-1.5 text-xs text-white/80 backdrop-blur-sm shadow-sm">
+                        Credit:{" "}
+                        <a
+                          href={sourceUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-white underline underline-offset-2"
+                        >
+                          Image Source
+                        </a>
+                      </div>
+                    );
+                  }
+                  if (authorText) {
+                    return (
+                      <div className="rounded-full bg-black/60 px-4 py-1.5 text-xs text-white/80 backdrop-blur-sm shadow-sm">
+                        Credit: {authorText}
+                      </div>
+                    );
+                  }
+                  return null;
+                })()}
+              </div>
+
               <div className="absolute top-4 right-4 z-110">
                 <RadixDialog.Close asChild>
                   <button className="cursor-pointer rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20">
