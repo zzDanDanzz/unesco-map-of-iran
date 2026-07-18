@@ -22,6 +22,7 @@ export function useSiteSelection() {
     saveState: boolean = true
   ) => {
     setSelectedSite(site)
+    setSelectedSubcomponent(null)
 
     if (!mapInstance) return
 
@@ -81,6 +82,7 @@ export function useSiteSelection() {
 
   const handleSiteDeselect = () => {
     setSelectedSite(null)
+    setSelectedSubcomponent(null)
 
     if (mapInstance && previousViewState) {
       mapInstance.flyTo({
