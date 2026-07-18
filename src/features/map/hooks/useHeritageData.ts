@@ -1,14 +1,9 @@
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import { toast } from "sonner"
-import type { FeatureCollection, Point } from "geojson"
-import type { HeritageSite, SubcomponentProperties } from "../types"
+import { useHeritageActions } from "@/stores/heritageStore"
 
 export function useHeritageData() {
-  const [sites, setSites] = useState<HeritageSite[]>([])
-  const [subcomponentsData, setSubcomponentsData] = useState<
-    Record<string, FeatureCollection<Point, SubcomponentProperties>>
-  >({})
-  const [isLoading, setIsLoading] = useState(true)
+  const { setHeritageData } = useHeritageActions()
 
   useEffect(() => {
     Promise.all([
@@ -22,20 +17,12 @@ export function useHeritageData() {
       }),
     ])
       .then(([topLevelData, subData]) => {
-        if (topLevelData && topLevelData.features) {
-          setSites(topLevelData.features)
-        }
-        if (subData) {
-          setSubcomponentsData(subData)
-        }
+        const sites = topLevelData?.features || []
+        const subcomponents = subData || {}
+        setHeritageData(sites, subcomponents)
       })
       .catch(() => {
         toast.error("Failed to load map data. Please try again later.")
       })
-      .finally(() => {
-        setIsLoading(false)
-      })
-  }, [])
-
-  return { sites, subcomponentsData, isLoading }
+  }, [setHeritageData])
 }

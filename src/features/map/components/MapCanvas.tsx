@@ -4,7 +4,8 @@ import Supercluster from "supercluster"
 import { useExploreStore } from "@/stores/exploreStore"
 import { useMapClustering } from "../hooks/useMapClustering"
 import { useSiteSelection } from "../hooks/useSiteSelection"
-import { useHeritageData } from "../hooks/useHeritageData"
+import { useFilteredSites } from "../hooks/useFilteredSites"
+import { useHeritageStore } from "@/stores/heritageStore"
 import { ClusterMarker } from "./ClusterMarker"
 import { SubcomponentMarkers } from "./SubcomponentMarkers"
 import { SiteMarker } from "./SiteMarker"
@@ -25,16 +26,18 @@ export function MapCanvas() {
   const [zoom, setZoom] = useState(getInitialViewState().zoom)
 
   const selectedSite = useExploreStore((state) => state.selectedSite)
-  const { sites, subcomponentsData } = useHeritageData()
-  const { clusters, supercluster } = useMapClustering(sites, zoom)
+
+  const subcomponentsData = useHeritageStore((state) => state.subcomponentsData)
+
+  const filteredSites = useFilteredSites()
+
+  const { clusters, supercluster } = useMapClustering(filteredSites, zoom)
+
   const { handleSiteSelect } = useSiteSelection()
 
   const handleSiteClick = (site: HeritageSiteProperties) => {
     handleSiteSelect(site, subcomponentsData)
   }
-
-
-
 
   return (
     <div className="relative h-screen">

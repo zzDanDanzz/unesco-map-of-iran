@@ -6,7 +6,7 @@ import {
   type SymbolLayerSpecification,
 } from "react-map-gl/maplibre"
 import { useExploreStore } from "@/stores/exploreStore"
-import { useHeritageData } from "../hooks/useHeritageData"
+import { useHeritageStore } from "@/stores/heritageStore"
 
 import Supercluster from "supercluster"
 import type { ClusterProps, HeritageSiteProperties } from "../types"
@@ -25,7 +25,7 @@ interface SiteLabelsProps {
 export function SiteLabels({ clusters }: SiteLabelsProps) {
   const { current: map } = useMap()
   const selectedSite = useExploreStore((state) => state.selectedSite)
-  const { subcomponentsData } = useHeritageData()
+  const subcomponentsData = useHeritageStore((state) => state.subcomponentsData)
 
   useEffect(() => {
     if (!map) return

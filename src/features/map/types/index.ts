@@ -9,6 +9,7 @@ export interface HeritageSiteProperties {
   images_urls: string[]
   id_no: string
   main_image_author?: string
+  eras?: string[]
 }
 
 export type HeritageSite = Feature<Point, HeritageSiteProperties>
