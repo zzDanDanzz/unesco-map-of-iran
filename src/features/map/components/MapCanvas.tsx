@@ -9,6 +9,7 @@ import { ClusterMarker } from "./ClusterMarker"
 import { SubcomponentMarkers } from "./SubcomponentMarkers"
 import { SiteMarker } from "./SiteMarker"
 import { type HeritageSiteProperties, type ClusterProps } from "../types"
+import { SiteLabels } from "./SiteLabels"
 
 const getInitialViewState = () => {
   const isMobile = window.innerWidth < 768
@@ -35,6 +36,8 @@ export function MapCanvas() {
   if (isLoading) {
     // Optional: add a subtle loading state overlay instead of returning null
   }
+
+
 
   return (
     <div className="relative h-screen">
@@ -92,6 +95,8 @@ export function MapCanvas() {
             )
           })
         )}
+
+        <SiteLabels clusters={clusters} />
       </Map>
     </div>
   )
