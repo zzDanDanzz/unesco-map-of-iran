@@ -25,7 +25,7 @@ export function MapCanvas() {
   const [viewState, setViewState] = useState(getInitialViewState)
 
   const selectedSite = useExploreStore((state) => state.selectedSite)
-  const { sites, subcomponentsData, isLoading } = useHeritageData()
+  const { sites, subcomponentsData } = useHeritageData()
   const { clusters, supercluster } = useMapClustering(sites, viewState.zoom)
   const { handleSiteSelect } = useSiteSelection()
 
@@ -33,9 +33,6 @@ export function MapCanvas() {
     handleSiteSelect(site, subcomponentsData)
   }
 
-  if (isLoading) {
-    // Optional: add a subtle loading state overlay instead of returning null
-  }
 
 
 

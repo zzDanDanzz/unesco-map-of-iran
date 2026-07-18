@@ -14,7 +14,8 @@ import { useSiteSelection } from "../hooks/useSiteSelection"
 export function ExplorerPanel() {
   const { sites, subcomponentsData } = useHeritageData()
   const selectedSite = useExploreStore((state) => state.selectedSite)
-  const { handleSiteSelect, handleSiteDeselect, handleSubcomponentSelect } = useSiteSelection()
+  const { handleSiteSelect, handleSiteDeselect, handleSubcomponentSelect } =
+    useSiteSelection()
   const itemRefs = useRef<Map<string, HTMLLIElement>>(new Map())
 
   const selectSite = (site: (typeof sites)[0]) => {
@@ -113,6 +114,15 @@ export function ExplorerPanel() {
                       >
                         {props.name_en}
                       </span>
+
+                      {isMulti && (
+                        <span
+                          className="mt-0.5 ml-auto shrink-0 text-xs font-medium text-muted-foreground/70 data-[selected=true]:text-white/70"
+                          data-selected={isSelected}
+                        >
+                          {subcomponents.length}
+                        </span>
+                      )}
                     </div>
                   </div>
 
@@ -128,7 +138,11 @@ export function ExplorerPanel() {
                               onClick={(e) => {
                                 e.stopPropagation()
                                 if (selectedSite?.id_no !== props.id_no) {
-                                  handleSiteSelect(site.properties, subcomponentsData, false)
+                                  handleSiteSelect(
+                                    site.properties,
+                                    subcomponentsData,
+                                    false
+                                  )
                                 }
                                 handleSubcomponentSelect(sub)
                               }}
