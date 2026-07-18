@@ -100,7 +100,7 @@ export function SiteDetailsPanel() {
                 <Carousel opts={{ loop: true }} setApi={setApi}>
                   <CarouselContent>
                     {carouselImages.map((url, i) => (
-                      <CarouselItem key={i}>
+                      <CarouselItem key={url}>
                         <div
                           className="group relative aspect-video w-full cursor-pointer overflow-hidden"
                           onClick={() => setFullScreenImageIndex(i)}

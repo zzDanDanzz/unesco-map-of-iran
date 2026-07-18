@@ -60,6 +60,7 @@ export function SubcomponentPopup({
             className="h-32 w-full overflow-hidden bg-muted cursor-pointer"
           >
             <img
+              key={activeImgUrl}
               src={activeImgUrl}
               alt={activeFeature.properties?.name || "Image"}
               className="h-full w-full object-cover transition-transform hover:scale-105"
