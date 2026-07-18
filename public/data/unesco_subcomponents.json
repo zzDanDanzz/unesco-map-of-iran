@@ -383,7 +383,7 @@
           "ref": "1262-003",
           "img": "/images/1262-006-{size}.webp",
           "parent_id": "1262",
-          "img_original": "/public/images/1262-006.png"
+          "img_original": "https://whc.unesco.org/uploads/nominations/1262.pdf (Fig 45)"
         },
         "geometry": {
           "type": "Point",
@@ -1334,7 +1334,7 @@
           "ref": "1647-002",
           "img": "/images/1647-002-{size}.webp",
           "parent_id": "1647",
-          "img_original": "/public/images/1647-002.png"
+          "img_original": "https://whc.unesco.org/document/181033 (Picture 12)"
         },
         "geometry": {
           "type": "Point",
@@ -1348,7 +1348,7 @@
           "ref": "1647-001",
           "img": "/images/1647-001-{size}.webp",
           "parent_id": "1647",
-          "img_original": "/public/images/1647-001.png"
+          "img_original": "https://whc.unesco.org/document/181033 (Picture 9)"
         },
         "geometry": {
           "type": "Point",
