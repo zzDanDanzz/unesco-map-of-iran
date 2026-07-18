@@ -90,7 +90,7 @@
       {
         "type": "Feature",
         "properties": {
-          "name": "Tappeh Nur Kuchak (not marked but the only unmarked site is 303300 4033850)",
+          "name": "Tappeh Nur Kuchak",
           "ref": "1188-012",
           "parent_id": "1188"
         },
@@ -212,6 +212,8 @@
         "properties": {
           "name": "Soltaniyeh Dome",
           "ref": "1188-001",
+          "img": "/images/whc-unesco-org/123745-{size}.webp",
+          "img_original": "https://whc.unesco.org/document/123745",
           "parent_id": "1188"
         },
         "geometry": {
