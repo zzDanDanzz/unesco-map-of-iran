@@ -77,20 +77,16 @@ export function ExplorerPanel() {
                     className="group flex w-full min-w-0 cursor-pointer items-start gap-1 rounded-md px-1.5 py-2 text-sm transition-colors select-none hover:bg-muted/60 data-[selected=true]:bg-blue-500 data-[selected=true]:text-white"
                   >
                     {isMulti ? (
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation()
-                          selectSite(site)
-                        }}
+                      <div
                         data-selected={isSelected}
-                        className="flex h-5 w-5 shrink-0 items-center justify-center rounded-sm text-muted-foreground hover:bg-muted-foreground/20 hover:text-foreground data-[selected=true]:text-white/80 data-[selected=true]:hover:bg-white/20 data-[selected=true]:hover:text-white"
+                        className="flex h-5 w-5 shrink-0 items-center justify-center text-muted-foreground group-hover:text-foreground data-[selected=true]:text-white/80 data-[selected=true]:group-hover:text-white"
                       >
                         {isExpanded ? (
                           <IconChevronDown size={14} />
                         ) : (
                           <IconChevronRight size={14} />
                         )}
-                      </button>
+                      </div>
                     ) : (
                       <div className="w-5 shrink-0" />
                     )}
