@@ -1,5 +1,5 @@
 import { useRef, useState } from "react"
-import Map, { type MapRef } from "react-map-gl/maplibre"
+import Map, { type MapRef, AttributionControl } from "react-map-gl/maplibre"
 import Supercluster from "supercluster"
 import { useExploreStore } from "@/stores/exploreStore"
 import { useMapClustering } from "../hooks/useMapClustering"
@@ -49,6 +49,7 @@ export function MapCanvas() {
         mapStyle="/style.json"
         style={{ width: "100%", height: "100%" }}
         maxZoom={19}
+        attributionControl={false}
       >
         {selectedSite ? (
           <SubcomponentMarkers
@@ -97,6 +98,7 @@ export function MapCanvas() {
         )}
 
         <SiteLabels clusters={clusters} />
+        <AttributionControl compact={true} position="bottom-right" />
       </Map>
     </div>
   )
