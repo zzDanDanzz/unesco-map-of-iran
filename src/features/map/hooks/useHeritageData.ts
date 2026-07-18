@@ -3,7 +3,7 @@ import { toast } from "sonner"
 import { useHeritageActions } from "@/stores/heritageStore"
 
 export function useHeritageData() {
-  const { setHeritageData } = useHeritageActions()
+  const { setHeritageData, setIsLoading } = useHeritageActions()
 
   useEffect(() => {
     Promise.all([
@@ -20,9 +20,11 @@ export function useHeritageData() {
         const sites = topLevelData?.features || []
         const subcomponents = subData || {}
         setHeritageData(sites, subcomponents)
+        setIsLoading(false)
       })
       .catch(() => {
         toast.error("Failed to load map data. Please try again later.")
+        setIsLoading(false)
       })
-  }, [setHeritageData])
+  }, [setHeritageData, setIsLoading])
 }

@@ -3,6 +3,7 @@ import type { FeatureCollection, Point } from 'geojson'
 import type { HeritageSite, SubcomponentProperties } from '@/features/map/types'
 
 interface HeritageState {
+  isLoading: boolean
   sites: HeritageSite[]
   subcomponentsData: Record<string, FeatureCollection<Point, SubcomponentProperties>>
   actions: {
@@ -10,10 +11,12 @@ interface HeritageState {
       sites: HeritageSite[],
       subcomponents: Record<string, FeatureCollection<Point, SubcomponentProperties>>
     ) => void
+    setIsLoading: (loading: boolean) => void
   }
 }
 
 export const useHeritageStore = create<HeritageState>((set) => ({
+  isLoading: true,
   sites: [],
   subcomponentsData: {},
   actions: {
@@ -21,6 +24,7 @@ export const useHeritageStore = create<HeritageState>((set) => ({
       sites,
       subcomponentsData: subcomponents,
     }),
+    setIsLoading: (loading) => set({ isLoading: loading }),
   }
 }))
 

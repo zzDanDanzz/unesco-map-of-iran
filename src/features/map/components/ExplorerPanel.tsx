@@ -30,6 +30,7 @@ const AVAILABLE_ERAS = [
 export function ExplorerPanel() {
   const filteredSites = useFilteredSites()
   const subcomponentsData = useHeritageStore((state) => state.subcomponentsData)
+  const isLoading = useHeritageStore((state) => state.isLoading)
 
   const selectedSite = useExploreStore((state) => state.selectedSite)
   const selectedCategory = useExploreStore((state) => state.selectedCategory)
@@ -128,7 +129,14 @@ export function ExplorerPanel() {
       </div>
 
       <ScrollArea className="h-[calc(100vh-11rem)]">
-        {sortedSites.length === 0 ? (
+        {isLoading ? (
+          <div className="flex h-48 flex-col items-center justify-center px-4 text-center">
+            <div className="mb-4 h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
+            <p className="text-sm font-medium text-foreground">
+              Loading data...
+            </p>
+          </div>
+        ) : sortedSites.length === 0 ? (
           /* Empty State */
           <div className="flex h-48 flex-col items-center justify-center px-4 text-center">
             <IconFilterOff
