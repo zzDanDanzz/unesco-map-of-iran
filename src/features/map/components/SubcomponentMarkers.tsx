@@ -3,16 +3,22 @@ import { SubcomponentPopup } from "./SubcomponentPopup"
 import { IconPhotoOff } from "@tabler/icons-react"
 import { type SubcomponentFeature } from "../types"
 import { useExploreStore, useExploreActions } from "@/stores/exploreStore"
+import { useSiteSelection } from "../hooks/useSiteSelection"
 
 interface SubcomponentMarkersProps {
   features: SubcomponentFeature[]
   mainImageUrl: string
 }
 
-export function SubcomponentMarkers({ features, mainImageUrl }: SubcomponentMarkersProps) {
+export function SubcomponentMarkers({
+  features,
+  mainImageUrl,
+}: SubcomponentMarkersProps) {
   const isSingleSubcomponent = features.length === 1
   const activeFeature = useExploreStore((state) => state.selectedSubcomponent)
   const { setSelectedSubcomponent } = useExploreActions()
+
+  const { handleSubcomponentSelect } = useSiteSelection()
 
   return (
     <>
@@ -34,10 +40,10 @@ export function SubcomponentMarkers({ features, mainImageUrl }: SubcomponentMark
             anchor="center"
             onClick={(e) => {
               e.originalEvent.stopPropagation()
-              setSelectedSubcomponent(feature)
+              handleSubcomponentSelect(feature)
             }}
           >
-            <button className="group flex flex-col items-center outline-none cursor-pointer">
+            <button className="group flex cursor-pointer flex-col items-center outline-none">
               <div className="h-14 w-14 overflow-hidden rounded-xl border-[3px] border-primary shadow-lg transition-transform duration-200 group-hover:scale-110">
                 {imgUrl ? (
                   <img
