@@ -11,10 +11,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.522118,
-            32.00857
-          ]
+          "coordinates": [48.522118, 32.00857]
         }
       }
     ]
@@ -31,10 +28,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            52.89028,
-            29.93444
-          ]
+          "coordinates": [52.89028, 29.93444]
         }
       }
     ]
@@ -51,10 +45,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            51.6777777777,
-            32.65745
-          ]
+          "coordinates": [51.6777777777, 32.65745]
         }
       }
     ]
@@ -71,10 +62,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            47.235,
-            36.60388889
-          ]
+          "coordinates": [47.235, 36.60388889]
         }
       }
     ]
@@ -91,10 +79,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            53.16729,
-            30.19383
-          ]
+          "coordinates": [53.16729, 30.19383]
         }
       }
     ]
@@ -111,10 +96,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.8057222222,
-            36.4297222222
-          ]
+          "coordinates": [48.8057222222, 36.4297222222]
         }
       },
       {
@@ -126,10 +108,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.8303333333,
-            36.4475555556
-          ]
+          "coordinates": [48.8303333333, 36.4475555556]
         }
       },
       {
@@ -141,10 +120,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.7825833333,
-            36.4393888889
-          ]
+          "coordinates": [48.7825833333, 36.4393888889]
         }
       },
       {
@@ -156,10 +132,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.8110833333,
-            36.4374722222
-          ]
+          "coordinates": [48.8110833333, 36.4374722222]
         }
       },
       {
@@ -171,10 +144,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.78625,
-            36.4640555556
-          ]
+          "coordinates": [48.78625, 36.4640555556]
         }
       },
       {
@@ -186,10 +156,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.7886944444,
-            36.4208333333
-          ]
+          "coordinates": [48.7886944444, 36.4208333333]
         }
       },
       {
@@ -201,10 +168,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.78275,
-            36.4536388889
-          ]
+          "coordinates": [48.78275, 36.4536388889]
         }
       },
       {
@@ -216,10 +180,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.7863055556,
-            36.4307222222
-          ]
+          "coordinates": [48.7863055556, 36.4307222222]
         }
       },
       {
@@ -231,10 +192,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.7830555556,
-            36.4384166667
-          ]
+          "coordinates": [48.7830555556, 36.4384166667]
         }
       },
       {
@@ -246,10 +204,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.7987777778,
-            36.4192222222
-          ]
+          "coordinates": [48.7987777778, 36.4192222222]
         }
       },
       {
@@ -261,10 +216,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.7960277778,
-            36.4339722222
-          ]
+          "coordinates": [48.7960277778, 36.4339722222]
         }
       },
       {
@@ -276,10 +228,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.8020277778,
-            36.4270277778
-          ]
+          "coordinates": [48.8020277778, 36.4270277778]
         }
       },
       {
@@ -291,10 +240,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.7946944444,
-            36.4176111111
-          ]
+          "coordinates": [48.7946944444, 36.4176111111]
         }
       },
       {
@@ -306,10 +252,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.8170277778,
-            36.4441666667
-          ]
+          "coordinates": [48.8170277778, 36.4441666667]
         }
       }
     ]
@@ -326,10 +269,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            58.3666666667,
-            29.11683
-          ]
+          "coordinates": [58.3666666667, 29.11683]
         }
       }
     ]
@@ -346,10 +286,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            47.4366666666,
-            34.3883333333
-          ]
+          "coordinates": [47.4366666666, 34.3883333333]
         }
       }
     ]
@@ -363,14 +300,12 @@
           "name": "The main chapel (Dzordzor)",
           "ref": "1262-007",
           "img": "/images/1262-007-{size}.webp",
-          "parent_id": "1262"
+          "parent_id": "1262",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Dzor_Dzor_church.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            44.4761111111,
-            39.1877777778
-          ]
+          "coordinates": [44.4761111111, 39.1877777778]
         }
       },
       {
@@ -383,10 +318,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            44.4761111111,
-            39.1877777778
-          ]
+          "coordinates": [44.4761111111, 39.1877777778]
         }
       },
       {
@@ -395,14 +327,12 @@
           "name": "The Monastery of Saint Thaddeus",
           "ref": "1262-001",
           "img": "/images/1262-001-{size}.webp",
-          "parent_id": "1262"
+          "parent_id": "1262",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Saint_Thaddeus_Monastery%2C_Iran%2C_northwestern_view.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            44.5444444444,
-            39.0922222222
-          ]
+          "coordinates": [44.5444444444, 39.0922222222]
         }
       },
       {
@@ -415,10 +345,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            44.5444444444,
-            39.0922222222
-          ]
+          "coordinates": [44.5444444444, 39.0922222222]
         }
       },
       {
@@ -427,14 +354,12 @@
           "name": "Chupan Chapel (Saint Stepanos Esemble)",
           "ref": "1262-006",
           "img": "/images/1262-006-{size}.webp",
-          "parent_id": "1262"
+          "parent_id": "1262",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/3/3a/ChapelofChupan.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            45.5727777778,
-            38.9752777778
-          ]
+          "coordinates": [45.5727777778, 38.9752777778]
         }
       },
       {
@@ -443,14 +368,12 @@
           "name": "Darresham Chapel (Saint Stepanos Esemble)",
           "ref": "1262-005",
           "img": "/images/1262-005-{size}.webp",
-          "parent_id": "1262"
+          "parent_id": "1262",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/7/75/Mary_church.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            45.4522222222,
-            38.99
-          ]
+          "coordinates": [45.4522222222, 38.99]
         }
       },
       {
@@ -459,14 +382,12 @@
           "name": "Chapel 5 (Sandokht) (Saint Thaddeus Ensemble)",
           "ref": "1262-003",
           "img": "/images/1262-006-{size}.webp",
-          "parent_id": "1262"
+          "parent_id": "1262",
+          "img_original": "/public/images/1262-006.png"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            44.5444444444,
-            39.0922222222
-          ]
+          "coordinates": [44.5444444444, 39.0922222222]
         }
       },
       {
@@ -475,14 +396,12 @@
           "name": "The main church (Monastery of Saint Stepanos Esemble)",
           "ref": "1262-004",
           "img": "/images/1262-004-{size}.webp",
-          "parent_id": "1262"
+          "parent_id": "1262",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Saint_Stephen_Church_-_8614907041.jpg/1280px-Saint_Stephen_Church_-_8614907041.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            45.4733333333,
-            38.9788888889
-          ]
+          "coordinates": [45.4733333333, 38.9788888889]
         }
       }
     ]
@@ -499,10 +418,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.8358333333,
-            32.0186111111
-          ]
+          "coordinates": [48.8358333333, 32.0186111111]
         }
       }
     ]
@@ -519,10 +435,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.2913888889,
-            38.2486111111
-          ]
+          "coordinates": [48.2913888889, 38.2486111111]
         }
       }
     ]
@@ -536,14 +449,12 @@
           "name": "Center",
           "ref": "1346-001",
           "img": "/images/1346-001-{size}.webp",
-          "parent_id": "1346"
+          "parent_id": "1346",
+          "img_original": "https://whc.unesco.org/en/documents/115056"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            46.2930555556,
-            38.0813888889
-          ]
+          "coordinates": [46.2930555556, 38.0813888889]
         }
       },
       {
@@ -555,10 +466,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            46.2980555556,
-            38.0847222222
-          ]
+          "coordinates": [46.2980555556, 38.0847222222]
         }
       },
       {
@@ -567,14 +475,12 @@
           "name": "Kabood Mosque",
           "ref": "1346-002",
           "img": "/images/1346-002-{size}.webp",
-          "parent_id": "1346"
+          "parent_id": "1346",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Blue_Mosque_Tabriz.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            46.3008333333,
-            38.0736111111
-          ]
+          "coordinates": [46.3008333333, 38.0736111111]
         }
       }
     ]
@@ -588,14 +494,12 @@
           "name": "Bagh-e Fin",
           "ref": "1372-004",
           "img": "/images/1372-004-{size}.webp",
-          "parent_id": "1372"
+          "parent_id": "1372",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Jard%C3%ADn_de_Fin%2C_Kashan%2C_Ir%C3%A1n%2C_2016-09-19%2C_DD_22.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            51.3724531554,
-            33.9462714748
-          ]
+          "coordinates": [51.3724531554, 33.9462714748]
         }
       },
       {
@@ -604,14 +508,12 @@
           "name": "Bagh-e Eram",
           "ref": "1372-002",
           "img": "/images/1372-002-{size}.webp",
-          "parent_id": "1372"
+          "parent_id": "1372",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/1/12/Bagh_Eram_Shiraz.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            52.5252777778,
-            29.6361111111
-          ]
+          "coordinates": [52.5252777778, 29.6361111111]
         }
       },
       {
@@ -620,14 +522,12 @@
           "name": "Bagh-e Abas Abad",
           "ref": "1372-005",
           "img": "/images/1372-005-{size}.webp",
-          "parent_id": "1372"
+          "parent_id": "1372",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/c/c0/%D8%B9%D8%A8%D8%A7%D8%B3_%D8%A7%D8%A8%D8%A7%D8%AF_%285%29.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            53.5938888889,
-            36.6638888889
-          ]
+          "coordinates": [53.5938888889, 36.6638888889]
         }
       },
       {
@@ -636,14 +536,12 @@
           "name": "Bagh-e Shahzadeh",
           "ref": "1372-006",
           "img": "/images/1372-006-{size}.webp",
-          "parent_id": "1372"
+          "parent_id": "1372",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/3/3c/%D8%A8%D8%A7%D8%BA_%D8%B4%D8%A7%D9%87%D8%B2%D8%A7%D8%AF%D9%87-%D9%85%D8%A7%D9%87%D8%A7%D9%86-%DA%A9%D8%B1%D9%85%D8%A7%D9%86.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            57.2830555556,
-            30.025
-          ]
+          "coordinates": [57.2830555556, 30.025]
         }
       },
       {
@@ -652,14 +550,12 @@
           "name": "Bagh-e Akbariyeh",
           "ref": "1372-009",
           "img": "/images/1372-009-{size}.webp",
-          "parent_id": "1372"
+          "parent_id": "1372",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/5/5b/%D9%85%D8%AC%D9%85%D9%88%D8%B9%D9%87_%D8%A7%DA%A9%D8%A8%D8%B1%DB%8C%D9%87%D8%8C_%D9%85%D8%B3%D8%AC%D8%AF_%D9%88_%D8%B9%D9%85%D8%A7%D8%B1%D8%AA_%D9%88_%D8%A8%D8%A7%D8%BA.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            59.2277777778,
-            32.8527777778
-          ]
+          "coordinates": [59.2277777778, 32.8527777778]
         }
       },
       {
@@ -668,14 +564,12 @@
           "name": "Bagh-e Dolat Abad",
           "ref": "1372-007",
           "img": "/images/1372-007-{size}.webp",
-          "parent_id": "1372"
+          "parent_id": "1372",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/0/06/Dolat_Abad_Garden_-_Pavilion_01.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            54.3519444444,
-            31.9033333333
-          ]
+          "coordinates": [54.3519444444, 31.9033333333]
         }
       },
       {
@@ -688,10 +582,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            54.4402777778,
-            31.5602777778
-          ]
+          "coordinates": [54.4402777778, 31.5602777778]
         }
       },
       {
@@ -700,14 +591,12 @@
           "name": "Bagh-e Chehel Sotun",
           "ref": "1372-003",
           "img": "/images/1372-003-{size}.webp",
-          "parent_id": "1372"
+          "parent_id": "1372",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Chehel_Sotoon.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            51.6722222222,
-            32.6575
-          ]
+          "coordinates": [51.6722222222, 32.6575]
         }
       },
       {
@@ -720,10 +609,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            53.1788758778,
-            30.2013918168
-          ]
+          "coordinates": [53.1788758778, 30.2013918168]
         }
       }
     ]
@@ -740,10 +626,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            51.6852777778,
-            32.6697222222
-          ]
+          "coordinates": [51.6852777778, 32.6697222222]
         }
       }
     ]
@@ -760,10 +643,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            55.169,
-            37.2580277778
-          ]
+          "coordinates": [55.169, 37.2580277778]
         }
       }
     ]
@@ -780,10 +660,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            51.4205111111,
-            35.6803666667
-          ]
+          "coordinates": [51.4205111111, 35.6803666667]
         }
       }
     ]
@@ -800,10 +677,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            55.3755555556,
-            30.1680555556
-          ]
+          "coordinates": [55.3755555556, 30.1680555556]
         }
       }
     ]
@@ -817,14 +691,12 @@
           "name": "Ardeshir Palace",
           "ref": "1455-002",
           "img": "/images/whc-unesco-org/137144-{size}.webp",
-          "parent_id": "1455"
+          "parent_id": "1455",
+          "img_original": "https://whc.unesco.org/en/documents/137144"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.2430555556,
-            32.1938888889
-          ]
+          "coordinates": [48.2430555556, 32.1938888889]
         }
       },
       {
@@ -833,14 +705,12 @@
           "name": "Susa archaeological complex",
           "ref": "1455-001",
           "img": "/images/1455-001-{size}.webp",
-          "parent_id": "1455"
+          "parent_id": "1455",
+          "img_original": "https://whc.unesco.org/en/documents/137114"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.2563722222,
-            32.1894583333
-          ]
+          "coordinates": [48.2563722222, 32.1894583333]
         }
       }
     ]
@@ -857,10 +727,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            61.3277777778,
-            30.5938888889
-          ]
+          "coordinates": [61.3277777778, 30.5938888889]
         }
       }
     ]
@@ -877,10 +744,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            58.8388888889,
-            30.2161111111
-          ]
+          "coordinates": [58.8388888889, 30.2161111111]
         }
       }
     ]
@@ -894,14 +758,12 @@
           "name": "Akbar Abad",
           "ref": "1506-011",
           "img": "/images/whc-unesco-org/141566-{size}.webp",
-          "parent_id": "1506"
+          "parent_id": "1506",
+          "img_original": "https://whc.unesco.org/document/141566"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            58.3986111111,
-            29.0894444444
-          ]
+          "coordinates": [58.3986111111, 29.0894444444]
         }
       },
       {
@@ -910,14 +772,12 @@
           "name": "Ghasem Abad",
           "ref": "1506-010",
           "img": "/images/whc-unesco-org/141567-{size}.webp",
-          "parent_id": "1506"
+          "parent_id": "1506",
+          "img_original": "https://whc.unesco.org/document/141567"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            58.3988888889,
-            29.0902777778
-          ]
+          "coordinates": [58.3988888889, 29.0902777778]
         }
       },
       {
@@ -926,14 +786,12 @@
           "name": "Qanat of Zarch",
           "ref": "1506-003",
           "img": "/images/whc-unesco-org/141568-{size}.webp",
-          "parent_id": "1506"
+          "parent_id": "1506",
+          "img_original": "https://whc.unesco.org/document/141568"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            54.369128201,
-            31.9074111424
-          ]
+          "coordinates": [54.369128201, 31.9074111424]
         }
       },
       {
@@ -942,14 +800,12 @@
           "name": "Qasabeh Gonabad",
           "ref": "1506-001",
           "img": "/images/whc-unesco-org/141569-{size}.webp",
-          "parent_id": "1506"
+          "parent_id": "1506",
+          "img_original": "https://whc.unesco.org/document/141569"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            58.6544444444,
-            34.29
-          ]
+          "coordinates": [58.6544444444, 34.29]
         }
       },
       {
@@ -958,14 +814,12 @@
           "name": "Qanat of Vazvan",
           "ref": "1506-006",
           "img": "/images/whc-unesco-org/141570-{size}.webp",
-          "parent_id": "1506"
+          "parent_id": "1506",
+          "img_original": "https://whc.unesco.org/document/141570"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            51.1782763703,
-            33.4317415323
-          ]
+          "coordinates": [51.1782763703, 33.4317415323]
         }
       },
       {
@@ -974,14 +828,12 @@
           "name": "Mozd Abad Qanat",
           "ref": "1506-007",
           "img": "/images/whc-unesco-org/141565-{size}.webp",
-          "parent_id": "1506"
+          "parent_id": "1506",
+          "img_original": "https://whc.unesco.org/document/141565"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            51.600672942,
-            33.2590794214
-          ]
+          "coordinates": [51.600672942, 33.2590794214]
         }
       },
       {
@@ -990,14 +842,12 @@
           "name": "Qanat of Baladeh",
           "ref": "1506-002",
           "img": "/images/whc-unesco-org/141582-{size}.webp",
-          "parent_id": "1506"
+          "parent_id": "1506",
+          "img_original": "https://whc.unesco.org/document/141582"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            58.3736686016,
-            34.1355177615
-          ]
+          "coordinates": [58.3736686016, 34.1355177615]
         }
       },
       {
@@ -1006,14 +856,12 @@
           "name": "Qanat of the Moon",
           "ref": "1506-008",
           "img": "/images/whc-unesco-org/141561-{size}.webp",
-          "parent_id": "1506"
+          "parent_id": "1506",
+          "img_original": "https://whc.unesco.org/document/141561"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            52.375,
-            33.3791666667
-          ]
+          "coordinates": [52.375, 33.3791666667]
         }
       },
       {
@@ -1022,14 +870,12 @@
           "name": "Qanat of Gowhariz",
           "ref": "1506-009",
           "img": "/images/whc-unesco-org/141571-{size}.webp",
-          "parent_id": "1506"
+          "parent_id": "1506",
+          "img_original": "https://whc.unesco.org/document/141571"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            57.1141895875,
-            30.0439893975
-          ]
+          "coordinates": [57.1141895875, 30.0439893975]
         }
       },
       {
@@ -1038,14 +884,12 @@
           "name": "Ebrahim Abad Qanat",
           "ref": "1506-005",
           "img": "/images/whc-unesco-org/141577-{size}.webp",
-          "parent_id": "1506"
+          "parent_id": "1506",
+          "img_original": "https://whc.unesco.org/document/141577"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            50.0252777778,
-            34.0941666666
-          ]
+          "coordinates": [50.0252777778, 34.0941666666]
         }
       },
       {
@@ -1054,14 +898,12 @@
           "name": "Hasam Abad-e Moshir Qanat",
           "ref": "1506-004",
           "img": "/images/whc-unesco-org/141572-{size}.webp",
-          "parent_id": "1506"
+          "parent_id": "1506",
+          "img_original": "https://whc.unesco.org/document/141572"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            54.4127027741,
-            31.5824806019
-          ]
+          "coordinates": [54.4127027741, 31.5824806019]
         }
       }
     ]
@@ -1075,14 +917,12 @@
           "name": "Area 1",
           "ref": "1544-001",
           "img": "/images/1544-001-{size}.webp",
-          "parent_id": "1544"
+          "parent_id": "1544",
+          "img_original": "https://whc.unesco.org/en/documents/158104"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            54.3691666667,
-            31.9013888889
-          ]
+          "coordinates": [54.3691666667, 31.9013888889]
         }
       },
       {
@@ -1091,14 +931,12 @@
           "name": "Area 2",
           "ref": "1544-002",
           "img": "/images/1544-002-{size}.webp",
-          "parent_id": "1544"
+          "parent_id": "1544",
+          "img_original": "https://whc.unesco.org/en/documents/158105"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            54.3730555556,
-            31.8836111111
-          ]
+          "coordinates": [54.3730555556, 31.8836111111]
         }
       },
       {
@@ -1107,14 +945,12 @@
           "name": "Area 3",
           "ref": "1544-003",
           "img": "/images/whc-unesco-org/158106-{size}.webp",
-          "parent_id": "1544"
+          "parent_id": "1544",
+          "img_original": "https://whc.unesco.org/en/documents/158106"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            54.3513888889,
-            31.9033333333
-          ]
+          "coordinates": [54.3513888889, 31.9033333333]
         }
       }
     ]
@@ -1128,14 +964,12 @@
           "name": "Bishapur: Shapur cave",
           "ref": "1568-007",
           "img": "/images/1568-007-{size}.webp",
-          "parent_id": "1568"
+          "parent_id": "1568",
+          "img_original": "https://en.wikipedia.org/wiki/File:Shapour_statue.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            51.6130555556,
-            29.8068333333
-          ]
+          "coordinates": [51.6130555556, 29.8068333333]
         }
       },
       {
@@ -1144,14 +978,12 @@
           "name": "Firuzabad : Qaleh Dokhtar",
           "ref": "1568-001",
           "img": "/images/1568-001-{size}.webp",
-          "parent_id": "1568"
+          "parent_id": "1568",
+          "img_original": "https://en.wikipedia.org/wiki/File:Dokhtar_Castle_Firuzabad_Hadi_Karimi.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            52.5300861111,
-            28.9208888889
-          ]
+          "coordinates": [52.5300861111, 28.9208888889]
         }
       },
       {
@@ -1160,14 +992,12 @@
           "name": "Firuzabad: Ardashir Palace",
           "ref": "1568-005",
           "img": "/images/1568-005-{size}.webp",
-          "parent_id": "1568"
+          "parent_id": "1568",
+          "img_original": "https://en.wikipedia.org/wiki/File:Firozahur.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            52.5392138889,
-            28.8979805556
-          ]
+          "coordinates": [52.5392138889, 28.8979805556]
         }
       },
       {
@@ -1176,14 +1006,12 @@
           "name": "Firuzabad: Ardashir Khurreh",
           "ref": "1568-004",
           "img": "/images/1568-004-{size}.webp",
-          "parent_id": "1568"
+          "parent_id": "1568",
+          "img_original": "https://en.wikipedia.org/wiki/File:Tour_de_Gur.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            52.5325416667,
-            28.8521472222
-          ]
+          "coordinates": [52.5325416667, 28.8521472222]
         }
       },
       {
@@ -1192,14 +1020,12 @@
           "name": "Sarvestan: Sarvestan Monument",
           "ref": "1568-008",
           "img": "/images/1568-008-{size}.webp",
-          "parent_id": "1568"
+          "parent_id": "1568",
+          "img_original": "https://en.wikipedia.org/wiki/File:Both_domes_of_Sarvestan_Palace.JPG"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            53.2310666667,
-            29.1955388889
-          ]
+          "coordinates": [53.2310666667, 29.1955388889]
         }
       },
       {
@@ -1208,14 +1034,12 @@
           "name": "Firuzabad : Ardashir investiture Relief",
           "ref": "1568-002",
           "img": "/images/1568-002-{size}.webp",
-          "parent_id": "1568"
+          "parent_id": "1568",
+          "img_original": "https://en.wikipedia.org/wiki/File:Relief_Ardachir_Ist_(Firuzabad_II)_V1.JPG"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            52.5373944444,
-            28.9165555556
-          ]
+          "coordinates": [52.5373944444, 28.9165555556]
         }
       },
       {
@@ -1224,14 +1048,12 @@
           "name": "Firuzabad: The Victory Relief of Ardashir",
           "ref": "1568-003",
           "img": "/images/1568-003-{size}.webp",
-          "parent_id": "1568"
+          "parent_id": "1568",
+          "img_original": "https://en.wikipedia.org/wiki/File:ArdachirVictory01.JPG"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            52.5409166667,
-            28.9098722222
-          ]
+          "coordinates": [52.5409166667, 28.9098722222]
         }
       },
       {
@@ -1240,14 +1062,12 @@
           "name": "Bishapur : The city of Bishapur and its related components",
           "ref": "1568-006",
           "img": "/images/1568-006-{size}.webp",
-          "parent_id": "1568"
+          "parent_id": "1568",
+          "img_original": "https://en.wikipedia.org/wiki/File:Bishapur_(Iran)_Sassanid_Period_2.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            51.57045,
-            29.7774805556
-          ]
+          "coordinates": [51.57045, 29.7774805556]
         }
       }
     ]
@@ -1261,14 +1081,12 @@
           "name": "Boola",
           "ref": "1584bis-006",
           "img": "/images/whc-unesco-org/166795-{size}.webp",
-          "parent_id": "1584"
+          "parent_id": "1584",
+          "img_original": "https://whc.unesco.org/document/166795"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            53.39375,
-            36.0988305555
-          ]
+          "coordinates": [53.39375, 36.0988305555]
         }
       },
       {
@@ -1281,10 +1099,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.8323333334,
-            37.9355527777
-          ]
+          "coordinates": [48.8323333334, 37.9355527777]
         }
       },
       {
@@ -1293,14 +1108,12 @@
           "name": "Kojoor",
           "ref": "1584bis-010",
           "img": "/images/whc-unesco-org/166788-{size}.webp",
-          "parent_id": "1584"
+          "parent_id": "1584",
+          "img_original": "https://whc.unesco.org/document/166788"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            51.6676388889,
-            36.546025
-          ]
+          "coordinates": [51.6676388889, 36.546025]
         }
       },
       {
@@ -1309,14 +1122,12 @@
           "name": "Alimestan",
           "ref": "1584bis-007",
           "img": "/images/whc-unesco-org/166814-{size}.webp",
-          "parent_id": "1584"
+          "parent_id": "1584",
+          "img_original": "https://whc.unesco.org/document/166814"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            52.4039416667,
-            36.1735833334
-          ]
+          "coordinates": [52.4039416667, 36.1735833334]
         }
       },
       {
@@ -1329,10 +1140,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            54.9448888889,
-            36.8125805556
-          ]
+          "coordinates": [54.9448888889, 36.8125805556]
         }
       },
       {
@@ -1345,10 +1153,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            55.1009416667,
-            36.8158305556
-          ]
+          "coordinates": [55.1009416667, 36.8158305556]
         }
       },
       {
@@ -1357,14 +1162,12 @@
           "name": "Jahan Nama",
           "ref": "1584bis-005",
           "img": "/images/whc-unesco-org/166812-{size}.webp",
-          "parent_id": "1584"
+          "parent_id": "1584",
+          "img_original": "https://whc.unesco.org/document/166812"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            54.4015277778,
-            36.6652777778
-          ]
+          "coordinates": [54.4015277778, 36.6652777778]
         }
       },
       {
@@ -1377,10 +1180,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            52.1250555556,
-            36.2791083334
-          ]
+          "coordinates": [52.1250555556, 36.2791083334]
         }
       },
       {
@@ -1393,10 +1193,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            52.0610555556,
-            36.3074694444
-          ]
+          "coordinates": [52.0610555556, 36.3074694444]
         }
       },
       {
@@ -1405,14 +1202,12 @@
           "name": "Chahar-Bagh",
           "ref": "1584bis-011",
           "img": "/images/whc-unesco-org/166817-{size}.webp",
-          "parent_id": "1584"
+          "parent_id": "1584",
+          "img_original": "https://whc.unesco.org/document/166817"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            51.2171388889,
-            36.2585555556
-          ]
+          "coordinates": [51.2171388889, 36.2585555556]
         }
       },
       {
@@ -1425,10 +1220,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            49.1527472222,
-            37.0655555556
-          ]
+          "coordinates": [49.1527472222, 37.0655555556]
         }
       },
       {
@@ -1437,14 +1229,12 @@
           "name": "Khoshk-e-Daran",
           "ref": "1584bis-012",
           "img": "/images/whc-unesco-org/166836-{size}.webp",
-          "parent_id": "1584"
+          "parent_id": "1584",
+          "img_original": "https://whc.unesco.org/document/166836"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            51.0639694444,
-            36.7272472223
-          ]
+          "coordinates": [51.0639694444, 36.7272472223]
         }
       },
       {
@@ -1453,14 +1243,12 @@
           "name": "Golestan (North)",
           "ref": "1584bis-001",
           "img": "/images/whc-unesco-org/166800-{size}.webp",
-          "parent_id": "1584"
+          "parent_id": "1584",
+          "img_original": "https://whc.unesco.org/document/166800"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            55.824,
-            37.425
-          ]
+          "coordinates": [55.824, 37.425]
         }
       },
       {
@@ -1469,14 +1257,12 @@
           "name": "Golestan (South)",
           "ref": "1584bis-002",
           "img": "/images/whc-unesco-org/166802-{size}.webp",
-          "parent_id": "1584"
+          "parent_id": "1584",
+          "img_original": "https://whc.unesco.org/document/166802"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            55.826,
-            37.342
-          ]
+          "coordinates": [55.826, 37.342]
         }
       },
       {
@@ -1485,14 +1271,12 @@
           "name": "Siahroud-e-Roudbar",
           "ref": "1584bis-013",
           "img": "/images/whc-unesco-org/166819-{size}.webp",
-          "parent_id": "1584"
+          "parent_id": "1584",
+          "img_original": "https://whc.unesco.org/document/166819"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            49.6720277778,
-            36.899775
-          ]
+          "coordinates": [49.6720277778, 36.899775]
         }
       },
       {
@@ -1505,10 +1289,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.6825055556,
-            38.754475
-          ]
+          "coordinates": [48.6825055556, 38.754475]
         }
       },
       {
@@ -1521,10 +1302,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.6793027778,
-            38.4549666667
-          ]
+          "coordinates": [48.6793027778, 38.4549666667]
         }
       }
     ]
@@ -1541,10 +1319,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            51.3983333333,
-            35.6583055556
-          ]
+          "coordinates": [51.3983333333, 35.6583055556]
         }
       }
     ]
@@ -1558,14 +1333,12 @@
           "name": "Western Valley",
           "ref": "1647-002",
           "img": "/images/1647-002-{size}.webp",
-          "parent_id": "1647"
+          "parent_id": "1647",
+          "img_original": "/public/images/1647-002.png"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            46.1365138889,
-            34.9462916666
-          ]
+          "coordinates": [46.1365138889, 34.9462916666]
         }
       },
       {
@@ -1574,14 +1347,12 @@
           "name": "Central-Eastern Valley",
           "ref": "1647-001",
           "img": "/images/1647-001-{size}.webp",
-          "parent_id": "1647"
+          "parent_id": "1647",
+          "img_original": "/public/images/1647-001.png"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            46.4778472223,
-            35.1073555556
-          ]
+          "coordinates": [46.4778472223, 35.1073555556]
         }
       }
     ]
@@ -1595,14 +1366,12 @@
           "name": "Gaz",
           "ref": "1668-017",
           "img": "/images/1668-017-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Abbasi_Caravanserai_Gaz.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            51.6093222222,
-            32.8093583333
-          ]
+          "coordinates": [51.6093222222, 32.8093583333]
         }
       },
       {
@@ -1611,14 +1380,12 @@
           "name": "Mehr",
           "ref": "1668-020",
           "img": "/images/1668-020-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/8/85/Mehr_Caravanserai%2C_Davarzan%2C_Iran_20180310_Tasnim_15.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            57.1436027777,
-            36.2845916666
-          ]
+          "coordinates": [57.1436027777, 36.2845916666]
         }
       },
       {
@@ -1627,14 +1394,12 @@
           "name": "Titi",
           "ref": "1668-038",
           "img": "/images/1668-038-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/7/79/T%C4%ABt%C4%AB_K%C4%81rv%C4%81nsar%C4%81_2.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            49.9022361111,
-            37.044775
-          ]
+          "coordinates": [49.9022361111, 37.044775]
         }
       },
       {
@@ -1647,10 +1412,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            44.6235277778,
-            38.466
-          ]
+          "coordinates": [44.6235277778, 38.466]
         }
       },
       {
@@ -1663,10 +1425,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            56.9207416667,
-            37.1532944444
-          ]
+          "coordinates": [56.9207416667, 37.1532944444]
         }
       },
       {
@@ -1675,14 +1434,12 @@
           "name": "Khān",
           "ref": "1668-044",
           "img": "/images/1668-044-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/8/85/Khan_Caravanserai13.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            56.0704138889,
-            33.3663805556
-          ]
+          "coordinates": [56.0704138889, 33.3663805556]
         }
       },
       {
@@ -1691,14 +1448,12 @@
           "name": "Afzal",
           "ref": "1668-052",
           "img": "/images/1668-052-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Shushtar-Afzal_Alley.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.8521277778,
-            32.0439611111
-          ]
+          "coordinates": [48.8521277778, 32.0439611111]
         }
       },
       {
@@ -1707,14 +1462,12 @@
           "name": "Parand",
           "ref": "1668-004",
           "img": "/images/1668-004-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/9/91/Parand_stone_castle1.png"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            50.9745972223,
-            35.4582277778
-          ]
+          "coordinates": [50.9745972223, 35.4582277778]
         }
       },
       {
@@ -1723,14 +1476,12 @@
           "name": "Meybod",
           "ref": "1668-029",
           "img": "/images/1668-029-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/7/72/Caravansary_Courtyard_Meybod.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            54.0091944444,
-            32.227925
-          ]
+          "coordinates": [54.0091944444, 32.227925]
         }
       },
       {
@@ -1739,14 +1490,12 @@
           "name": "Sāeen",
           "ref": "1668-037",
           "img": "/images/1668-037-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Ks.SH.A3.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            47.8815861111,
-            38.0010444444
-          ]
+          "coordinates": [47.8815861111, 38.0010444444]
         }
       },
       {
@@ -1755,14 +1504,12 @@
           "name": "Rashti",
           "ref": "1668-049",
           "img": "/images/1668-049-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/7/75/%DA%A9%D8%A7%D8%B1%D9%88%D8%A7%D9%86%D8%B3%D8%B1%D8%A7%DB%8C_%D8%B1%D8%B4%D8%AA%DB%8C_%D8%B9%D9%82%D8%AF%D8%A7_2.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            53.6310527778,
-            32.4407222222
-          ]
+          "coordinates": [53.6310527778, 32.4407222222]
         }
       },
       {
@@ -1771,14 +1518,12 @@
           "name": "Bastak",
           "ref": "1668-053",
           "img": "/images/1668-053-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Bastak_Caravanserai_Borhan.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            54.3759722223,
-            27.1985
-          ]
+          "coordinates": [54.3759722223, 27.1985]
         }
       },
       {
@@ -1787,14 +1532,12 @@
           "name": "Mahyār",
           "ref": "1668-016",
           "img": "/images/1668-016-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Mahyar_Caravanserai_panorama.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            51.8097333333,
-            32.2650166667
-          ]
+          "coordinates": [51.8097333333, 32.2650166667]
         }
       },
       {
@@ -1803,14 +1546,12 @@
           "name": "Mazinān",
           "ref": "1668-019",
           "img": "/images/1668-019-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/6/69/%DA%A9%D8%A7%D8%B1%D9%88%D8%A7%D9%86%D8%B3%D8%B1%D8%A7%DB%8C_%D9%85%D8%B2%DB%8C%D9%86%D8%A7%D9%86.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            56.8064416667,
-            36.3078777778
-          ]
+          "coordinates": [56.8064416667, 36.3078777778]
         }
       },
       {
@@ -1819,14 +1560,12 @@
           "name": "Mayāmey",
           "ref": "1668-025",
           "img": "/images/1668-025-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/3/31/%DA%A9%D8%A7%D8%B1%D9%88%D8%A7%D9%86%D8%B3%D8%B1%D8%A7%DB%8C_%D9%85%DB%8C%D8%A7%D9%85%DB%8C_%D8%B4%D8%A7%D9%87%D8%B1%D9%88%D8%AF.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            55.6533,
-            36.4091861111
-          ]
+          "coordinates": [55.6533, 36.4091861111]
         }
       },
       {
@@ -1835,14 +1574,12 @@
           "name": "Farasfaj",
           "ref": "1668-030",
           "img": "/images/1668-030-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/7/71/Farasfaj_caravanserai_20190507_17.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.2829888889,
-            34.4879666666
-          ]
+          "coordinates": [48.2829888889, 34.4879666666]
         }
       },
       {
@@ -1851,14 +1588,12 @@
           "name": "Bisotūn",
           "ref": "1668-032",
           "img": "/images/1668-032-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/3/3c/%D9%82%D8%A7%D8%A8_%DA%A9%D8%A7%D8%B1%D9%88%D8%A7%D9%86%D8%B3%D8%B1%D8%A7.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            47.4349333333,
-            34.3845333333
-          ]
+          "coordinates": [47.4349333333, 34.3845333333]
         }
       },
       {
@@ -1871,10 +1606,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            46.86335,
-            38.3438944444
-          ]
+          "coordinates": [46.86335, 38.3438944444]
         }
       },
       {
@@ -1887,10 +1619,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            50.561525,
-            30.7882027777
-          ]
+          "coordinates": [50.561525, 30.7882027777]
         }
       },
       {
@@ -1903,10 +1632,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.2113361111,
-            33.2379555555
-          ]
+          "coordinates": [48.2113361111, 33.2379555555]
         }
       },
       {
@@ -1915,14 +1641,12 @@
           "name": "Āhovān",
           "ref": "1668-003",
           "img": "/images/1668-003-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/4/47/%27Shah_Soleimani%27_Caravanserai_%28old_Inn%29_%DA%A9%D8%A7%D8%B1%D9%88%D8%A7%D9%86%D8%B3%D8%B1%D8%A7%DB%8C_-%D8%B4%D8%A7%D9%87_%D8%B9%D8%A8%D8%A7%D8%B3%DB%8C-_%D8%B4%D8%A7%D9%87_%D8%B3%D9%84%DB%8C%D9%85%D8%A7%D9%86%DB%8C_%D8%A2%D9%87%D9%88%D8%A7%D9%86_-_panoramio.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            53.7301444445,
-            35.7705388889
-          ]
+          "coordinates": [53.7301444445, 35.7705388889]
         }
       },
       {
@@ -1931,14 +1655,12 @@
           "name": "Maranjāb",
           "ref": "1668-013",
           "img": "/images/1668-013-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Maranjab8.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            51.8123861111,
-            34.2991361111
-          ]
+          "coordinates": [51.8123861111, 34.2991361111]
         }
       },
       {
@@ -1947,14 +1669,12 @@
           "name": "Sarāyān",
           "ref": "1668-023",
           "img": "/images/1668-023-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/a/a2/%DA%A9%D8%A7%D8%B1%D9%88%D8%A7%D9%86%D8%B3%D8%B1%D8%A7%DB%8C_%D8%B3%D8%B1%D8%A7%DB%8C%D8%A7%D9%86_%D9%88_%D8%B1%D8%AF_%D8%B3%D8%AA%D8%A7%D8%B1%DA%AF%D8%A7%D9%86.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            58.5180166667,
-            33.8552861111
-          ]
+          "coordinates": [58.5180166667, 33.8552861111]
         }
       },
       {
@@ -1963,14 +1683,12 @@
           "name": "Kharānaq",
           "ref": "1668-048",
           "img": "/images/1668-048-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Kharanagh_caravansary_01.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            54.6679833334,
-            32.3449472222
-          ]
+          "coordinates": [54.6679833334, 32.3449472222]
         }
       },
       {
@@ -1983,10 +1701,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            52.4357861111,
-            32.7134305556
-          ]
+          "coordinates": [52.4357861111, 32.7134305556]
         }
       },
       {
@@ -1995,14 +1710,12 @@
           "name": "Miāndasht",
           "ref": "1668-027",
           "img": "/images/1668-027-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/4/43/DJI_0060-04_resize.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            56.0605777778,
-            36.4281305556
-          ]
+          "coordinates": [56.0605777778, 36.4281305556]
         }
       },
       {
@@ -2011,14 +1724,12 @@
           "name": "Zeynoddīn",
           "ref": "1668-028",
           "img": "/images/1668-028-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/5/54/%D9%82%D9%84%D8%B9%D9%87_%D8%B2%DB%8C%D9%86_%D8%A7%D9%84%D8%AF%DB%8C%D9%86.JPG"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            54.7068527778,
-            31.4118583333
-          ]
+          "coordinates": [54.7068527778, 31.4118583333]
         }
       },
       {
@@ -2027,14 +1738,12 @@
           "name": "Borāzjān",
           "ref": "1668-050",
           "img": "/images/1668-050-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/9/98/Fort_Borazjan.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            51.2082583333,
-            29.2671138889
-          ]
+          "coordinates": [51.2082583333, 29.2671138889]
         }
       },
       {
@@ -2043,14 +1752,12 @@
           "name": "Noushirvān",
           "ref": "1668-002",
           "img": "/images/1668-002-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/f/f5/%D9%82%D9%84%D8%B9%D9%87_%D9%82%D8%AF%D9%8A%D9%85%D9%8A_%D8%AF%D8%B1_%D8%A7%D8%B3%D8%AA%D8%A7%D9%86_%D8%B3%D9%85%D9%86%D8%A7%D9%86_Old_castle_in_semnan_iran_-_panoramio.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            53.7323722223,
-            35.7707305556
-          ]
+          "coordinates": [53.7323722223, 35.7707305556]
         }
       },
       {
@@ -2059,14 +1766,12 @@
           "name": "Amin Ābād",
           "ref": "1668-014",
           "img": "/images/1668-014-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/0/07/Iran_-_Izadkhast_-_Amin_Abad_-_Malek_Caravanserai_-_panoramio.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            52.0684472223,
-            31.6726944445
-          ]
+          "coordinates": [52.0684472223, 31.6726944445]
         }
       },
       {
@@ -2079,10 +1784,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            51.489525,
-            33.7686
-          ]
+          "coordinates": [51.489525, 33.7686]
         }
       },
       {
@@ -2091,14 +1793,12 @@
           "name": "Īzadkhāst",
           "ref": "1668-031",
           "img": "/images/1668-031-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Izadkhvast_Caravanserai_05.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            52.1332055556,
-            31.5133638889
-          ]
+          "coordinates": [52.1332055556, 31.5133638889]
         }
       },
       {
@@ -2111,10 +1811,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            52.7993638889,
-            32.9712055556
-          ]
+          "coordinates": [52.7993638889, 32.9712055556]
         }
       },
       {
@@ -2123,14 +1820,12 @@
           "name": "Tāj Ābād",
           "ref": "1668-046",
           "img": "/images/1668-046-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Taaj-abad-0297.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.2207277778,
-            34.8766333334
-          ]
+          "coordinates": [48.2207277778, 34.8766333334]
         }
       },
       {
@@ -2139,14 +1834,12 @@
           "name": "Zafarāniyeh",
           "ref": "1668-021",
           "img": "/images/1668-021-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/4/43/Zafaranie_Sabzevar_1.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            58.0862305555,
-            36.1657194444
-          ]
+          "coordinates": [58.0862305555, 36.1657194444]
         }
       },
       {
@@ -2159,10 +1852,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            58.0553861111,
-            34.7446361111
-          ]
+          "coordinates": [58.0553861111, 34.7446361111]
         }
       },
       {
@@ -2171,14 +1861,12 @@
           "name": "Yengeh Emām",
           "ref": "1668-034",
           "img": "/images/1668-034-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/f/f2/%D8%AD%DB%8C%D8%A7%D8%B7_%D9%85%D8%B1%DA%A9%D8%B2%DB%8C_%DA%A9%D8%A7%D8%B1%D9%88%D8%A7%D9%86%D8%B3%D8%B1%D8%A7%DB%8C_%DB%8C%D9%86%DA%AF%DB%8C_%D8%A7%D9%85%D8%A7%D9%85.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            50.7196222223,
-            35.9362861111
-          ]
+          "coordinates": [50.7196222223, 35.9362861111]
         }
       },
       {
@@ -2191,10 +1879,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            56.9791777778,
-            33.9915611111
-          ]
+          "coordinates": [56.9791777778, 33.9915611111]
         }
       },
       {
@@ -2203,14 +1888,12 @@
           "name": "Deyr-e Gachin",
           "ref": "1668-001",
           "img": "/images/1668-001-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/a/a4/%DA%A9%D8%A7%D8%B1%D9%88%D8%A7%D9%86%D8%B3%D8%B1%D8%A7%DB%8C_%D8%AF%DB%8C%D8%B1%DA%AF%DA%86%DB%8C%D9%86_%D9%82%D9%85%D8%8C_%D8%A8%D8%A7_%D9%82%D8%AF%D9%85%D8%AA_%D8%B3%D8%A7%D8%B3%D8%A7%D9%86%DB%8C%D8%8C_%D9%85%DB%8C%D8%B1%D8%A7%D8%AB_%D9%85%D9%84%DB%8C_20.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            51.4201361111,
-            35.0583527778
-          ]
+          "coordinates": [51.4201361111, 35.0583527778]
         }
       },
       {
@@ -2223,10 +1906,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            54.4840388889,
-            32.1622111111
-          ]
+          "coordinates": [54.4840388889, 32.1622111111]
         }
       },
       {
@@ -2235,14 +1915,12 @@
           "name": "Jamāl Ābād",
           "ref": "1668-009",
           "img": "/images/1668-009-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/7/7e/%D8%AC%D8%A7%D9%85%D8%A7%D9%84_%D8%A2%D9%88%D8%A7%DA%A9%D8%B1%D9%88%D8%A7%D9%86%D8%B3%D8%B1%D8%A7%D8%B3%DB%8C.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            47.8431,
-            37.2719138889
-          ]
+          "coordinates": [47.8431, 37.2719138889]
         }
       },
       {
@@ -2251,14 +1929,12 @@
           "name": "Abbās Ābād",
           "ref": "1668-026",
           "img": "/images/1668-026-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/a/a9/%DA%A9%D8%A7%D8%B1%D9%88%D8%A7%D9%86%D8%B3%D8%B1%D8%A7%DB%8C_%D8%B4%D8%A7%D9%87_%D8%B9%D8%A8%D8%A7%D8%B3%DB%8C_%D8%B1%D9%88%D8%B3%D8%AA%D8%A7%DB%8C_%D8%B9%D8%A8%D8%A7%D8%B3_%D8%A2%D8%A8%D8%A7%D8%AF_%D8%B4%D8%A7%D9%87%D8%B1%D9%88%D8%AF.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            56.387875,
-            36.3612194444
-          ]
+          "coordinates": [56.387875, 36.3612194444]
         }
       },
       {
@@ -2267,14 +1943,12 @@
           "name": "Ganjali Khān",
           "ref": "1668-033",
           "img": "/images/1668-033-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/4/42/Ganjali_Khan_Complex_13961227_09.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            57.0789361111,
-            30.2909555555
-          ]
+          "coordinates": [57.0789361111, 30.2909555555]
         }
       },
       {
@@ -2283,14 +1957,12 @@
           "name": "Khājeh Nazar",
           "ref": "1668-035",
           "img": "/images/1668-035-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Khajehnazar_carvansaray.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            45.5769722223,
-            38.9774444445
-          ]
+          "coordinates": [45.5769722223, 38.9774444445]
         }
       },
       {
@@ -2303,10 +1975,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            57.1404083333,
-            31.9400111111
-          ]
+          "coordinates": [57.1404083333, 31.9400111111]
         }
       },
       {
@@ -2315,14 +1984,12 @@
           "name": "Chāh kūrān",
           "ref": "1668-047",
           "img": "/images/1668-047-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/a/a0/%DA%A9%D8%A7%D8%B1%D9%88%D8%A7%D9%86_%D8%B3%D8%B1%D8%A7%DB%8C_%DA%86%D8%A7%D9%87_%DA%A9%D9%88%D8%B1%D8%A7%D9%86%28%DA%86%D8%A7%DA%A9%D9%88%D8%B1%D9%88%29.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            56.8501694444,
-            31.5693333334
-          ]
+          "coordinates": [56.8501694444, 31.5693333334]
         }
       },
       {
@@ -2335,10 +2002,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            54.4771083334,
-            32.1532444444
-          ]
+          "coordinates": [54.4771083334, 32.1532444444]
         }
       },
       {
@@ -2347,14 +2011,12 @@
           "name": "Qasr-e Bahrām",
           "ref": "1668-024",
           "img": "/images/1668-024-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/8/80/Bahram_Palace_26.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            52.1771361111,
-            34.7652805556
-          ]
+          "coordinates": [52.1771361111, 34.7652805556]
         }
       },
       {
@@ -2367,10 +2029,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            50.4469555555,
-            34.9908305555
-          ]
+          "coordinates": [50.4469555555, 34.9908305555]
         }
       },
       {
@@ -2379,14 +2038,12 @@
           "name": "Fakhr-e Dāvūd",
           "ref": "1668-011",
           "img": "/images/1668-011-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/3/33/%D9%81%D8%AE%D8%B1_1.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            59.3134861111,
-            35.9998861111
-          ]
+          "coordinates": [59.3134861111, 35.9998861111]
         }
       },
       {
@@ -2395,14 +2052,12 @@
           "name": "Sheikhali Khān",
           "ref": "1668-012",
           "img": "/images/1668-012-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/4/4a/14%DA%A9%D8%A7%D8%B1%D9%88%D8%A7%D9%86%D8%B3%D8%B1%D8%A7%DB%8C_%DA%86%D8%A7%D9%84%D9%87_%D8%B3%DB%8C%D8%A7%D9%87.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            51.3704027778,
-            32.8681583334
-          ]
+          "coordinates": [51.3704027778, 32.8681583334]
         }
       },
       {
@@ -2411,14 +2066,12 @@
           "name": "Robāt-e Sharaf",
           "ref": "1668-005",
           "img": "/images/1668-005-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/1/15/Ribat_Sharaf%2C_Sarakhs%2C_Iran%2C_May_2013.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            60.6551611111,
-            36.2665694444
-          ]
+          "coordinates": [60.6551611111, 36.2665694444]
         }
       },
       {
@@ -2427,14 +2080,12 @@
           "name": "Saʿadossaltaneh",
           "ref": "1668-054",
           "img": "/images/1668-054-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/0/08/MBZ8190005.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            50.0007083333,
-            36.2692944445
-          ]
+          "coordinates": [50.0007083333, 36.2692944445]
         }
       },
       {
@@ -2443,14 +2094,12 @@
           "name": "Abbās Ābād Tāybād",
           "ref": "1668-008",
           "img": "/images/1668-008-{size}.webp",
-          "parent_id": "1668"
+          "parent_id": "1668",
+          "img_original": "https://upload.wikimedia.org/wikipedia/commons/3/32/Abbas_aabaad_Nights..._01_%28cropped%29.jpg"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            60.7183666667,
-            34.9959361111
-          ]
+          "coordinates": [60.7183666667, 34.9959361111]
         }
       }
     ]
@@ -2467,10 +2116,7 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.5183333334,
-            34.8035555556
-          ]
+          "coordinates": [48.5183333334, 34.8035555556]
         }
       }
     ]
@@ -2484,14 +2130,12 @@
           "name": "Kunji Cave",
           "ref": "1744-005",
           "img": "/images/whc-unesco-org/220600-{size}.webp",
-          "parent_id": "1744"
+          "parent_id": "1744",
+          "img_original": "https://whc.unesco.org/en/documents/220600"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.3566861111,
-            33.4426277777
-          ]
+          "coordinates": [48.3566861111, 33.4426277777]
         }
       },
       {
@@ -2500,14 +2144,12 @@
           "name": "Kaldar Cave",
           "ref": "1744-001",
           "img": "/images/whc-unesco-org/219756-{size}.webp",
-          "parent_id": "1744"
+          "parent_id": "1744",
+          "img_original": "https://whc.unesco.org/document/219756"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.2926361111,
-            33.5573166667
-          ]
+          "coordinates": [48.2926361111, 33.5573166667]
         }
       },
       {
@@ -2516,14 +2158,12 @@
           "name": "Yafteh Cave",
           "ref": "1744-004",
           "img": "/images/whc-unesco-org/219758-{size}.webp",
-          "parent_id": "1744"
+          "parent_id": "1744",
+          "img_original": "https://whc.unesco.org/document/219758"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.2114555556,
-            33.5082666667
-          ]
+          "coordinates": [48.2114555556, 33.5082666667]
         }
       },
       {
@@ -2532,14 +2172,12 @@
           "name": "Ghamari Cave",
           "ref": "1744-002",
           "img": "/images/whc-unesco-org/219760-{size}.webp",
-          "parent_id": "1744"
+          "parent_id": "1744",
+          "img_original": "https://whc.unesco.org/document/219760"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.3455722222,
-            33.4921083333
-          ]
+          "coordinates": [48.3455722222, 33.4921083333]
         }
       },
       {
@@ -2548,14 +2186,12 @@
           "name": "Gilvaran Cave",
           "ref": "1744-003",
           "img": "/images/whc-unesco-org/220601-{size}.webp",
-          "parent_id": "1744"
+          "parent_id": "1744",
+          "img_original": "https://whc.unesco.org/document/220601"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.3156111111,
-            33.4700944445
-          ]
+          "coordinates": [48.3156111111, 33.4700944445]
         }
       },
       {
@@ -2564,14 +2200,12 @@
           "name": "Gar Arjeneh Rock-shelter",
           "ref": "1744-006",
           "img": "/images/whc-unesco-org/219754-{size}.webp",
-          "parent_id": "1744"
+          "parent_id": "1744",
+          "img_original": "https://whc.unesco.org/document/219754"
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [
-            48.3393444444,
-            33.4418472222
-          ]
+          "coordinates": [48.3393444444, 33.4418472222]
         }
       }
     ]
