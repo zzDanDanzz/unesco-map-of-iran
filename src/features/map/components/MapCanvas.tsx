@@ -22,11 +22,11 @@ const getInitialViewState = () => {
 
 export function MapCanvas() {
   const mapRef = useRef<MapRef>(null)
-  const [viewState, setViewState] = useState(getInitialViewState)
+  const [zoom, setZoom] = useState(getInitialViewState().zoom)
 
   const selectedSite = useExploreStore((state) => state.selectedSite)
   const { sites, subcomponentsData } = useHeritageData()
-  const { clusters, supercluster } = useMapClustering(sites, viewState.zoom)
+  const { clusters, supercluster } = useMapClustering(sites, zoom)
   const { handleSiteSelect } = useSiteSelection()
 
   const handleSiteClick = (site: HeritageSiteProperties) => {
@@ -41,8 +41,8 @@ export function MapCanvas() {
       <Map
         id="main-map"
         ref={mapRef}
-        {...viewState}
-        onMove={(e) => setViewState(e.viewState)}
+        initialViewState={getInitialViewState()}
+        onZoom={(e) => setZoom(e.viewState.zoom)}
         mapStyle="/style.json"
         style={{ width: "100%", height: "100%" }}
         maxZoom={19}
