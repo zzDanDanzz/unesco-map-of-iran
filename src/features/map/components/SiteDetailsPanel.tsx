@@ -78,7 +78,7 @@ export function SiteDetailsPanel() {
       >
         {selectedSite && (
           <>
-            <SheetHeader>
+            <SheetHeader className="pr-12">
               <SheetTitle>{selectedSite.name_en}</SheetTitle>
               <SheetDescription className="mt-1 flex items-center gap-2">
                 <Badge
