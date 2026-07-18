@@ -48,14 +48,14 @@ export function SiteLabels({ clusters }: SiteLabelsProps) {
       img.src = bgDataUrl
     }
 
-    if (map.getMap().loaded()) {
+    if (map.getMap().isStyleLoaded()) {
       addBgImage()
     } else {
-      map.on("load", addBgImage)
+      map.on("style.load", addBgImage)
     }
 
     return () => {
-      map.off("load", addBgImage)
+      map.off("style.load", addBgImage)
     }
   }, [map])
 
