@@ -12,6 +12,7 @@ import { SubcomponentMarkers } from "./SubcomponentMarkers"
 import { SiteMarker } from "./SiteMarker"
 import { type HeritageSiteProperties, type ClusterProps } from "../types"
 import { SiteLabels } from "./SiteLabels"
+import { useMediaQuery } from "../hooks/useMediaQuery"
 
 import { MapControls } from "./MapControls"
 import { getInitialViewState } from "../utils"
@@ -19,6 +20,7 @@ import { getInitialViewState } from "../utils"
 export function MapCanvas() {
   const mapRef = useRef<MapRef>(null)
   const [zoom, setZoom] = useState(getInitialViewState().zoom)
+  const isDesktop = useMediaQuery("(min-width: 768px)")
 
   const mapStyle = useMapStyleStore((state) => state.mapStyle)
   const selectedSite = useExploreStore((state) => state.selectedSite)
@@ -96,7 +98,14 @@ export function MapCanvas() {
 
           <SiteLabels clusters={clusters} />
           <MapControls />
-          <AttributionControl compact={true} position="bottom-right" />
+          <AttributionControl 
+            compact={true} 
+            position="bottom-right" 
+            style={{ 
+              marginRight: isDesktop ? undefined : "4rem", 
+              marginBottom: isDesktop ? undefined : "calc(2rem + env(safe-area-inset-bottom))" 
+            }} 
+          />
         </Map>
       )}
     </div>

@@ -24,12 +24,12 @@ export function MapControls() {
   }
 
   return (
-    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-row rounded-xl border bg-background/80 shadow-xl backdrop-blur-md overflow-hidden">
+    <div className="absolute z-10 flex rounded-xl border bg-background/80 shadow-xl backdrop-blur-md overflow-hidden bottom-8 right-4 mb-[env(safe-area-inset-bottom)] flex-col-reverse divide-y divide-y-reverse divide-border md:right-auto md:left-1/2 md:-translate-x-1/2 md:mb-0 md:flex-row md:divide-y-0 md:divide-x">
       <Button 
         variant="ghost" 
         size="icon" 
         onClick={handleZoomOut} 
-        className="rounded-none border-r h-9 w-9" 
+        className="rounded-none h-9 w-9" 
         title="Zoom Out"
         aria-label="Zoom Out"
       >
@@ -39,7 +39,7 @@ export function MapControls() {
         variant="ghost" 
         size="icon" 
         onClick={handleReset} 
-        className="rounded-none border-r h-9 w-9" 
+        className="rounded-none h-9 w-9" 
         title="Reset View"
         aria-label="Reset View"
       >

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Badge } from "@/components/ui/badge"
 
 import { useExploreStore, useExploreActions } from "@/stores/exploreStore"
@@ -10,8 +10,17 @@ import {
   IconFolderFilled,
   IconMapPinFilled,
   IconFilterOff,
+  IconList,
 } from "@tabler/icons-react"
 import { useSiteSelection } from "../hooks/useSiteSelection"
+import { useMediaQuery } from "../hooks/useMediaQuery"
+import {
+  Drawer,
+  DrawerContent,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer"
+import { Button } from "@/components/ui/button"
 
 const AVAILABLE_ERAS = [
   "Prehistoric",
@@ -26,7 +35,7 @@ const AVAILABLE_ERAS = [
   "Modern",
 ]
 
-export function ExplorerPanel() {
+function ExplorerPanelContent({ onSiteSelect }: { onSiteSelect?: () => void }) {
   const filteredSites = useFilteredSites()
   const subcomponentsData = useHeritageStore((state) => state.subcomponentsData)
   const isLoading = useHeritageStore((state) => state.isLoading)
@@ -45,6 +54,7 @@ export function ExplorerPanel() {
       handleSiteDeselect()
     } else {
       handleSiteSelect(site.properties, subcomponentsData, false)
+      if (onSiteSelect) onSiteSelect()
     }
   }
 
@@ -65,9 +75,9 @@ export function ExplorerPanel() {
   })
 
   return (
-    <div className="absolute top-4 left-4 z-10 hidden w-80 flex-col overflow-hidden rounded-xl border bg-background/80 shadow-xl backdrop-blur-md md:flex">
+    <>
       {/* Header & Clear Button */}
-      <div className="flex items-center justify-between border-b bg-muted/20 p-3">
+      <div className="flex items-center justify-between border-b bg-muted/20 p-3 shrink-0">
         <h2 className="px-2 text-sm font-semibold tracking-tight">Explorer</h2>
         {(selectedCategory !== "All" || selectedEras.length > 0) && (
           <button
@@ -80,7 +90,7 @@ export function ExplorerPanel() {
       </div>
 
       {/* Category Segmented Control */}
-      <div className="p-3 pb-2">
+      <div className="p-3 pb-2 shrink-0">
         <div className="relative flex rounded-lg border border-border/30 bg-muted/50 p-1">
           {(["All", "Cultural", "Natural"] as const).map((cat) => (
             <button
@@ -99,7 +109,7 @@ export function ExplorerPanel() {
       </div>
 
       {/* Eras Horizontal Scrollable Chips */}
-      <div className="border-b border-border/40">
+      <div className="border-b border-border/40 shrink-0">
         <div className="flex w-full space-x-1.5 overflow-x-auto whitespace-nowrap px-3 pb-2 pt-1 custom-scrollbar-horizontal">
           {AVAILABLE_ERAS.map((era) => {
             const isSelected = selectedEras.includes(era)
@@ -121,7 +131,7 @@ export function ExplorerPanel() {
         </div>
       </div>
 
-      <div className="h-[calc(100vh-11rem)] overflow-y-auto custom-scrollbar">
+      <div className="flex-1 overflow-y-auto custom-scrollbar min-h-0">
         {isLoading ? (
           <div className="flex h-48 flex-col items-center justify-center px-4 text-center">
             <div className="mb-4 h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
@@ -237,6 +247,7 @@ export function ExplorerPanel() {
                                     )
                                   }
                                   handleSubcomponentSelect(sub)
+                                  if (onSiteSelect) onSiteSelect()
                                 }}
                                 className="flex w-full min-w-0 cursor-pointer items-start gap-2 rounded-md px-2 py-2 text-xs text-muted-foreground transition-colors select-none hover:bg-muted/60"
                               >
@@ -263,6 +274,43 @@ export function ExplorerPanel() {
           </div>
         )}
       </div>
+    </>
+  )
+}
+
+export function ExplorerPanel() {
+  const isDesktop = useMediaQuery("(min-width: 768px)")
+  const [isOpen, setIsOpen] = useState(false)
+
+  if (isDesktop) {
+    return (
+      <div className="absolute top-4 left-4 z-10 w-80 flex-col overflow-hidden rounded-xl border bg-background/80 shadow-xl backdrop-blur-md flex max-h-[calc(100vh-2rem)]">
+        <ExplorerPanelContent />
+      </div>
+    )
+  }
+
+  return (
+    <div className="absolute bottom-8 left-4 z-10 flex mb-[env(safe-area-inset-bottom)]">
+      <Drawer open={isOpen} onOpenChange={setIsOpen}>
+        <DrawerTrigger asChild>
+          <Button 
+            size="icon" 
+            variant="ghost"
+            className="h-12 w-12 rounded-xl border bg-background/80 shadow-xl backdrop-blur-md hover:bg-background/90"
+          >
+            <IconList className="h-6 w-6" />
+          </Button>
+        </DrawerTrigger>
+        <DrawerContent className="max-h-[85vh]">
+          <div className="sr-only">
+             <DrawerTitle>Explorer</DrawerTitle>
+          </div>
+          <div className="flex flex-col h-[70vh] overflow-hidden">
+            <ExplorerPanelContent onSiteSelect={() => setIsOpen(false)} />
+          </div>
+        </DrawerContent>
+      </Drawer>
     </div>
   )
 }

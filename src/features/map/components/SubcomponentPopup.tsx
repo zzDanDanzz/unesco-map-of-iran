@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/tooltip"
 import { useExploreActions } from "@/stores/exploreStore"
 import { getAssetUrl } from "@/lib/utils"
+import { useMediaQuery } from "../hooks/useMediaQuery"
 
 interface SubcomponentPopupProps {
   activeFeature: SubcomponentFeature
@@ -23,6 +24,7 @@ export function SubcomponentPopup({
   isSingleSubcomponent,
   onClose,
 }: SubcomponentPopupProps) {
+  const isDesktop = useMediaQuery("(min-width: 768px)")
   const { setFullScreenImageIndex } = useExploreActions()
   const [longitude, latitude] = activeFeature.geometry.coordinates
   let activeImgUrl = activeFeature.properties?.img
@@ -32,6 +34,8 @@ export function SubcomponentPopup({
   if (!activeImgUrl && isSingleSubcomponent && mainImageUrl) {
     activeImgUrl = getAssetUrl(mainImageUrl.replace("{size}", "large"))
   }
+
+  if (!isDesktop) return null;
 
   return (
     <Popup
