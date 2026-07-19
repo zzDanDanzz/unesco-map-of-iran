@@ -27,6 +27,8 @@ export function SiteLabels({ clusters }: SiteLabelsProps) {
   const selectedSite = useExploreStore((state) => state.selectedSite)
   const subcomponentsData = useHeritageStore((state) => state.subcomponentsData)
 
+  const isSubcomponentView = !!selectedSite;
+
   useEffect(() => {
     if (!map) return
 
@@ -78,12 +80,12 @@ export function SiteLabels({ clusters }: SiteLabelsProps) {
   }, [selectedSite, subcomponentsData, clusters])
 
   const labelLayer: SymbolLayerSpecification = {
-    id: "site-labels",
+    id: isSubcomponentView ? "subcomponent-labels" : "site-labels",
     type: "symbol",
     source: "site-labels-source",
     minzoom: 5,
     layout: {
-      "text-field": selectedSite ? ["get", "name"] : ["get", "name_en"],
+      "text-field": isSubcomponentView ? ["get", "name"] : ["get", "name_en"],
       "text-size": 13,
       "text-anchor": "top",
       "text-offset": [0, 2.75],
@@ -98,7 +100,7 @@ export function SiteLabels({ clusters }: SiteLabelsProps) {
 
   return (
     <Source id="site-labels-source" type="geojson" data={labelData}>
-      <Layer {...labelLayer} />
+      <Layer key={labelLayer.id} {...labelLayer} />
     </Source>
   )
 }
