@@ -1,21 +1,25 @@
-# React + TypeScript + Vite + shadcn/ui
+# 🗺️ UNESCO World Heritage Sites of Iran
 
-This is a template for a new Vite project with React, TypeScript, and shadcn/ui.
+[View Live Deployment on GitHub Pages](https://zzdandanzz.github.io/unesco-map-of-iran/)
 
-## Adding components
+An interactive web mapping application visualizing the UNESCO World Heritage Sites in Iran.
 
-To add components to your app, run the following command:
+## 📖 Data Curation
 
-```bash
-npx shadcn@latest add button
-```
+The application's UX relies on custom, image-based map markers, but the original UNESCO dataset didn't specify images for each heritage site's subcomponents.
 
-This will place the ui components in the `src/components` directory.
+To bridge the gap, I manually matched photos from UNESCO's official website and Wikimedia with the subcomponents. It's not perfect. Some may be wrong matches, and some are still missing.
 
-## Using components
+## 🛠️ Tech Stack
 
-To use the components in your app, import them as follows:
+- **Framework**: React 19 + TypeScript + Vite
+- **Mapping**: MapLibre GL JS + React Map GL
+- **Basemap**: PMTiles (OSM)
+- **State Management**: Zustand
+- **Styling**: Tailwind + shadcn/ui
 
-```tsx
-import { Button } from "@/components/ui/button"
-```
+## 📜 License
+
+**Source Code:** The source code is licensed under the MIT License.
+
+**Data & Assets:** The geographical data, descriptions, and primary images are sourced from UNESCO. Supplemental images are sourced from Wikimedia Commons. Original attribution URLs and authors are preserved within the dataset properties (`img_original`, `main_image_author`). These assets remain subject to their respective licenses (primarily CC BY-SA and CC0) and are used here for educational and demonstrative purposes.
