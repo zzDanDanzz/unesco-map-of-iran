@@ -1,5 +1,6 @@
-import { useRef, useState } from "react"
-import Map, { type MapRef, AttributionControl } from "react-map-gl/maplibre"
+import { useEffect, useRef, useState } from "react"
+import { IconBrandGithub, IconInfoCircle } from "@tabler/icons-react"
+import Map, { type MapRef } from "react-map-gl/maplibre"
 import Supercluster from "supercluster"
 import { useExploreStore } from "@/stores/exploreStore"
 import { useMapClustering } from "../hooks/useMapClustering"
@@ -98,16 +99,88 @@ export function MapCanvas() {
 
           <SiteLabels clusters={clusters} />
           <MapControls />
-          <AttributionControl 
-            compact={true} 
-            position="bottom-right" 
-            style={{ 
-              marginRight: isDesktop ? undefined : "4rem", 
-              marginBottom: isDesktop ? undefined : "calc(2rem + env(safe-area-inset-bottom))" 
-            }} 
-          />
         </Map>
       )}
+
+      <CustomAttribution isDesktop={isDesktop} />
+    </div>
+  )
+}
+
+function CustomAttribution({ isDesktop }: { isDesktop: boolean }) {
+  const [isExpanded, setIsExpanded] = useState(false)
+
+  useEffect(() => {
+    if (!isExpanded || isDesktop) return
+    const handleDocumentClick = () => setIsExpanded(false)
+    const timeoutId = setTimeout(() => {
+      document.addEventListener("click", handleDocumentClick)
+    }, 0)
+    
+    return () => {
+      clearTimeout(timeoutId)
+      document.removeEventListener("click", handleDocumentClick)
+    }
+  }, [isExpanded, isDesktop])
+
+  if (isDesktop) {
+    return (
+      <div 
+        className="absolute z-10 flex flex-col items-end bottom-4 right-4 gap-1.5 rounded-xl border bg-background/80 shadow-xl backdrop-blur-md px-3 py-2 text-xs text-muted-foreground pointer-events-auto transition-all"
+      >
+        <a
+          href="https://github.com/zzdandanzz/unesco-map-of-iran"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-1.5 hover:text-foreground transition-colors font-medium"
+        >
+          <IconBrandGithub size={14} />
+          <span>GitHub Repo</span>
+        </a>
+
+        <div className="flex items-center gap-1">
+          <span>&copy;</span>
+          <a href="https://openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+            OpenStreetMap
+          </a>
+        </div>
+      </div>
+    )
+  }
+
+  if (!isExpanded) {
+    return (
+      <button
+        onClick={() => setIsExpanded(true)}
+        className="absolute z-10 right-[4rem] bottom-[calc(2rem+env(safe-area-inset-bottom))] flex items-center justify-center w-7 h-7 rounded-full border border-border/50 bg-background/60 backdrop-blur-md text-muted-foreground shadow-sm pointer-events-auto hover:bg-background/80 transition-colors"
+        aria-label="Show attribution"
+      >
+        <IconInfoCircle size={16} stroke={1.5} />
+      </button>
+    )
+  }
+
+  return (
+    <div 
+      onClick={(e) => e.stopPropagation()}
+      className="absolute z-10 flex flex-row items-center right-[4rem] bottom-[calc(2rem+env(safe-area-inset-bottom))] gap-3 rounded-lg border border-border/50 bg-background/60 backdrop-blur-md px-2 py-1 text-[10px] sm:text-xs text-muted-foreground pointer-events-auto shadow-sm transition-all"
+    >
+      <a
+        href="https://github.com/zzdandanzz/unesco-map-of-iran"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-1 hover:text-foreground transition-colors font-medium"
+      >
+        <IconBrandGithub size={12} />
+        <span>GitHub Repo</span>
+      </a>
+
+      <div className="flex items-center gap-1">
+        <span>&copy;</span>
+        <a href="https://openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+          OpenStreetMap
+        </a>
+      </div>
     </div>
   )
 }
