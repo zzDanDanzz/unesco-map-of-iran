@@ -151,3 +151,37 @@
 .custom-marker-popup.maplibregl-popup-anchor-right .maplibregl-popup-tip {
   border-left-color: var(--background);
 }
+
+@layer utilities {
+  /* Vertical Scrollbar */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--border);
+    border-radius: 20px;
+  }
+
+  /* Horizontal Scrollbar */
+  .custom-scrollbar-horizontal {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+  .custom-scrollbar-horizontal::-webkit-scrollbar {
+    height: 4px;
+  }
+  .custom-scrollbar-horizontal::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar-horizontal::-webkit-scrollbar-thumb {
+    background-color: var(--border);
+    border-radius: 20px;
+  }
+}

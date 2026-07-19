@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react"
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { Badge } from "@/components/ui/badge"
 
 import { useExploreStore, useExploreActions } from "@/stores/exploreStore"
@@ -101,34 +100,28 @@ export function ExplorerPanel() {
 
       {/* Eras Horizontal Scrollable Chips */}
       <div className="border-b border-border/40">
-        <ScrollArea
-          className="w-full px-3 pb-1 whitespace-nowrap"
-          scrollHideDelay={100}
-        >
-          <div className="flex space-x-1.5 pb-2">
-            {AVAILABLE_ERAS.map((era) => {
-              const isSelected = selectedEras.includes(era)
-              return (
-                <Badge
-                  key={era}
-                  variant={isSelected ? "default" : "outline"}
-                  onClick={() => toggleEra(era)}
-                  className={`cursor-pointer rounded-full px-2.5 py-0.5 text-[11px] font-medium transition-all ${
-                    isSelected
-                      ? "scale-[1.02] border-transparent bg-primary text-primary-foreground shadow-xs"
-                      : "border-border/60 text-muted-foreground hover:bg-muted/40 hover:text-foreground"
-                  }`}
-                >
-                  {era}
-                </Badge>
-              )
-            })}
-          </div>
-          <ScrollBar orientation="horizontal" className="h-1" />
-        </ScrollArea>
+        <div className="flex w-full space-x-1.5 overflow-x-auto whitespace-nowrap px-3 pb-2 pt-1 custom-scrollbar-horizontal">
+          {AVAILABLE_ERAS.map((era) => {
+            const isSelected = selectedEras.includes(era)
+            return (
+              <Badge
+                key={era}
+                variant={isSelected ? "default" : "outline"}
+                onClick={() => toggleEra(era)}
+                className={`cursor-pointer shrink-0 rounded-full px-2.5 py-0.5 text-[11px] font-medium transition-all ${
+                  isSelected
+                    ? "scale-[1.02] border-transparent bg-primary text-primary-foreground shadow-xs"
+                    : "border-border/60 text-muted-foreground hover:bg-muted/40 hover:text-foreground"
+                }`}
+              >
+                {era}
+              </Badge>
+            )
+          })}
+        </div>
       </div>
 
-      <ScrollArea className="h-[calc(100vh-11rem)]">
+      <div className="h-[calc(100vh-11rem)] overflow-y-auto custom-scrollbar">
         {isLoading ? (
           <div className="flex h-48 flex-col items-center justify-center px-4 text-center">
             <div className="mb-4 h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
@@ -269,7 +262,7 @@ export function ExplorerPanel() {
             </ul>
           </div>
         )}
-      </ScrollArea>
+      </div>
     </div>
   )
 }

@@ -23,6 +23,7 @@ export const useHeritageStore = create<HeritageState>((set) => ({
     setHeritageData: (sites, subcomponents) => set({
       sites,
       subcomponentsData: subcomponents,
+      isLoading: false,
     }),
     setIsLoading: (loading) => set({ isLoading: loading }),
   }
