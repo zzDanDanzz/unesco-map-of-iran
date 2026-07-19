@@ -2,19 +2,23 @@ import { useMap } from "react-map-gl/maplibre"
 import { IconPlus, IconMinus, IconHome } from "@tabler/icons-react"
 import { Button } from "@/components/ui/button"
 import { getInitialViewState } from "../utils"
+import { clearSavedViewState } from "../hooks/useSiteSelection"
 
 export function MapControls() {
   const { current: map } = useMap()
 
   const handleZoomIn = () => {
+    clearSavedViewState()
     map?.zoomIn({ duration: 300 })
   }
 
   const handleZoomOut = () => {
+    clearSavedViewState()
     map?.zoomOut({ duration: 300 })
   }
 
   const handleReset = () => {
+    clearSavedViewState()
     const { longitude, latitude, zoom } = getInitialViewState()
     map?.flyTo({
       center: [longitude, latitude],

@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { useMap } from "react-map-gl/maplibre"
 import bbox from "@turf/bbox"
 import { featureCollection } from "@turf/helpers"
@@ -5,6 +6,7 @@ import { useExploreActions } from "@/stores/exploreStore"
 import { type HeritageSiteProperties } from "../types"
 import type { FeatureCollection, Point } from "geojson"
 import type { SubcomponentProperties, SubcomponentFeature } from "../types"
+import type { MapLibreEvent } from "maplibre-gl"
 
 let previousViewState: {
   longitude: number
@@ -12,9 +14,29 @@ let previousViewState: {
   zoom: number
 } | null = null
 
+export const clearSavedViewState = () => {
+  previousViewState = null
+}
+
 export function useSiteSelection() {
   const { setSelectedSite, setSelectedSubcomponent } = useExploreActions()
   const { "main-map": mapInstance } = useMap()
+
+  useEffect(() => {
+    if (!mapInstance) return
+
+    const handleMoveStart = (e: MapLibreEvent) => {
+      if (e.originalEvent) {
+        clearSavedViewState()
+      }
+    }
+
+    mapInstance.on("movestart", handleMoveStart)
+
+    return () => {
+      mapInstance.off("movestart", handleMoveStart)
+    }
+  }, [mapInstance])
 
   const handleSiteSelect = (
     site: HeritageSiteProperties,
@@ -41,15 +63,14 @@ export function useSiteSelection() {
 
     const features = subcomponentsData[site.id_no]?.features
     if (features && features.length > 0) {
-      const EXPLORER_PANEL_WIDTH = 375
-      const DETAILS_PANEL_WIDTH = 450
+      const HORIZONTAL_PADDING = 450
       const VERTICAL_PADDING = 75
 
       const padding = {
         top: VERTICAL_PADDING,
         bottom: VERTICAL_PADDING,
-        left: EXPLORER_PANEL_WIDTH,
-        right: DETAILS_PANEL_WIDTH,
+        left: HORIZONTAL_PADDING,
+        right: HORIZONTAL_PADDING,
       }
 
       const featuresCollection = featureCollection(features)
