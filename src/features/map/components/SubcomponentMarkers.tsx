@@ -45,16 +45,21 @@ export function SubcomponentMarkers({
             }}
           >
             <button className="group flex cursor-pointer flex-col items-center outline-none">
-              <div className="h-14 w-14 overflow-hidden rounded-xl border-[3px] border-primary shadow-lg transition-transform duration-200 group-hover:scale-110">
+              <div className="relative h-14 w-14 overflow-hidden rounded-xl border-[3px] border-primary bg-muted shadow-lg transition-transform duration-200 group-hover:scale-110">
                 {imgUrl ? (
-                  <img
-                    src={imgUrl}
-                    alt={feature.properties?.name || "Image"}
-                    className="h-full w-full object-cover"
-                    loading="lazy"
-                  />
+                  <>
+                    <div className="absolute inset-0 flex items-center justify-center text-[9px] font-medium tracking-tighter text-muted-foreground/60 uppercase">
+                      loading
+                    </div>
+                    <img
+                      src={imgUrl}
+                      alt={feature.properties?.name || "Image"}
+                      className="absolute inset-0 z-10 h-full w-full object-cover"
+                      loading="lazy"
+                    />
+                  </>
                 ) : (
-                  <div className="flex h-full w-full items-center justify-center bg-muted text-muted-foreground">
+                  <div className="relative z-10 flex h-full w-full items-center justify-center bg-muted text-muted-foreground">
                     <IconPhotoOff className="h-6 w-6" />
                   </div>
                 )}

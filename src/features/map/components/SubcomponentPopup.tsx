@@ -1,6 +1,6 @@
 import { Popup } from "react-map-gl/maplibre"
 import { type SubcomponentFeature } from "../types"
-import { IconInfoCircle } from "@tabler/icons-react"
+import { IconInfoCircle, IconLoader2 } from "@tabler/icons-react"
 import {
   Tooltip,
   TooltipContent,
@@ -13,7 +13,8 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { useExploreActions } from "@/stores/exploreStore"
-import { getAssetUrl } from "@/lib/utils"
+import { getAssetUrl, cn } from "@/lib/utils"
+import { useState } from "react"
 
 interface SubcomponentPopupProps {
   activeFeature: SubcomponentFeature
@@ -63,13 +64,12 @@ export function SubcomponentPopup({
           <button 
             type="button"
             onClick={() => setFullScreenImageIndex(0, 'subcomponent')}
-            className="h-32 w-full overflow-hidden bg-muted cursor-pointer"
+            className="group relative h-32 w-full overflow-hidden bg-muted cursor-pointer"
           >
-            <img
+            <PopupImage
               key={activeImgUrl}
               src={activeImgUrl}
               alt={activeFeature.properties?.name || "Image"}
-              className="h-full w-full object-cover transition-transform hover:scale-105"
             />
           </button>
         )}
@@ -114,5 +114,28 @@ export function SubcomponentPopup({
         )}
       </div>
     </Popup>
+  )
+}
+
+function PopupImage({ src, alt }: { src: string; alt: string }) {
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  return (
+    <>
+      {!isLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center bg-muted/80 backdrop-blur-sm">
+          <IconLoader2 className="h-6 w-6 animate-spin text-muted-foreground/70" />
+        </div>
+      )}
+      <img
+        src={src}
+        alt={alt}
+        onLoad={() => setIsLoaded(true)}
+        className={cn(
+          "absolute inset-0 h-full w-full object-cover transition-all duration-700 group-hover:scale-105",
+          isLoaded ? "opacity-100 blur-0" : "opacity-0 blur-md scale-110"
+        )}
+      />
+    </>
   )
 }

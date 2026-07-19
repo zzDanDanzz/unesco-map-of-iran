@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/carousel"
 import { getAssetUrl, cn } from "@/lib/utils"
 import { useExploreActions, useExploreStore } from "@/stores/exploreStore"
-import { IconMaximize, IconX } from "@tabler/icons-react"
+import { IconMaximize, IconX, IconLoader2 } from "@tabler/icons-react"
 import { useState, useSyncExternalStore } from "react"
 import { useSiteSelection } from "../hooks/useSiteSelection"
 import { useMediaQuery } from "../hooks/useMediaQuery"
@@ -143,16 +143,15 @@ function SiteDetailsCard({ isMobile }: { isMobile: boolean }) {
             {carouselImages.map((url, i) => (
               <CarouselItem key={url}>
                 <div
-                  className="group relative aspect-video w-full cursor-pointer overflow-hidden"
+                  className="group relative aspect-video w-full cursor-pointer overflow-hidden bg-muted"
                   onClick={() => setFullScreenImageIndex(i)}
                 >
-                  <img
-                    src={getAssetUrl(url.replace("{size}", "large"))}
-                    alt={`${selectedSite.name_en} - Image ${i + 1}`}
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  <CarouselImage 
+                    src={getAssetUrl(url.replace("{size}", "large"))} 
+                    alt={`${selectedSite.name_en} - Image ${i + 1}`} 
                   />
-                  <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/10" />
-                  <div className="absolute top-2 right-2 opacity-0 transition-opacity group-hover:opacity-100">
+                  <div className="absolute inset-0 bg-black/0 transition-colors pointer-events-none group-hover:bg-black/10" />
+                  <div className="absolute top-2 right-2 opacity-0 transition-opacity pointer-events-none group-hover:opacity-100">
                     <div className="flex h-7 w-7 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm">
                       <IconMaximize size={16} />
                     </div>
@@ -204,5 +203,28 @@ function SiteDetailsCard({ isMobile }: { isMobile: boolean }) {
           )}
       </div>
     </div>
+  )
+}
+
+function CarouselImage({ src, alt }: { src: string; alt: string }) {
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  return (
+    <>
+      {!isLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center bg-muted/80 backdrop-blur-sm">
+          <IconLoader2 className="h-6 w-6 animate-spin text-muted-foreground/70" />
+        </div>
+      )}
+      <img
+        src={src}
+        alt={alt}
+        onLoad={() => setIsLoaded(true)}
+        className={cn(
+          "absolute inset-0 h-full w-full object-cover transition-all duration-700 group-hover:scale-105",
+          isLoaded ? "opacity-100 blur-0" : "opacity-0 blur-md scale-110"
+        )}
+      />
+    </>
   )
 }
