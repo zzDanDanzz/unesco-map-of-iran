@@ -39,7 +39,7 @@ export function MapCanvas() {
   }
 
   return (
-    <div className="relative h-safe-screen bg-background">
+    <div className="h-safe-screen relative bg-background">
       {mapStyle && (
         <Map
           id="main-map"
@@ -65,7 +65,9 @@ export function MapCanvas() {
                 return (
                   <ClusterMarker
                     key={`cluster-${cluster.id}`}
-                    cluster={cluster as Supercluster.ClusterFeature<ClusterProps>}
+                    cluster={
+                      cluster as Supercluster.ClusterFeature<ClusterProps>
+                    }
                     supercluster={supercluster}
                     onClick={() => {
                       const map = mapRef.current
@@ -78,7 +80,6 @@ export function MapCanvas() {
                       map?.flyTo({
                         center: [longitude, latitude],
                         zoom: expansionZoom,
-                        duration: 500,
                       })
                     }}
                   />
@@ -116,7 +117,7 @@ function CustomAttribution({ isDesktop }: { isDesktop: boolean }) {
     const timeoutId = setTimeout(() => {
       document.addEventListener("click", handleDocumentClick)
     }, 0)
-    
+
     return () => {
       clearTimeout(timeoutId)
       document.removeEventListener("click", handleDocumentClick)
@@ -125,14 +126,12 @@ function CustomAttribution({ isDesktop }: { isDesktop: boolean }) {
 
   if (isDesktop) {
     return (
-      <div 
-        className="absolute z-10 flex flex-col items-end bottom-4 right-4 gap-1.5 rounded-xl border bg-background/80 shadow-xl backdrop-blur-md px-3 py-2 text-xs text-muted-foreground pointer-events-auto transition-all"
-      >
+      <div className="pointer-events-auto absolute right-4 bottom-4 z-10 flex flex-col items-end gap-1.5 rounded-xl border bg-background/80 px-3 py-2 text-xs text-muted-foreground shadow-xl backdrop-blur-md transition-all">
         <a
           href="https://github.com/zzdandanzz/unesco-map-of-iran"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-1.5 hover:text-foreground transition-colors font-medium"
+          className="flex items-center gap-1.5 font-medium transition-colors hover:text-foreground"
         >
           <IconBrandGithub size={14} />
           <span>GitHub Repo</span>
@@ -140,7 +139,12 @@ function CustomAttribution({ isDesktop }: { isDesktop: boolean }) {
 
         <div className="flex items-center gap-1">
           <span>&copy;</span>
-          <a href="https://openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+          <a
+            href="https://openstreetmap.org/copyright"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-foreground"
+          >
             OpenStreetMap
           </a>
         </div>
@@ -152,7 +156,7 @@ function CustomAttribution({ isDesktop }: { isDesktop: boolean }) {
     return (
       <button
         onClick={() => setIsExpanded(true)}
-        className="absolute z-10 right-[4rem] bottom-[calc(2rem+env(safe-area-inset-bottom))] flex items-center justify-center w-7 h-7 rounded-full border border-border/50 bg-background/60 backdrop-blur-md text-muted-foreground shadow-sm pointer-events-auto hover:bg-background/80 transition-colors"
+        className="pointer-events-auto absolute right-[4rem] bottom-[calc(2rem+env(safe-area-inset-bottom))] z-10 flex h-7 w-7 items-center justify-center rounded-full border border-border/50 bg-background/60 text-muted-foreground shadow-sm backdrop-blur-md transition-colors hover:bg-background/80"
         aria-label="Show attribution"
       >
         <IconInfoCircle size={16} stroke={1.5} />
@@ -161,15 +165,15 @@ function CustomAttribution({ isDesktop }: { isDesktop: boolean }) {
   }
 
   return (
-    <div 
+    <div
       onClick={(e) => e.stopPropagation()}
-      className="absolute z-10 flex flex-row items-center right-[4rem] bottom-[calc(2rem+env(safe-area-inset-bottom))] gap-3 rounded-lg border border-border/50 bg-background/60 backdrop-blur-md px-2 py-1 text-[10px] sm:text-xs text-muted-foreground pointer-events-auto shadow-sm transition-all"
+      className="pointer-events-auto absolute right-[4rem] bottom-[calc(2rem+env(safe-area-inset-bottom))] z-10 flex flex-row items-center gap-3 rounded-lg border border-border/50 bg-background/60 px-2 py-1 text-[10px] text-muted-foreground shadow-sm backdrop-blur-md transition-all sm:text-xs"
     >
       <a
         href="https://github.com/zzdandanzz/unesco-map-of-iran"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-1 hover:text-foreground transition-colors font-medium"
+        className="flex items-center gap-1 font-medium transition-colors hover:text-foreground"
       >
         <IconBrandGithub size={12} />
         <span>GitHub Repo</span>
@@ -177,7 +181,12 @@ function CustomAttribution({ isDesktop }: { isDesktop: boolean }) {
 
       <div className="flex items-center gap-1">
         <span>&copy;</span>
-        <a href="https://openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+        <a
+          href="https://openstreetmap.org/copyright"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transition-colors hover:text-foreground"
+        >
           OpenStreetMap
         </a>
       </div>

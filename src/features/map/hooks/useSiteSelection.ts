@@ -69,6 +69,8 @@ export function useSiteSelection() {
         ? {
           left: 450,
           right: 450,
+          top: 0,
+          bottom: 0,
         }
         : {
           top: 100,
@@ -81,6 +83,7 @@ export function useSiteSelection() {
       const [minLng, minLat, maxLng, maxLat] = bbox(featuresCollection)
 
       if (features.length === 1) {
+        mapInstance.stop()
         mapInstance.flyTo({
           center: [minLng, minLat],
           zoom: 12,
@@ -94,9 +97,11 @@ export function useSiteSelection() {
             [maxLng, maxLat],
           ] as [[number, number], [number, number]]
 
+          mapInstance.stop()
           mapInstance.fitBounds(bounds, {
             padding,
             duration: 1000,
+            maxZoom: 16,
           })
         } catch (e) {
           console.error("Map bounds calculation failed:", e)
@@ -110,10 +115,12 @@ export function useSiteSelection() {
     setSelectedSubcomponent(null)
 
     if (mapInstance && previousViewState) {
+      mapInstance.stop()
       mapInstance.flyTo({
         center: [previousViewState.longitude, previousViewState.latitude],
         zoom: previousViewState.zoom,
         duration: 1000,
+        padding: { top: 0, bottom: 0, left: 0, right: 0 },
       })
       previousViewState = null
     }
@@ -126,6 +133,7 @@ export function useSiteSelection() {
 
     const [longitude, latitude] = feature.geometry.coordinates
 
+    mapInstance.stop()
     mapInstance.flyTo({
       center: [longitude, latitude],
       zoom: Math.max(mapInstance.getZoom(), 12),

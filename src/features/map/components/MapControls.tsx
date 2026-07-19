@@ -23,37 +23,36 @@ export function MapControls() {
     map?.flyTo({
       center: [longitude, latitude],
       zoom,
-      duration: 800,
     })
   }
 
   return (
-    <div className="absolute z-10 flex rounded-xl border bg-background/80 shadow-xl backdrop-blur-md overflow-hidden bottom-8 right-4 mb-[env(safe-area-inset-bottom)] flex-col-reverse divide-y divide-y-reverse divide-border md:right-auto md:left-1/2 md:-translate-x-1/2 md:mb-0 md:flex-row md:divide-y-0 md:divide-x">
-      <Button 
-        variant="ghost" 
-        size="icon" 
-        onClick={handleZoomOut} 
-        className="rounded-none h-9 w-9" 
+    <div className="absolute right-4 bottom-8 z-10 mb-[env(safe-area-inset-bottom)] flex flex-col-reverse divide-y divide-y-reverse divide-border overflow-hidden rounded-xl border bg-background/80 shadow-xl backdrop-blur-md md:right-auto md:left-1/2 md:mb-0 md:-translate-x-1/2 md:flex-row md:divide-x md:divide-y-0">
+      <Button
+        variant="ghost"
+        size="icon"
+        onClick={handleZoomOut}
+        className="h-9 w-9 rounded-none"
         title="Zoom Out"
         aria-label="Zoom Out"
       >
         <IconMinus className="h-4 w-4" />
       </Button>
-      <Button 
-        variant="ghost" 
-        size="icon" 
-        onClick={handleReset} 
-        className="rounded-none h-9 w-9" 
+      <Button
+        variant="ghost"
+        size="icon"
+        onClick={handleReset}
+        className="h-9 w-9 rounded-none"
         title="Reset View"
         aria-label="Reset View"
       >
         <IconHome className="h-4 w-4" />
       </Button>
-      <Button 
-        variant="ghost" 
-        size="icon" 
-        onClick={handleZoomIn} 
-        className="rounded-none h-9 w-9" 
+      <Button
+        variant="ghost"
+        size="icon"
+        onClick={handleZoomIn}
+        className="h-9 w-9 rounded-none"
         title="Zoom In"
         aria-label="Zoom In"
       >
