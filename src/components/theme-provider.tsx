@@ -58,6 +58,7 @@ function disableTransitionsTemporarily() {
   }
 }
 
+/*
 function isEditableTarget(target: EventTarget | null) {
   if (!(target instanceof HTMLElement)) {
     return false
@@ -76,6 +77,7 @@ function isEditableTarget(target: EventTarget | null) {
 
   return false
 }
+  */
 
 export function ThemeProvider({
   children,
@@ -85,12 +87,14 @@ export function ThemeProvider({
   ...props
 }: ThemeProviderProps) {
   const [theme, setThemeState] = React.useState<Theme>(() => {
-    const storedTheme = localStorage.getItem(storageKey)
-    if (isTheme(storedTheme)) {
-      return storedTheme
-    }
+    return "light" // Temporarily force light mode
 
-    return defaultTheme
+    // Commented out until dark mode is ready:
+    // const storedTheme = localStorage.getItem(storageKey)
+    // if (isTheme(storedTheme)) {
+    //   return storedTheme
+    // }
+    // return defaultTheme
   })
 
   const setTheme = React.useCallback(
@@ -139,6 +143,7 @@ export function ThemeProvider({
     }
   }, [theme, applyTheme])
 
+  /* Temporarily disabling the theme toggle shortcut
   React.useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.repeat) {
@@ -178,6 +183,7 @@ export function ThemeProvider({
       window.removeEventListener("keydown", handleKeyDown)
     }
   }, [storageKey])
+  */
 
   React.useEffect(() => {
     const handleStorageChange = (event: StorageEvent) => {
