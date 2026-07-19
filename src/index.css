@@ -184,4 +184,9 @@
     background-color: var(--border);
     border-radius: 20px;
   }
+
+  .h-safe-screen {
+    height: 100vh;
+    height: 100dvh;
+  }
 }

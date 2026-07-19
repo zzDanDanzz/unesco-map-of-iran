@@ -38,7 +38,7 @@ export function MapCanvas() {
   }
 
   return (
-    <div className="relative h-screen bg-background">
+    <div className="relative h-safe-screen bg-background">
       {mapStyle && (
         <Map
           id="main-map"
