@@ -1,5 +1,6 @@
 import { Marker } from "react-map-gl/maplibre"
 import { type HeritageSiteProperties } from "../types"
+import { getAssetUrl } from "@/lib/utils"
 
 interface SiteMarkerProps {
   site: HeritageSiteProperties
@@ -14,7 +15,7 @@ export function SiteMarker({
   latitude,
   onClick,
 }: SiteMarkerProps) {
-  const imageUrl = site.main_image_url.replace("{size}", "thumb")
+  const imageUrl = getAssetUrl(site.main_image_url.replace("{size}", "thumb"))
 
   return (
     <Marker

@@ -1,5 +1,6 @@
 import { Marker } from "react-map-gl/maplibre"
 import type { ClusterMarkerProps } from "../types"
+import { getAssetUrl } from "@/lib/utils"
 
 export function ClusterMarker({
   cluster,
@@ -29,10 +30,10 @@ export function ClusterMarker({
             className={`grid h-full w-full gap-0.5 bg-background ${leaves.length === 2 ? "grid-cols-2" : "grid-cols-2 grid-rows-2"}`}
           >
             {leaves.map((leaf, i) => {
-              const imgUrl = leaf.properties.main_image_url.replace(
+              const imgUrl = getAssetUrl(leaf.properties.main_image_url.replace(
                 "{size}",
                 "thumb"
-              )
+              ))
               return (
                 <div
                   key={leaf.properties.id_no}

@@ -8,6 +8,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { useExploreActions } from "@/stores/exploreStore"
+import { getAssetUrl } from "@/lib/utils"
 
 interface SubcomponentPopupProps {
   activeFeature: SubcomponentFeature
@@ -25,11 +26,11 @@ export function SubcomponentPopup({
   const { setFullScreenImageIndex } = useExploreActions()
   const [longitude, latitude] = activeFeature.geometry.coordinates
   let activeImgUrl = activeFeature.properties?.img
-    ? activeFeature.properties.img.replace("{size}", "large")
+    ? getAssetUrl(activeFeature.properties.img.replace("{size}", "large"))
     : null
 
   if (!activeImgUrl && isSingleSubcomponent && mainImageUrl) {
-    activeImgUrl = mainImageUrl.replace("{size}", "large")
+    activeImgUrl = getAssetUrl(mainImageUrl.replace("{size}", "large"))
   }
 
   return (

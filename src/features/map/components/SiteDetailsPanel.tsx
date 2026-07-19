@@ -18,6 +18,7 @@ import {
 import { IconMaximize } from "@tabler/icons-react"
 import { useExploreStore, useExploreActions } from "@/stores/exploreStore"
 import { useSiteSelection } from "../hooks/useSiteSelection"
+import { getAssetUrl } from "@/lib/utils"
 
 export function SiteDetailsPanel() {
   const selectedSite = useExploreStore((state) => state.selectedSite)
@@ -106,7 +107,7 @@ export function SiteDetailsPanel() {
                           onClick={() => setFullScreenImageIndex(i)}
                         >
                           <img
-                            src={url.replace("{size}", "large")}
+                            src={getAssetUrl(url.replace("{size}", "large"))}
                             alt={`${selectedSite.name_en} - Image ${i + 1}`}
                             className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                           />

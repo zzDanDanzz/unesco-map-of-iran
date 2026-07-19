@@ -11,6 +11,7 @@ import { IconX } from "@tabler/icons-react"
 import { Dialog as RadixDialog } from "radix-ui"
 import { useShallow } from "zustand/react/shallow"
 import { useExploreStore, useExploreActions } from "@/stores/exploreStore"
+import { getAssetUrl } from "@/lib/utils"
 
 interface FullScreenViewerUIProps {
   isOpen: boolean
@@ -126,7 +127,7 @@ export function FullScreenViewerUI({
                       <CarouselItem key={i}>
                         <div className="relative flex h-[85vh] w-full items-center justify-center">
                           <img
-                            src={url.replace("{size}", "large")}
+                            src={getAssetUrl(url.replace("{size}", "large"))}
                             alt={`${title || "Image"} - ${i + 1}`}
                             className="max-h-full max-w-full object-contain"
                           />

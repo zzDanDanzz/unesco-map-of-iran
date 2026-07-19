@@ -32,6 +32,7 @@ export function SiteLabels({ clusters }: SiteLabelsProps) {
 
     const addBgImage = () => {
       const maplibreMap = map.getMap()
+
       if (maplibreMap.hasImage("label-bg")) return
 
       const img = new Image()
@@ -51,10 +52,12 @@ export function SiteLabels({ clusters }: SiteLabelsProps) {
     if (map.getMap().isStyleLoaded()) {
       addBgImage()
     } else {
+      map.on("load", addBgImage)
       map.on("style.load", addBgImage)
     }
 
     return () => {
+      map.off("load", addBgImage)
       map.off("style.load", addBgImage)
     }
   }, [map])

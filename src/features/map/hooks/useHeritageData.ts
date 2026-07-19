@@ -1,17 +1,18 @@
 import { useEffect } from "react"
 import { toast } from "sonner"
 import { useHeritageActions } from "@/stores/heritageStore"
+import { getAssetUrl } from "@/lib/utils"
 
 export function useHeritageData() {
   const { setHeritageData, setIsLoading } = useHeritageActions()
 
   useEffect(() => {
     Promise.all([
-      fetch("/data/unesco_top_level.geojson").then((res) => {
+      fetch(getAssetUrl("/data/unesco_top_level.geojson")).then((res) => {
         if (!res.ok) throw new Error("Failed to fetch map data")
         return res.json()
       }),
-      fetch("/data/unesco_subcomponents.json").then((res) => {
+      fetch(getAssetUrl("/data/unesco_subcomponents.json")).then((res) => {
         if (!res.ok) throw new Error("Failed to fetch subcomponents")
         return res.json()
       }),

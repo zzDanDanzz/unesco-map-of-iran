@@ -4,6 +4,7 @@ import { IconPhotoOff } from "@tabler/icons-react"
 import { type SubcomponentFeature } from "../types"
 import { useExploreStore, useExploreActions } from "@/stores/exploreStore"
 import { useSiteSelection } from "../hooks/useSiteSelection"
+import { getAssetUrl } from "@/lib/utils"
 
 interface SubcomponentMarkersProps {
   features: SubcomponentFeature[]
@@ -25,11 +26,11 @@ export function SubcomponentMarkers({
       {features.map((feature, idx) => {
         const [longitude, latitude] = feature.geometry.coordinates
         let imgUrl = feature.properties?.img
-          ? feature.properties.img.replace("{size}", "thumb")
+          ? getAssetUrl(feature.properties.img.replace("{size}", "thumb"))
           : null
 
         if (!imgUrl && isSingleSubcomponent && mainImageUrl) {
-          imgUrl = mainImageUrl.replace("{size}", "thumb")
+          imgUrl = getAssetUrl(mainImageUrl.replace("{size}", "thumb"))
         }
 
         return (
