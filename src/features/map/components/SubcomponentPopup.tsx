@@ -7,6 +7,11 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
 import { useExploreActions } from "@/stores/exploreStore"
 import { getAssetUrl } from "@/lib/utils"
 
@@ -85,7 +90,7 @@ export function SubcomponentPopup({
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <button type="button" className="text-muted-foreground hover:text-foreground">
+                    <button type="button" className="hidden md:block text-muted-foreground hover:text-foreground">
                       <IconInfoCircle className="h-4 w-4" />
                     </button>
                   </TooltipTrigger>
@@ -94,6 +99,16 @@ export function SubcomponentPopup({
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
+              <Popover>
+                <PopoverTrigger asChild>
+                  <button type="button" className="md:hidden text-muted-foreground hover:text-foreground">
+                    <IconInfoCircle className="h-4 w-4" />
+                  </button>
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-2 text-xs">
+                  <p>Approximate location based on UNESCO data.</p>
+                </PopoverContent>
+              </Popover>
             </div>
           </div>
         )}
