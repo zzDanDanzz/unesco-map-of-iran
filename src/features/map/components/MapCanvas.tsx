@@ -13,14 +13,8 @@ import { SiteMarker } from "./SiteMarker"
 import { type HeritageSiteProperties, type ClusterProps } from "../types"
 import { SiteLabels } from "./SiteLabels"
 
-const getInitialViewState = () => {
-  const isMobile = window.innerWidth < 768
-  return {
-    longitude: 54.03,
-    latitude: 33.03,
-    zoom: isMobile ? 3.8 : 4.5,
-  }
-}
+import { MapControls } from "./MapControls"
+import { getInitialViewState } from "../utils"
 
 export function MapCanvas() {
   const mapRef = useRef<MapRef>(null)
@@ -101,6 +95,7 @@ export function MapCanvas() {
           )}
 
           <SiteLabels clusters={clusters} />
+          <MapControls />
           <AttributionControl compact={true} position="bottom-right" />
         </Map>
       )}
