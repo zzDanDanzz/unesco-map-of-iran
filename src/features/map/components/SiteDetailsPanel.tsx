@@ -111,7 +111,7 @@ function SiteDetailsCard({ isMobile }: { isMobile: boolean }) {
 
   return (
     <div
-      className="flex h-full flex-col gap-3 overflow-hidden p-4"
+      className="flex h-full flex-col gap-3 overflow-hidden p-4 outline-none"
       onKeyDown={handleKeyDown}
       tabIndex={0}
     >
