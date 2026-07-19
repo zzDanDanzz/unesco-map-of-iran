@@ -72,9 +72,6 @@ function SiteDetailsDesktop() {
 
 function SiteDetailsCard({ isMobile }: { isMobile: boolean }) {
   const selectedSite = useExploreStore((state) => state.selectedSite)!
-  const selectedSubcomponent = useExploreStore(
-    (state) => state.selectedSubcomponent
-  )
   const { setFullScreenImageIndex } = useExploreActions()
   const { handleSiteDeselect } = useSiteSelection()
 
@@ -120,13 +117,8 @@ function SiteDetailsCard({ isMobile }: { isMobile: boolean }) {
     >
       <div className="relative shrink-0 outline-none">
         <h2 className="pr-7 text-lg leading-tight font-semibold tracking-tighter">
-          {selectedSubcomponent?.properties?.name || selectedSite.name_en}
+          {selectedSite.name_en}
         </h2>
-        {selectedSubcomponent && (
-          <p className="mt-0.5 text-xs text-muted-foreground">
-            Part of {selectedSite.name_en}
-          </p>
-        )}
         <button
           onClick={handleSiteDeselect}
           className="absolute top-0 right-0 flex h-7 w-7 items-center justify-center rounded-full bg-muted/60 text-muted-foreground transition-colors hover:bg-muted/80 hover:text-foreground"
