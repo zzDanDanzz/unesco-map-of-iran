@@ -12,8 +12,23 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       workbox: {
+        globIgnores: ['**/*-large.webp'],
         globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,json,geojson}'],
         maximumFileSizeToCacheInBytes: 15 * 1024 * 1024, // 15MB limit
+
+        runtimeCaching: [
+          {
+            urlPattern: /.*-large\.webp$/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'large-images-cache',
+
+              cacheableResponse: {
+                statuses: [200]
+              }
+            }
+          }
+        ]
       },
       manifest: {
         name: 'UNESCO World Heritage Sites of Iran',
