@@ -7,6 +7,7 @@ import { type HeritageSiteProperties } from "../types"
 import type { FeatureCollection, Point } from "geojson"
 import type { SubcomponentProperties, SubcomponentFeature } from "../types"
 import type { MapLibreEvent } from "maplibre-gl"
+import { useMediaQuery } from "./useMediaQuery"
 
 let previousViewState: {
   longitude: number
@@ -21,6 +22,7 @@ export const clearSavedViewState = () => {
 export function useSiteSelection() {
   const { setSelectedSite, setSelectedSubcomponent } = useExploreActions()
   const { "main-map": mapInstance } = useMap()
+  const isDesktop = useMediaQuery("(min-width: 768px)")
 
   useEffect(() => {
     if (!mapInstance) return
@@ -63,15 +65,17 @@ export function useSiteSelection() {
 
     const features = subcomponentsData[site.id_no]?.features
     if (features && features.length > 0) {
-      const HORIZONTAL_PADDING = 450
-      const VERTICAL_PADDING = 75
-
-      const padding = {
-        top: VERTICAL_PADDING,
-        bottom: VERTICAL_PADDING,
-        left: HORIZONTAL_PADDING,
-        right: HORIZONTAL_PADDING,
-      }
+      const padding = isDesktop
+        ? {
+          left: 450,
+          right: 450,
+        }
+        : {
+          top: 100,
+          bottom: window.innerHeight * 0.4,
+          left: 100,
+          right: 100,
+        }
 
       const featuresCollection = featureCollection(features)
       const [minLng, minLat, maxLng, maxLat] = bbox(featuresCollection)
