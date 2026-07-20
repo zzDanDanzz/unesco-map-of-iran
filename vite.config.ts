@@ -12,17 +12,27 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       workbox: {
-        globIgnores: ['**/*-large.webp'],
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,json,geojson}'],
-        maximumFileSizeToCacheInBytes: 15 * 1024 * 1024, // 15MB limit
+        globIgnores: ['**/*-large.webp', '**/*-thumb.webp'],
+
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,json,geojson}'],
+        maximumFileSizeToCacheInBytes: 15 * 1024 * 1024,
 
         runtimeCaching: [
+          {
+            urlPattern: /.*-thumb\.webp$/i,
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'thumbnail-images-cache',
+              cacheableResponse: {
+                statuses: [200]
+              }
+            }
+          },
           {
             urlPattern: /.*-large\.webp$/i,
             handler: 'CacheFirst',
             options: {
               cacheName: 'large-images-cache',
-
               cacheableResponse: {
                 statuses: [200]
               }
