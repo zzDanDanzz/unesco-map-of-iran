@@ -7,7 +7,6 @@ import { useMapClustering } from "../hooks/useMapClustering"
 import { useSiteSelection } from "../hooks/useSiteSelection"
 import { useFilteredSites } from "../hooks/useFilteredSites"
 import { useHeritageStore } from "@/stores/heritageStore"
-import { useMapStyleStore } from "@/stores/mapStyleStore"
 import { ClusterMarker } from "./ClusterMarker"
 import { SubcomponentMarkers } from "./SubcomponentMarkers"
 import { SiteMarker } from "./SiteMarker"
@@ -17,13 +16,13 @@ import { useMediaQuery } from "../hooks/useMediaQuery"
 
 import { MapControls } from "./MapControls"
 import { getInitialViewState } from "../utils"
+import { getAssetUrl } from "@/lib/utils"
 
 export function MapCanvas() {
   const mapRef = useRef<MapRef>(null)
   const [zoom, setZoom] = useState(getInitialViewState().zoom)
   const isDesktop = useMediaQuery("(min-width: 768px)")
 
-  const mapStyle = useMapStyleStore((state) => state.mapStyle)
   const selectedSite = useExploreStore((state) => state.selectedSite)
 
   const subcomponentsData = useHeritageStore((state) => state.subcomponentsData)
@@ -40,18 +39,24 @@ export function MapCanvas() {
 
   return (
     <div className="h-safe-screen relative bg-background">
-      {mapStyle && (
-        <Map
-          id="main-map"
-          ref={mapRef}
-          initialViewState={getInitialViewState()}
-          onZoom={(e) => setZoom(e.viewState.zoom)}
-          mapStyle={mapStyle}
-          style={{ width: "100%", height: "100%" }}
-          maxZoom={19}
-          attributionControl={false}
-        >
-          {selectedSite ? (
+      <Map
+        id="main-map"
+        ref={mapRef}
+        initialViewState={getInitialViewState()}
+        onZoom={(e) => setZoom(e.viewState.zoom)}
+        mapStyle={getAssetUrl("/style.json")}
+        transformRequest={(url) => {
+          if (url.startsWith("pmtiles:///")) {
+            const filename = url.replace("pmtiles:///", "/")
+            return { url: `pmtiles://${getAssetUrl(filename)}` }
+          }
+          return { url }
+        }}
+        style={{ width: "100%", height: "100%" }}
+        maxZoom={19}
+        attributionControl={false}
+      >
+        {selectedSite ? (
             <SubcomponentMarkers
               features={subcomponentsData[selectedSite.id_no]?.features || []}
               mainImageUrl={selectedSite.main_image_url}
@@ -101,7 +106,6 @@ export function MapCanvas() {
           <SiteLabels clusters={clusters} />
           <MapControls />
         </Map>
-      )}
 
       <CustomAttribution isDesktop={isDesktop} />
     </div>
