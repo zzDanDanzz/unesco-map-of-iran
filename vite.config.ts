@@ -14,10 +14,20 @@ export default defineConfig({
       workbox: {
         globIgnores: ['**/*-large.webp', '**/*-thumb.webp'],
 
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,json,geojson}'],
+        globPatterns: ['**/*.{js,css,ico,png,svg,json,geojson}'],
         maximumFileSizeToCacheInBytes: 15 * 1024 * 1024,
 
         runtimeCaching: [
+          {
+            urlPattern: ({ request }) => request.mode === 'navigate',
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'html-cache',
+              cacheableResponse: {
+                statuses: [200]
+              }
+            }
+          },
           {
             urlPattern: /.*-thumb\.webp$/i,
             handler: 'StaleWhileRevalidate',
