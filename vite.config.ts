@@ -14,7 +14,7 @@ export default defineConfig({
       workbox: {
         globIgnores: ['**/*-large.webp', '**/*-thumb.webp'],
 
-        globPatterns: ['**/*.{js,css,ico,png,svg,json,geojson,pbf}'],
+        globPatterns: ['**/*.{js,css,ico,png,svg,json,geojson}'],
         maximumFileSizeToCacheInBytes: 15 * 1024 * 1024,
 
         runtimeCaching: [
@@ -43,6 +43,16 @@ export default defineConfig({
             handler: 'CacheFirst',
             options: {
               cacheName: 'large-images-cache',
+              cacheableResponse: {
+                statuses: [200]
+              }
+            }
+          },
+          {
+            urlPattern: /.*\.pbf$/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'pbf-cache',
               cacheableResponse: {
                 statuses: [200]
               }
