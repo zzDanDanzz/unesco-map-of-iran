@@ -86,6 +86,7 @@ export function SiteLabels({ clusters }: SiteLabelsProps) {
     minzoom: 5,
     layout: {
       "text-field": isSubcomponentView ? ["get", "name"] : ["get", "name_en"],
+      "text-font": ["Noto Sans Regular"],
       "text-size": 13,
       "text-anchor": "top",
       "text-offset": [0, 2.75],

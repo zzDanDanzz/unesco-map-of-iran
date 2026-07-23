@@ -9712,6 +9712,6 @@
       "minzoom": 5
     }
   ],
-  "sprite": "https://protomaps.github.io/basemaps-assets/sprites/v4/light",
-  "glyphs": "https://protomaps.github.io/basemaps-assets/fonts/{fontstack}/{range}.pbf"
+  "sprite": "asset://sprites/v4/light",
+  "glyphs": "asset://fonts/{fontstack}/{range}.pbf"
 }

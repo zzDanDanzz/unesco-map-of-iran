@@ -50,6 +50,10 @@ export function MapCanvas() {
             const filename = url.replace("pmtiles:///", "/")
             return { url: `pmtiles://${getAssetUrl(filename)}` }
           }
+          if (url.startsWith("asset://")) {
+            const path = url.replace("asset://", "")
+            return { url: window.location.origin + getAssetUrl(path) }
+          }
           return { url }
         }}
         style={{ width: "100%", height: "100%" }}

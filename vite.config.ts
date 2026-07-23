@@ -14,7 +14,7 @@ export default defineConfig({
       workbox: {
         globIgnores: ['**/*-large.webp', '**/*-thumb.webp'],
 
-        globPatterns: ['**/*.{js,css,ico,png,svg,json,geojson}'],
+        globPatterns: ['**/*.{js,css,ico,png,svg,json,geojson,pbf}'],
         maximumFileSizeToCacheInBytes: 15 * 1024 * 1024,
 
         runtimeCaching: [
