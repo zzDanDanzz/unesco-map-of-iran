@@ -12,6 +12,7 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       workbox: {
+        navigateFallback: null,
         globIgnores: ['**/*-large.webp', '**/*-thumb.webp'],
 
         globPatterns: ['**/*.{js,css,ico,png,svg,json,geojson}'],
