@@ -1,9 +1,5 @@
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
-import { registerSW } from "virtual:pwa-register"
-
-registerSW({ immediate: true })
-
 import "./index.css"
 import "maplibre-gl/dist/maplibre-gl.css"
 import maplibregl from "maplibre-gl"

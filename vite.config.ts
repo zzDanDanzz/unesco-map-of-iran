@@ -10,25 +10,15 @@ export default defineConfig({
     react(),
     tailwindcss(),
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: 'prompt',
       workbox: {
-        navigateFallback: null,
+        navigateFallback: 'index.html',
         globIgnores: ['**/*-large.webp', '**/*-thumb.webp'],
 
-        globPatterns: ['**/*.{js,css,ico,png,svg,json,geojson}'],
+        globPatterns: ['**/*.{js,css,ico,png,svg,json,geojson,html}'],
         maximumFileSizeToCacheInBytes: 15 * 1024 * 1024,
 
         runtimeCaching: [
-          {
-            urlPattern: ({ request }) => request.mode === 'navigate',
-            handler: 'NetworkFirst',
-            options: {
-              cacheName: 'html-cache',
-              cacheableResponse: {
-                statuses: [200]
-              }
-            }
-          },
           {
             urlPattern: /.*-thumb\.webp$/i,
             handler: 'StaleWhileRevalidate',
