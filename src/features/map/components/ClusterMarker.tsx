@@ -48,7 +48,6 @@ export function ClusterMarker({
                     src={imgUrl}
                     alt={leaf.properties.name_en}
                     className="h-full w-full object-cover"
-                    loading="lazy"
                     onLoad={() => setLoadedCount((prev) => prev + 1)}
                   />
                 </div>
