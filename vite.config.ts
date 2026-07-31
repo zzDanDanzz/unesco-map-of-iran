@@ -64,4 +64,25 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            const vendorChunks = {
+              'map-vendor': ['maplibre-gl', 'react-map-gl', 'pmtiles'],
+              'ui-vendor': ['@tabler/icons-react', 'embla-carousel-react', 'vaul', 'radix-ui'],
+              'utils-vendor': ['supercluster', 'use-supercluster', '@turf/bbox', '@turf/helpers']
+            };
+            
+            for (const [chunkName, dependencies] of Object.entries(vendorChunks)) {
+              if (dependencies.some(dep => id.includes(dep))) {
+                return chunkName;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 })
